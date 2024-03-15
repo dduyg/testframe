@@ -12,13 +12,11 @@
     --quaternary-color: black;
     --quinary-color: FloralWhite;
 }
-
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
-
 nav { 
     display: flex; /* Use flexbox */
     flex-direction: column; /* Stack items vertically */
@@ -30,17 +28,14 @@ nav {
     z-index: 5;
     backface-visibility: hidden;
 }
-
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0; /* Remove default margin */
 }
-
 nav li { 
     margin-bottom: 10px; /* Add spacing between items */
 }
-
 nav a { 
     display: block; 
     width: 20px; 
@@ -51,16 +46,13 @@ nav a {
     border: 2px solid #531eff; 
     transition: all 0.3s ease;
 }
-
 nav a:hover, nav a.active {
     background-color: #531eff;
     border-radius: 25px;
 }
-
-.section {
+section {
     height: 100vh;
 }
-
 .blue { background-color: var(--primary-color); }
 .red { background-color: var(--secondary-color); }
 .green { background-color: var(--tertiary-color); }
@@ -71,23 +63,23 @@ nav a:hover, nav a.active {
 <body>
 <nav>
     <ul>
-        <li><a href="#main">Main</a></li>
-        <li><a href="#secondary">Secondary</a></li>
-        <li><a href="#third">Third</a></li>
-        <li><a href="#fourth">Fourth</a></li>
-        <li><a href="#fifth">Fifth</a></li>
+        <li><a href="#first">01</a></li>
+        <li><a href="#second">02</a></li>
+        <li><a href="#third">03</a></li>
+        <li><a href="#fourth">04</a></li>
+        <li><a href="#fifth">05</a></li>
     </ul>
 </nav>	
 	
-<section id="main" class="section blue"></section>
+<section id="first" class="blue"></section>
 	
-<section id="secondary" class="section red"></section>
+<section id="second" class="red"></section>
 	
-<section id="third" class="section green"></section>
+<section id="third" class="green"></section>
 	
-<section id="fourth" class="section pink"></section>
+<section id="fourth" class="pink"></section>
 	
-<section id="fifth" class="section black"></section>
+<section id="fifth" class="black"></section>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
