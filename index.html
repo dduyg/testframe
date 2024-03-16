@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Liminal Loop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
     html, body {
@@ -12,11 +12,13 @@
       border: 0;
       background-color: #e8e5da;
       color: #292721;
-      font-family: 'DM Serif Display', serif;
     }
 
     main {
       width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -24,6 +26,7 @@
 
     .section-title h1 {
       font-size: 4vw;
+      font-family: 'DM Serif Display', serif;
       margin: 0;
     }
 
@@ -31,71 +34,97 @@
       transform: rotate(-90deg);
     }
 
-    .panel {
-      border-right: 1px solid black;
-      flex: 1;
-      height: 80%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: flex 0.5s, background-color 0.5s;
+    .panel-active .section-title {
+      transform: rotate(0deg);
+      transition: 0.5s ease;
     }
 
-    .panel:hover {
+    .panel {
+      border-right: 1px black solid;
+      display: flex;
+      flex: 1;
+      height: 80%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .panel-inactive:hover {
       flex: 1.1;
-      background-color: rgba(0,0,0,0.1);
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: 0.5s ease;
     }
 
     .panel-active {
       flex: 16;
-      transition: flex 1s;
+      transition: 1s ease;
+    }
+
+    .panel-content {
+      display: none;
+    }
+
+    .panel-active .panel-content {
+      display: block;
     }
   </style>
 </head>
 <body>
-  <main>
-    <div class="panel panel-active">
-      <div class="section-title">
-        <h1>People</h1>
-      </div>
+<main>
+  <div class="panel panel-active">
+    <div class="section-title">
+      <h1>People</h1>
     </div>
-    <div class="panel panel-inactive">
-      <div class="section-title">
-        <h1>Lands</h1>
-      </div>
+    <div class="panel-content">
+      <p>Text content about People.</p>
     </div>
-    <div class="panel panel-inactive">
-      <div class="section-title">
-        <h1>Misc.</h1>
-      </div>
+  </div>
+  <div class="panel panel-inactive">
+    <div class="section-title">
+      <h1>Lands</h1>
     </div>
-    <div class="panel panel-inactive">
-      <div class="section-title">
-        <h1>Video</h1>
-      </div>
+    <div class="panel-content">
+      <p>Text content about Lands.</p>
     </div>
-  </main>
+  </div>
+  <div class="panel panel-inactive">
+    <div class="section-title">
+      <h1>Misc.</h1>
+    </div>
+    <div class="panel-content">
+      <p>Text content about Misc.</p>
+    </div>
+  </div>
+  <div class="panel panel-inactive">
+    <div class="section-title">
+      <h1>Video</h1>
+    </div>
+    <div class="panel-content">
+      <p>Text content about Video.</p>
+    </div>
+  </div>
+</main>
+<script>
+  panels = document.querySelectorAll('.panel');
 
-  <script>
-    const panels = document.querySelectorAll('.panel');
+  panels.forEach((panel) => {
+    panel.addEventListener('mousedown', activatePanel);  
+  });
 
-    function deactivatePanels() {
-      const activePanel = document.querySelector('.panel-active');
-      if (activePanel) {
-        activePanel.classList.add('panel-inactive');
-        activePanel.classList.remove('panel-active');
-      }
-    }
+  function deactivatePanels() {
+    activePanel = document.querySelector('.panel-active');
+    if (activePanel){
+      activePanel.classList.add('panel-inactive');
+      activePanel.classList.remove('panel-active');
+      activePanel.querySelector('.panel-content').style.display = 'none'; // Hide panel content
+    };
+  };
 
-    function activatePanel() {
-      deactivatePanels();
-      this.classList.remove('panel-inactive');
-      this.classList.add('panel-active');
-    }
-
-    panels.forEach(panel => {
-      panel.addEventListener('mousedown', activatePanel);
-    });
-  </script>
+  function activatePanel() {
+    deactivatePanels();
+    this.classList.remove('panel-inactive');
+    this.classList.add('panel-active');
+    this.querySelector('.panel-content').style.display = 'block'; // Show panel content
+  };
+</script>
 </body>
 </html>
