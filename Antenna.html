@@ -1,138 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Liminal Loop</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      padding: 0;
-      margin: 0;
-      border: 0;
-      background-color: #898989;
-      color: #292721;
-      font-family: "Lato", sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            background-color: #0e5d6f;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
 
-    main {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-    }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    .section-title h1 {
-      font-size: 6vw;
-      font-family: 'DM Serif Display', serif;
-      margin: 0;
-    }
+        h1 {
+            font-size: 36px;
+            text-align: center;
+        }
 
-    .section-title {
-      transform: rotate(-90deg);
-    }
+        h2 {
+            font-size: 24px;
+        }
 
-    .panel-active .section-title {
-      transform: rotate(0deg);
-      transition: 0.5s ease;
-    }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
 
-    .panel {
-      border-right: 1px black solid;
-      display: flex;
-      flex: 1;
-      height: 70%;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
 
-    .panel-inactive:hover {
-      flex: 1.1;
-      background-color: rgba(0, 0, 0, 0.1);
-      transition: 0.5s ease;
-    }
-
-    .panel-active {
-      flex: 16;
-      transition: 1s ease;
-    }
-
-    .panel-content {
-      display: none;
-      font-size: 4vw;
-      padding: 3% 12%;
-      overflow-y: auto;
-      max-height: calc(100% - 20px);
-    }
-
-    .panel-active .panel-content {
-      display: block;
-    }
-  </style>
+        pre {
+            background-color: #001e27;
+            color: #7df;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+    </style>
 </head>
+
 <body>
-<main>
-  <div class="panel panel-active">
-    <div class="section-title">
-      <h1>People</h1>
-    </div>
-    <div class="panel-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Sed aliquam tincidunt elit ac scelerisque.</p>   
-    </div>
-  </div>
-  <div class="panel panel-inactive">
-    <div class="section-title">
-      <h1>Lands</h1>
-    </div>
-    <div class="panel-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
-      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent finibus ac enim vel iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et egestas ante. Nullam ac elementum velit, quis aliquam nisi. Pellentesque cursus eu ligula non semper. Nam pharetra velit sit amet orci tempor fringilla. Donec pretium mattis gravida. Morbi ut leo felis.</p>
-    </div>
-  </div>
-  <div class="panel panel-inactive">
-    <div class="section-title">
-      <h1>Misc.</h1>
-    </div>
-    <div class="panel-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
-    </div>
-  </div>
-  <div class="panel panel-inactive">
-    <div class="section-title">
-      <h1>Video</h1>
-    </div>
-    <div class="panel-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
-    </div>
-  </div>
-</main>
-<script>
-  panels = document.querySelectorAll('.panel');
+    <div class="container">
+        <h1>Compressed Bytes</h1>
+        <h2>Introduction:</h2>
+        <p>This Python script provides a convenient way to compress data files using gzip compression, aiming to optimize storage and transmission costs. By compressing data files, users can reduce file sizes, making them more efficient for storage and transmission over networks.</p>
 
-  panels.forEach((panel) => {
-    panel.addEventListener('mousedown', activatePanel);  
-  });
+        <h2>Features:</h2>
+        <ul>
+            <li>Compresses data files using gzip compression.</li>
+            <li>Calculates compression ratio to assess the effectiveness of compression.</li>
+            <li>Provides informative output about the compression process.</li>
+        </ul>
 
-  function deactivatePanels() {
-    activePanel = document.querySelector('.panel-active');
-    if (activePanel){
-      activePanel.classList.add('panel-inactive');
-      activePanel.classList.remove('panel-active');
-      activePanel.querySelector('.panel-content').style.display = 'none'; // Hide panel content
-    };
-  };
+        <h2>Requirements:</h2>
+        <ul>
+            <li>Python 3.x</li>
+            <li>Operating system that supports gzip compression (e.g., Unix-based systems, Windows)</li>
+        </ul>
 
-  function activatePanel() {
-    deactivatePanels();
-    this.classList.remove('panel-inactive');
-    this.classList.add('panel-active');
-    this.querySelector('.panel-content').style.display = 'block'; // Show panel content
-  };
-</script>
+        <h2>Usage:</h2>
+        <p>Ensure that you have Python 3.x installed on your system. Customize the <code>input_file</code> variable in the script to specify the path to your data file. Run the script using the command <code>python compress_data.py</code>. After execution, the script will generate a compressed file with a <code>.gz</code> extension in the same directory as the input file.</p>
+
+        <h2>Example Output:</h2>
+        <pre>
+            Compression complete:
+            Original file size: 1048576 bytes
+            Compressed file size: 524288 bytes
+            Compression ratio: 2.00
+        </pre>
+
+        <h2>Note:</h2>
+        <ul>
+            <li>The script assumes that the input file is in a format compatible with gzip compression.</li>
+            <li>Ensure that you have necessary permissions to read and write files in the specified directories.</li>
+            <li>For large files, the compression process may take some time depending on the system resources available.</li>
+        </ul>
+
+        <h2>Author:</h2>
+        <p>@dduyg</p>
+
+        <h2>Date:</h2>
+        <p>@16 Mar, 2024</p>
+    </div>
 </body>
+
 </html>
