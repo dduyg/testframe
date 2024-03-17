@@ -107,25 +107,27 @@
   </section>
 </main>
 <script>
-  const sections = document.querySelectorAll('section');
+  sections = document.querySelectorAll('section');
 
   sections.forEach((section) => {
     section.addEventListener('click', activatePanel);  
   });
 
   function deactivatePanels() {
-    const activePanel = document.querySelector('.panel-active');
+    activePanel = document.querySelector('.panel-active');
     if (activePanel){
+      activePanel.classList.add('panel-inactive');
       activePanel.classList.remove('panel-active');
       activePanel.querySelector('.content').style.display = 'none'; // Hide panel content
-    }
-  }
+    };
+  };
 
   function activatePanel() {
     deactivatePanels();
+    this.classList.remove('panel-inactive');
     this.classList.add('panel-active');
     this.querySelector('.content').style.display = 'block'; // Show panel content
-  }
+  };
 </script>
 </body>
 </html>
