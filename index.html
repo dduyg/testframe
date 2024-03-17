@@ -48,17 +48,6 @@
       transition: 0.5s ease;
     }
 
-    .panel-inactive:hover {
-      flex: 1.1;
-      background-color: rgba(0, 0, 0, 0.1);
-      transition: 0.5s ease;
-    }
-
-    .panel-active {
-      flex: 16;
-      transition: 1s ease;
-    }
-
     .panel-content {
       display: none;
       font-size: 4vw;
@@ -67,6 +56,15 @@
       max-height: calc(100% - 20px);
     }
 
+    .panel-inactive:hover {
+      flex: 1.1;
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: 0.5s ease;
+    }
+    .panel-active {
+      flex: 16;
+      transition: 1s ease;
+    }
     .panel-active .panel-content {
       display: block;
     }
