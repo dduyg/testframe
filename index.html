@@ -15,7 +15,6 @@
       color: #292721;
       font-family: "Lato", sans-serif;
     }
-
     main {
       width: 100%;
       margin: 0;
@@ -24,6 +23,16 @@
       height: 100vh;
       display: flex;
       align-items: center;
+    }
+
+    section {
+      border-right: 1px black solid;
+      display: flex;
+      flex: 1;
+      height: 70%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
 
     header {
@@ -37,16 +46,6 @@
     header .panel-active {
       transform: rotate(0deg);
       transition: 0.5s ease;
-    }
-
-    section {
-      border-right: 1px black solid;
-      display: flex;
-      flex: 1;
-      height: 70%;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
     }
 
     .panel-inactive:hover {
