@@ -68,6 +68,40 @@
     .panel-active .content {
       display: block;
     }
+
+    a {
+      color: black;
+      font-family: "Arial", sans-serif;
+      text-decoration: none;
+    }
+    #credits {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      padding: 0.75em 1em;
+      text-align: center;
+      color: black;
+      font-size: 1.1em;
+    }
+    #credits a::before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      transform-origin: center center;
+      top: -0.0325em;
+      height: 0.65em;
+      width: 0.65em;
+      background-color: black;
+      color: black;
+      border-radius: 100%;
+      margin-right: 0.35em;
+      animation: 1.5s rotate ease-in-out infinite;
+    }
+    @keyframes rotate {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
   </style>
 </head>
 <body>
