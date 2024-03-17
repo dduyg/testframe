@@ -26,17 +26,15 @@
       align-items: center;
     }
 
-    .section-title h1 {
+    header {
+      transform: rotate(-90deg);
+    } 
+    header h1 {
       font-size: 6vw;
       font-family: 'DM Serif Display', serif;
       margin: 0;
     }
-
-    .section-title {
-      transform: rotate(-90deg);
-    }
-
-    .panel-active .section-title {
+    header .panel-active {
       transform: rotate(0deg);
       transition: 0.5s ease;
     }
@@ -78,34 +76,34 @@
 <body>
 <main>
   <section class="panel-active">
-    <div class="section-title">
+    <header>
       <h1>People</h1>
-    </div>
+    </header>
     <div class="panel-content">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Sed aliquam tincidunt elit ac scelerisque.</p>   
     </div>
   </section>
   <section class="panel-inactive">
-    <div class="section-title">
+    <header>
       <h1>Lands</h1>
-    </div>
+    </header>
     <div class="panel-content">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
       <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent finibus ac enim vel iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et egestas ante. Nullam ac elementum velit, quis aliquam nisi. Pellentesque cursus eu ligula non semper. Nam pharetra velit sit amet orci tempor fringilla. Donec pretium mattis gravida. Morbi ut leo felis.</p>
     </div>
   </section>
   <section class="panel-inactive">
-    <div class="section-title">
+    <header>
       <h1>Misc.</h1>
-    </div>
+    </header>
     <div class="panel-content">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
     </div>
   </section>
   <section class="panel-inactive">
-    <div class="section-title">
+    <header>
       <h1>Video</h1>
-    </div>
+    </header>
     <div class="panel-content">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
     </div>
