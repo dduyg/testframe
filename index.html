@@ -3,91 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.glitch.global/e5c2954d-d111-4702-9088-6eba6e7bad24/favicon.ico?v=1711374642195">
+    <title>ByteEfficient</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #0e5d6f;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            padding: 20px;
+	    margin: 0;
+	    padding: 0;
+	    font-size: clamp(17px, 1rem, 19px);
+	    line-height: 1.5;
+            color: #292721;
+            background: linear-gradient(to right, #c9bd95, #8daa97);
+            font-family: "DM Sans", sans-serif;
         }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+	nav { 
+	    display: flex; /* Use flexbox */
+            flex-direction: column; /* Stack items vertically */
+            align-items: flex-end; /* Align items to the end of the container (vertically) */
+            position: fixed;
+            right: 1rem;
+            top: 50vh; /* Position at 50% of viewport height */
+            transform: translateY(-50%);
+            z-index: 999;
+            backface-visibility: hidden;
+	}
+	nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+	}
+	nav li { 
+            margin-bottom: 15px; /* Add spacing between items */
+	}
+	nav a {
+	    display: block;
+            opacity: .8;
+            cursor: pointer;
+            width: 4.4vw;
+            height: 4.4vw;
+            max-width: 25px; /* Limit maximum width */
+            max-height: 25px; /* Limit maximum height */
+            text-indent: -9999px;
+            border-radius: 50%;
+            background-color: transparent; 
+            border: 2px solid #1912FE; 
+            transition: all 0.3s ease;
+	}
+	nav a:active {
+	    transform: translateY(5px);
+	}
+	nav a.active {
+	    opacity: 1;
+            background-color: #1912FE;
+	}
+	#credits {
+	    position: absolute;
+            top: 2%;
+            left: 3%;
+	    margin: 0;
+	    padding: 0.75em 1em;
+	    text-align: center;
+	    color: black;
+	    font-size: 1.1em;
+	    font-family: "Arial", sans-serif;
+	    font-weight: bold;
+            letter-spacing: 0.07em;
+	}	    
+	#badge {
+	    position: absolute;
+	    top: 2%;
+	    right: 3%;
+	    margin: 0;
+	    padding: 0.75em 1em;
+	    text-align: center;
+	    color: black;
+	    font-size: 1.1em;
+	    font-family: "Arial", sans-serif;
+	}
+	#badge a::before {
+	    content: '';
+	    display: inline-block;
+	    position: relative;
+	    transform-origin: center center;
+	    top: -0.0325em;
+	    height: 0.65em;
+	    width: 0.65em;
+	    background-color: black;
+	    color: black;
+	    border-radius: 100%;
+	    margin-right: 0.35em;
+	    animation: 1.5s rotate ease-in-out infinite;
+	}
+	@keyframes rotate {
+	    0% { transform: rotateY(0deg); }
+	    100% { transform: rotateY(360deg); }
+	}    
+	main {
+	    max-width: 800px;
+	    margin: 0 auto;
+	    padding: 3em;
         }
-
-        h1 {
-            font-size: 36px;
+        section {
+            padding: 80px 0;
+        }
+	a {
+	    color: inherit;
+	    text-decoration: none;
+	}
+	a.get {
+	    border-bottom: 3px solid #1912FE;
+	}
+	u {
+	    text-decoration-color: rgba(25, 18, 254, 0.6);
+	}
+	h1, h2 {
+            margin-bottom: 20px;
             text-align: center;
-        }
-
-        h2 {
-            font-size: 24px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        code {
+	    color: #1912FE;
+	    letter-spacing: 2px;		
+	}
+	h1 {
+	    font-size: 2em;
+	}
+	h2 {
+	    font-size: 1.8em;
+	}
+	h3 {
+            margin-bottom: 0;
+	    padding-bottom: 0;
+	    color: #1912FE;
+	}
+	samp {
+	    color: black;
+	}
+	code {
             font-family: 'Courier New', Courier, monospace;
-        }
-
-        pre {
-            background-color: #001e27;
-            color: #7df;
-            padding: 10px;
+	    background-color: #001e27;
+            color: #f0e68c;
+            padding: 2px 5px;
+            border-radius: 4px;
+	}
+	pre {
+	    background-color: #001e27;
+	    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #f0e68c;
+            padding: 20px;
             overflow-x: auto;
-            border-radius: 5px;
-        }
+            border-radius: 5px
+	}
+	section ul {
+	    padding-left: 0;
+	    list-style: none;
+	}
+	section ul li::before {
+           content: "\27BC"; /* Unicode code point for the symbol ⤷ */
+           margin-right: 10px;
+           font-size: 1.2rem;
+	}    
+	section ul li {
+	    margin-bottom: 20px;
+	    font-size: 1rem;
+	}   
+	ol {
+	    padding-left: 0;
+	    list-style-position: inside;
+	}
+	ol li {
+	    margin-bottom: 30px;
+	}
+	ol li::marker {
+	    font-family: "Roboto Mono", monospace;
+	    margin-right: 10px;
+	    font-size: 1.4rem;
+	    color: #1912FE;
+	}
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <h1>Compressed Bytes</h1>
-        <h2>Introduction:</h2>
-        <p>This Python script provides a convenient way to compress data files using gzip compression, aiming to optimize storage and transmission costs. By compressing data files, users can reduce file sizes, making them more efficient for storage and transmission over networks.</p>
+    <div id="credits"><a href="https://www.instagram.com/insert.data" target="_blank">/dduyg</a></div>
+    <div id="badge"><a href="https://github.com/dduyg/byte-efficient" target="_blank">Download Here</a></div>
+    <nav>
+	<ul>
+	   <li><a href="#first">01</a></li>
+           <li><a href="#second">02</a></li>
+           <li><a href="#third">03</a></li>
+           <li><a href="#fourth">04</a></li>
+           <li><a href="#fifth">05</a></li>
+	</ul>
+    </nav>
+    
+<main>
+    <section id="first">
+        <h1>Byte Efficient</h1>
+	<p>ByteEfficient is a Python tool designed to reduce the size of data files using gzip compression. It provides a flexible and convenient way for optimizing storage space and transmission over networks, especially useful for scenarios involving large amounts of data that need to be stored or transmitted efficiently. With ByteEfficient, you can compress various types of files, such as text, CSV, JSON, and binary files, without compromising data integrity. This documentation provides detailed instructions on effectively using the ByteEfficient script to compress your files.</p>
+    </section>
+    <section id="second">
+        <h1>Usage</h1>
+	<p>To use ByteEfficient, follow these simple steps:</p>
+	<ol>
+	   <li><strong>Download the Script:</strong> Clone or download the <code>byte_efficient.py</code> script from the <a href="https://github.com/dduyg/byte-efficient" target="_blank" class="get">repository</a>.</li>
+	   <li><strong>Prepare Your Files:</strong> Ensure your file(s) that you want to compress are ready and placed in the same directory as the script.</li>
+	   <li><strong>Run the Script:</strong> Open a terminal or command prompt and navigate to the directory containing the script and your data file(s). Execute the script using the following command:
+	       <pre><code>python byte_efficient.py input_file output_file</code></pre>
+	        Replace <code>input_file</code> with the path to your input data file and <code>output_file</code> with the desired location to save the compressed output file. Press Enter to execute the command.
+	    </li>
+	    <li><strong>Review Compression Output:</strong> Once the script completes execution, it will display information about the compression process, including the original file size, compressed file size, and compression ratio. Review this output to ensure the compression was successful and to analyze the effectiveness of the compression.</li>
+	</ol>
+    </section>
+    <section id="third">
+            <h1>Example</h1>
+	    <p>Suppose you have a CSV file named <code>my_data.csv</code> that you want to compress and save as <code>compressed_data.csv.gz</code>. Here's how you would use ByteEfficient:</p>
+	    <pre><code>python byte_efficient.py my_data.csv compressed_data.csv.gz</code></pre>
+	    <p>After execution, the script will compress <code>my_data.csv</code> using gzip compression and save the compressed output as <code>compressed_data.csv.gz</code>. It will then display compression information, including original and compressed file sizes, and compression ratio:</p>
+<pre style="padding-top: 0px;"><code>
+Compression complete:
+Original file size: 1048576 bytes
+Compressed file size: 524288 bytes
+Compression ratio: 2.00
+</code></pre>
+    </section>
+    <section id="fourth">
+	    <h1>Command-line Arguments</h1>
+	    <p>The script accepts the following command-line arguments:</p>
+	    <ul>
+	       <li><code>input_file</code> &nbsp;: Path to the input data file.</li>
+	       <li><code>output_file</code> &nbsp;: Path to save the compressed output file.</li>
+	       <p><u>You must specify both arguments when running the script.</u></p>
+	       <li><strong>Optional:</strong>&nbsp; <code>--overwrite</code> Allow the tool to overwrite the output file if it already exists.</li>
+	    </ul>
+            <h3>Input File Format</h3>
+            <p style="margin-top: 0px; padding-top: 0px;">The script can handle any type of file format as input. It uses binary mode (<samp>'rb'</samp>) to read the input file, which allows it to handle files of any format, without restrictions based on its format or content. It is particularly effective for compressing text-based data, but it can also compress binary data efficiently. Here are some examples of file formats that can be used as input:</p>
+            <ul>
+               <li><strong>Text files & Structured Data Files</strong>: Such as .txt, .csv, .log, .xml, .json, .tsv, etc.</li>
+               <li><strong>Binary files</strong>: Such as .jpg, .png, .pdf, .docx, .xlsx, .mp3, .mp4, .bin, .exe, etc.</li>
+               <li><strong>Database files & dumps</strong>: Such as .sqlite, .db, .sql, etc.</li>
+               <li><strong>Archive files</strong>: Such as .zip, .tar, .gz, .rar, etc. though further compression may not provide significant gains.</li>
+	    </ul>
+	    <p>Regardless of the file format, the script operates at a binary level, treating the input file as a stream of bytes without considering its specific content or format. Therefore, you can use the script to compress a wide range of file formats, making it versatile for various compression needs. Simply ensure to specify the correct file path when running the script, and it will handle the compression accordingly.</p>
+	    <h3>Output File Format</h3>
+            <p style="margin-top: 0px; padding-top: 0px;">After compression, the output will be a gzip-compressed file with the <samp>.gz</samp> extension. This compressed file contains the same data as the original input file but in a compressed format. This means that regardless of the format of the input file, the output file will always be in the gzip-compressed format.</p>
+            <p>It's important to note that gzip compression is lossless, meaning it does not result in any loss of data or quality. The output file will be a compressed version of the input file, and can be decompressed back to its original form using gzip decompression.</p>
+	    <h3>Overwrite Option</h3>
+	    <p style="margin-top: 0px; padding-top: 0px;">The <code>--overwrite</code> option allows you to specify whether to overwrite the output file if it already exists. By default, the script will not overwrite existing files unless this option is provided. <u>Use this option with caution to avoid accidentally overwriting important data files.</u> Always ensure that you have backups or are confident in replacing the existing file before using this option.</p>
+	    <p>To use the <code>--overwrite</code> option, simply include it when running the script:</p>
+            <pre><code>python byte_efficient.py input_file output_file --overwrite</code></pre>
+            <p>If the output file already existed, the tool will overwrite it without prompting for confirmation.</p>
+            <p>Here's how you would use the overwrite option with the example <code>my_data.csv</code>:</p>
+            <pre><code>python byte_efficient.py my_data.csv compressed_data.csv.gz --overwrite</code></pre>
+            <p>This command will compress the file <code>my_data.csv</code> and save the compressed output as <code>compressed_data.csv.gz</code>. If <code>compressed_data.csv.gz</code> already existed in the directory, it will be overwritten with the new compressed data.</p>
+            <p>The <code>--overwrite</code> option can be useful in situations where you want to automatically replace an existing compressed file with a new version without having to manually delete the old file first. This can save time and simplify the compression process, especially when dealing with large datasets or frequent updates to the data files.</p>
+    </section>
+    <section id="fifth">
+	    <h2>Troubleshooting & Notes</h2>
+	    <ul>
+	       <li>Ensure you have Python 3.x installed on your system to run the script.</li>
+	       <li>Monitor available disk space, especially when compressing large files, to avoid running out of storage. Make sure to have enough disk space available in the directory where the script is executed, as the script creates a compressed copy of the data file(s).</li>
+	       <li>Ensure that you have specified the correct file paths for the input and output files.</li>
+               <li>For large data files, the compression process may take some time to complete depending on your system's specifications.</li>
+	       <li>Make sure you have the necessary permissions to read the input file and write to the output file.</li>
+	       <li>Regularly monitor the size and compression ratio of your data files to ensure that you're achieving the desired storage and transmission optimizations.</li>
+	       <li>You can customize the script to handle different compression algorithms, error handling, or additional functionality as needed.</li>
+	    </ul>
+    </section>
+</main>
 
-        <h2>Features:</h2>
-        <ul>
-            <li>Compresses data files using gzip compression.</li>
-            <li>Calculates compression ratio to assess the effectiveness of compression.</li>
-            <li>Provides informative output about the compression process.</li>
-        </ul>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('a[href^="#"]').click(function(event) {
+        var id = $(this).attr("href");
+        var target = $(id).offset().top;
+        $('html, body').animate({scrollTop: target}, 500);
+        event.preventDefault();
+    });
 
-        <h2>Requirements:</h2>
-        <ul>
-            <li>Python 3.x</li>
-            <li>Operating system that supports gzip compression (e.g., Unix-based systems, Windows)</li>
-        </ul>
+    function getTargetTop(elem) {
+        var id = elem.attr("href");
+        var offset = 60;
+        return $(id).offset().top - offset;
+    }
 
-        <h2>Usage:</h2>
-        <p>Ensure that you have Python 3.x installed on your system. Customize the <code>input_file</code> variable in the script to specify the path to your data file. Run the script using the command <code>python compress_data.py</code>. After execution, the script will generate a compressed file with a <code>.gz</code> extension in the same directory as the input file.</p>
+    var $window = $(window);
+    var sections = $('a[href^="#"]');
 
-        <h2>Example Output:</h2>
-        <pre>
-            Compression complete:
-            Original file size: 1048576 bytes
-            Compressed file size: 524288 bytes
-            Compression ratio: 2.00
-        </pre>
+    $window.scroll(function(e) {
+        isSelected($window.scrollTop());
+    });
 
-        <h2>Note:</h2>
-        <ul>
-            <li>The script assumes that the input file is in a format compatible with gzip compression.</li>
-            <li>Ensure that you have necessary permissions to read and write files in the specified directories.</li>
-            <li>For large files, the compression process may take some time depending on the system resources available.</li>
-        </ul>
+    function isSelected(scrolledTo) {
+        var threshold = 100;
 
-        <h2>Author:</h2>
-        <p>@dduyg</p>
+        sections.each(function() {
+            var section = $(this);
+            var target = getTargetTop(section);
 
-        <h2>Date:</h2>
-        <p>@16 Mar, 2024</p>
-    </div>
+            if (scrolledTo > target - threshold && scrolledTo < target + threshold) {
+                sections.removeClass("active");
+                section.addClass("active");
+            }
+        });
+    }
+});
+</script>
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('dduyg', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Give Support',
+    'floating-chat.donateButton.background-color': '#292721',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
 </body>
-
 </html>
