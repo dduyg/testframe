@@ -10,12 +10,17 @@
         body {
 	    margin: 0;
 	    padding: 0;
-	    font-size: clamp(17px, 1rem, 20px);
+	    font-size: 18px;
 	    line-height: 1.5;
             color: #292721;
             background: linear-gradient(to right, #c9bd95, #8daa97);
             font-family: "DM Sans", sans-serif;
         }
+	@media only screen and (max-width: 768px) {
+            body {
+                font-size: 17px; /* Adjust font size for smaller screens */
+	    }
+	}
 	nav { 
 	    display: flex; /* Use flexbox */
             flex-direction: column; /* Stack items vertically */
