@@ -53,6 +53,12 @@
       transform: rotate(0deg);
       transition: 0.5s ease;
     }
+    #contact header {
+      transform: none; /* Reset rotation for contact section */
+    }
+    #contact h1 i {
+      font-size: inherit; /* Inherit font size from the parent <h1> */
+    }
 
     .content {
       display: none;
@@ -123,9 +129,9 @@
 <body>
 <div id="credits"><a href="https://ko-fi.com/dduyg" target="_blank">See More</a></div>
 <main>
-  <section id="intro" class="panel-active">
+  <section id="welcome" class="panel-active">
     <header>
-      <h1>Antenna</h1>
+      <h1>/dduyg</h1>
     </header>
     <div class="content">
       <p>Lorem ipsum dolor <a href="#about" class="panel-link">sit</a> amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Sed aliquam tincidunt elit ac scelerisque.</p>   
@@ -150,7 +156,7 @@
   </section>
   <section id="contact" class="panel-inactive">
     <header>
-      <h1>dduyg</h1>
+      <h1><i class="far fa-paper-plane"></i></h1>
     </header>
     <div class="content">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
