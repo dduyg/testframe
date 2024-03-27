@@ -174,19 +174,20 @@
   });
 
   function deactivatePanels() {
-    const activePanel = document.querySelector('.panel-active');
-    if (activePanel){
-      activePanel.classList.add('panel-inactive');
-      activePanel.classList.remove('panel-active');
-      activePanel.querySelector('.content').style.display = 'none'; // Hide panel content
-    }
+    sections.forEach((section) => {
+      section.classList.add('panel-inactive');
+      section.classList.remove('panel-active');
+      section.querySelector('.content').style.display = 'none'; // Hide panel content
+    });
   }
 
-  function activatePanel() {
-    deactivatePanels();
-    this.classList.remove('panel-inactive');
-    this.classList.add('panel-active');
-    this.querySelector('.content').style.display = 'block'; // Show panel content
+  function activatePanel(event) {
+    if (!event.target.closest('.panel-link')) {
+      deactivatePanels();
+      this.classList.remove('panel-inactive');
+      this.classList.add('panel-active');
+      this.querySelector('.content').style.display = 'block'; // Show panel content
+    }
   }
 </script>
 </body>
