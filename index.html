@@ -39,8 +39,13 @@
       transform: rotate(-90deg);
     } 
     header h1 {
-      font-size: 5vw;
+      font-size: min(5vw, 32px);
       margin: 0;
+    }
+    @media screen and (min-width: 1200px) {
+      header h1 {
+          font-size: 32px; /* Resets font size to 32px for screens wider than 1200px */
+      }
     }
     .panel-active header {
       color: #F5FFFA;
@@ -50,10 +55,15 @@
 
     .content {
       display: none;
-      font-size: 4vw;
+      font-size: min(4vw, 19px); /* Limits font size to 19px or 4vw, whichever is smaller */
       padding: 3% 12%;
       overflow-y: auto;
       max-height: calc(100% - 20px);
+    }
+    @media screen and (min-width: 1200px) {
+      .content {
+          font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
+      }
     }
 
     .panel-inactive:hover {
