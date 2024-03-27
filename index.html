@@ -127,6 +127,18 @@
       0% { transform: rotateY(0deg); }
       100% { transform: rotateY(360deg); }
     }
+
+    .blog {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1em;
+    }
+    article {
+      background-color: #4b3e75; /* Dark purple */
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+    } 
   </style>
 </head>
 <body>
@@ -166,6 +178,20 @@
     </div>
   </section>
 </main>
+
+<div class="blog">
+  <h2>Latest Posts</h2>
+  <article>
+      <h2>Post Title 1</h2>
+      <p>This is a short description of Post 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#">Read more</a>
+  </article>
+  <article>
+      <h2>Post Title 2</h2>
+      <p>This is a short description of Post 2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a href="#">Read more</a>
+  </article>
+</div> 
 <script>
   const sections = document.querySelectorAll('section');
   const panelLinks = document.querySelectorAll('.panel-link');
