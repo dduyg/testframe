@@ -152,28 +152,42 @@
   </section>
 </main>
 <script>
-  sections = document.querySelectorAll('section');
+  const sections = document.querySelectorAll('section');
+  const panelLinks = document.querySelectorAll('.panel-link');
 
   sections.forEach((section) => {
     section.addEventListener('click', activatePanel);  
   });
 
+  panelLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent default link behavior
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        deactivatePanels();
+        targetSection.classList.remove('panel-inactive');
+        targetSection.classList.add('panel-active');
+        targetSection.querySelector('.content').style.display = 'block';
+      }
+    });
+  });
+
   function deactivatePanels() {
-    activePanel = document.querySelector('.panel-active');
+    const activePanel = document.querySelector('.panel-active');
     if (activePanel){
       activePanel.classList.add('panel-inactive');
       activePanel.classList.remove('panel-active');
       activePanel.querySelector('.content').style.display = 'none'; // Hide panel content
-    };
-  };
+    }
+  }
 
-  function activatePanel(panelId) {
+  function activatePanel() {
     deactivatePanels();
-    var panelToActivate = document.getElementById(panelId);
-    panelToActivate.classList.remove('panel-inactive');
-    panelToActivate.classList.add('panel-active');
-    panelToActivate.querySelector('.content').style.display = 'block'; // Show panel content
-  };
+    this.classList.remove('panel-inactive');
+    this.classList.add('panel-active');
+    this.querySelector('.content').style.display = 'block'; // Show panel content
+  }
 </script>
 </body>
 </html>
