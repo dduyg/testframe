@@ -122,7 +122,7 @@
       <h1>Antenna</h1>
     </header>
     <div class="content">
-      <p>Lorem ipsum dolor <a href="#about">sit</a> amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Sed aliquam tincidunt elit ac scelerisque.</p>   
+      <p>Lorem ipsum dolor <a href="#" onclick="activatePanel('about')">sit</a> amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Sed aliquam tincidunt elit ac scelerisque.</p>   
     </div>
   </section>
   <section id="about" class="panel-inactive">
@@ -167,11 +167,12 @@
     };
   };
 
-  function activatePanel() {
+  function activatePanel(panelId) {
     deactivatePanels();
-    this.classList.remove('panel-inactive');
-    this.classList.add('panel-active');
-    this.querySelector('.content').style.display = 'block'; // Show panel content
+    var panelToActivate = document.getElementById(panelId);
+    panelToActivate.classList.remove('panel-inactive');
+    panelToActivate.classList.add('panel-active');
+    panelToActivate.querySelector('.content').style.display = 'block'; // Show panel content
   };
 </script>
 </body>
