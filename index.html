@@ -75,6 +75,20 @@
           font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
       }
     }
+    /* Content scrollbar */
+    .content::-webkit-scrollbar {
+      width: 5px;
+    }
+    .content::-webkit-scrollbar-track {
+      background: transparent; /* track color */
+    }
+    .content::-webkit-scrollbar-thumb {
+      background: #F5FFFA; /* scrollbar handle */
+      border-radius: 10px;
+    }
+    .content::-webkit-scrollbar-thumb:hover {
+      background: #ddd; /* Handle on hover */
+    }
 
     .panel-inactive:hover {
       flex: 1.1;
