@@ -34,6 +34,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      transition: flex 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
     }
 
     header {
@@ -79,7 +80,7 @@
     .panel-inactive:hover {
       flex: 1.1;
       background-color: rgba(0, 0, 0, 0.1);
-      transition: 0.5s ease;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
     }
     .panel-active {
       flex: 16;
