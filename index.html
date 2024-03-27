@@ -75,19 +75,23 @@
           font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
       }
     }
-    /* Content scrollbar */
+    /* Styling scrollbar for sections with overflow */
+    .content {
+      scrollbar-width: thin; /* For Firefox */
+      scrollbar-color: #999 transparent; /* For Firefox */
+    }
+    /* For Webkit based browsers (Chrome, Safari, etc.) */
     .content::-webkit-scrollbar {
-      width: 4px;
+      width: 5px;
     }
     .content::-webkit-scrollbar-track {
-      background: transparent; /* track color */
+      background: transparent;
     }
     .content::-webkit-scrollbar-thumb {
-      background: #292721; /* scrollbar handle color */
-      height: 15px;
+      background: #999;
     }
     .content::-webkit-scrollbar-thumb:hover {
-      background: #ddd; /* Handle on hover */
+      background: #555;
     }
 
     .panel-inactive:hover {
