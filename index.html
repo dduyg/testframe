@@ -79,22 +79,16 @@
       }
     }
     /* Styling scrollbar for sections with overflow */
-    .content {
-      scrollbar-width: thin; /* For Firefox */
-      scrollbar-color: #999 transparent; /* For Firefox */
-    }
     /* For Webkit based browsers (Chrome, Safari, etc.) */
     .content::-webkit-scrollbar {
-      width: 5px;
+      width: 10px; /* Set width of the scrollbar */
     }
-    .content::-webkit-scrollbar-track {
-      background: transparent;
-    }
+
+    /* Handle (Thumb) */
     .content::-webkit-scrollbar-thumb {
-      background: #999;
-    }
-    .content::-webkit-scrollbar-thumb:hover {
-      background: #555;
+      background: url('scroller.png') no-repeat center; /* Set icon as the scrollbar thumb */
+      background-size: contain; /* Ensure the icon fits within the scrollbar thumb */
+      border: none; /* Remove default scrollbar border */
     }
 
     .panel-inactive:hover {
