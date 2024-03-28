@@ -83,13 +83,19 @@
     /* Styling scrollbar for sections with overflow */
     /* For Webkit based browsers (Chrome, Safari, etc.) */
     .content::-webkit-scrollbar {
-      width: 3.5vw; /* Set width of scrollbar */
+      width: 8px; /* Set width of the scrollbar */
     }
-    /* Handle (Thumb) */
+    /* Handle (Thumb) for Webkit */
     .content::-webkit-scrollbar-thumb {
       background: url('scroll.png') no-repeat center; /* Set icon as the scrollbar thumb */
-      background-size: contain; /* Ensure the icon fits within the scrollbar thumb */
+      background-size: 100%; /* Set background size relative to the element's font size */
       border: none; /* Remove default scrollbar border */
+    }
+    /* For Firefox */
+    .content::-moz-scrollbar-thumb {
+      background: url('scroll.png') no-repeat center; /* Set icon as the scrollbar thumb */
+      background-size: 100%; /* Set background size relative to the element's font size */
+      width: 100%; /* Set width of the scrollbar thumb for Firefox */
     }
 
     .panel-inactive:hover {
