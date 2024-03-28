@@ -80,22 +80,17 @@
           font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
       }
     }
-    /* Styling scrollbar for sections with overflow */
     /* For Webkit based browsers (Chrome, Safari, etc.) */
     .content::-webkit-scrollbar {
-      width: 8px; /* Set width of the scrollbar */
+      width: 8px; /* Set width of scrollbar */
     }
-    /* Handle (Thumb) for Webkit */
     .content::-webkit-scrollbar-thumb {
-      background: url('scroll.png') no-repeat center; /* Set icon as the scrollbar thumb */
-      background-size: 100%; /* Set background size relative to the element's font size */
+      background: url('scroll.png') no-repeat center; /* Set icon as scrollbar thumb */
+      background-size: 80%; /* Increase icon size */
       border: none; /* Remove default scrollbar border */
     }
-    /* For Firefox */
-    .content::-moz-scrollbar-thumb {
-      background: url('scroll.png') no-repeat center; /* Set icon as the scrollbar thumb */
-      background-size: 100%; /* Set background size relative to the element's font size */
-      width: 100%; /* Set width of the scrollbar thumb for Firefox */
+    .content {
+      scrollbar-width: thin; /* For Firefox */
     }
 
     .panel-inactive:hover {
