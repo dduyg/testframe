@@ -80,18 +80,6 @@
           font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
       }
     }
-    /* For Webkit based browsers (Chrome, Safari, etc.) */
-    .content::-webkit-scrollbar {
-      width: 10px;
-    }
-    .content::-webkit-scrollbar-thumb {
-      background: url('scroll.png') no-repeat center; /* Set icon as the scrollbar thumb */
-      background-size: contain; /* Ensure the icon fits within the scrollbar thumb */
-      border: none; /* Remove default scrollbar border */
-    } 
-    .content {
-      scrollbar-width: thin; /* For Firefox */
-    }
 
     .panel-inactive:hover {
       flex: 1.1;
@@ -144,6 +132,37 @@
       0% { transform: rotateY(0deg); }
       100% { transform: rotateY(360deg); }
     }
+
+
+    /* For Firefox */
+.content {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: transparent transparent; /* For Firefox */
+}
+
+/* For Webkit/Blink based browsers (Chrome, Safari, etc.) */
+.content::-webkit-scrollbar {
+  width: 8px; /* Set width of the scrollbar */
+}
+
+/* Handle */
+.content::-webkit-scrollbar-thumb {
+  background: transparent; /* Set background color of the scrollbar handle */
+  border: none; /* Remove default border */
+}
+
+/* Handle icon */
+.content::-webkit-scrollbar-thumb:before {
+  content: url('your-icon.png'); /* Replace 'your-icon.png' with the path to your icon */
+  display: block; /* Ensure the icon is displayed as block-level element */
+  width: 100%; /* Set width of the icon */
+  height: 100%; /* Set height of the icon */
+}
+
+/* Handle on hover (optional) */
+.content::-webkit-scrollbar-thumb:hover {
+  background: transparent; /* Set background color of the scrollbar handle on hover */
+}
   </style>
 </head>
 <body>
@@ -223,6 +242,25 @@
       this.querySelector('.content').style.display = 'block'; // Show panel content
     }
   }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const contentElements = document.querySelectorAll('.content');
+
+  contentElements.forEach(function(contentElement) {
+    contentElement.addEventListener('scroll', function() {
+      const scrollTop = this.scrollTop;
+      const scrollHeight = this.scrollHeight;
+      const clientHeight = this.clientHeight;
+
+      const thumbHeight = Math.min(clientHeight, clientHeight * (clientHeight / scrollHeight));
+      const thumbY = scrollTop * (clientHeight / scrollHeight);
+
+      this.style.setProperty('--thumb-y', thumbY + 'px');
+      this.style.setProperty('--thumb-height', thumbHeight + 'px');
+    });
+  });
+});  
 </script>
 </body>
 </html>
