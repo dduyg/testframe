@@ -84,28 +84,24 @@
       }
     }
     /* Custom scrollbar for .content */
-.content::-webkit-scrollbar {
-  display: none;
-}
+ /* For Webkit based browsers (Chrome, Safari, etc.) */
+    .content::-webkit-scrollbar {
+      width: 25px;
+    }
+    @media screen and (max-width: 768px) {
+        .content::-webkit-scrollbar {
+            width: 14px; /* Adjusted width for smaller screens */
+        }
+    }
+    .content::-webkit-scrollbar-thumb {
+      background: url('scroll.png') no-repeat center; /* Set icon as the scrollbar thumb */
+      background-size: contain; /* Ensure the icon fits within the scrollbar thumb */
+      border: none; /* Remove default scrollbar border */
+    } 
+    .content {
+      scrollbar-width: thin; /* For Firefox */
+    }
 
-/* Show custom scrollbar */
-.content {
-  scrollbar-width: none;
-  overflow-y: auto;
-}
-
-/* Define custom scrollbar thumb */
-.content::-webkit-scrollbar-thumb {
-  background: url('thumb-image-url.png') center center no-repeat; /* Replace 'thumb-image-url.png' with your thumb image URL */
-  background-size: contain; /* Ensure the image fits within the thumb */
-  width: 20px; /* Adjust width of the thumb */
-}
-
-/* Define custom scrollbar track */
-.content::-webkit-scrollbar-track {
-  background-color: transparent; /* Transparent background for the track */
-  border-left: 1px solid black; /* Black line on the left side of the track */
-}
 
       
     .panel-inactive:hover {
