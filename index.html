@@ -83,33 +83,31 @@
           font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
       }
     }
-    /* Custom scrollbar */
-/* Hide default scrollbar */
-.content::-webkit-scrollbar {
-  width: 0;
-}
-
-/* Style for custom scrollbar */
+    /* Custom scrollbar for .content */
 .content {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: thin; /* "auto" will also work on some browsers */
+  scrollbar-color: transparent black; /* thumb color and track color */
+  overflow-y: auto;
 }
 
-/* Style for the thumb */
+/* Custom styling for the thumb */
 .content::-webkit-scrollbar-thumb {
-  background-color: transparent;
+  background-color: transparent; /* Make thumb transparent */
   border: none;
-  width: 12px; /* Adjust width as needed */
-  height: 60px; /* Adjust height as needed */
-  background-image: url('scroll.png'); /* Replace 'path/to/your/image.png' with the path to your image */
+  border-radius: 0;
+  border-left: 1px solid black; /* Add a border to simulate a thin line */
+}
+
+/* Custom styling for the track */
+.content::-webkit-scrollbar-track {
+  background-color: transparent; /* Make track transparent */
+}
+
+/* Use an image for the thumb */
+.content::-webkit-scrollbar-thumb {
+  background-image: url('scroll.png'); /* Replace 'path/to/thumb-image.png' with your image path */
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-}
-
-/* Style for the track */
-.content::-webkit-scrollbar-track {
-  background-color: transparent;
 }
       
     .panel-inactive:hover {
