@@ -91,27 +91,7 @@
           font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
       }
     }
-    /* Custom scrollbar for .content */
- /* For Webkit based browsers (Chrome, Safari, etc.) */
-    .content::-webkit-scrollbar {
-      width: 25px;
-    }
-    @media screen and (max-width: 768px) {
-        .content::-webkit-scrollbar {
-            width: 14px; /* Adjusted width for smaller screens */
-        }
-    }
-    .content::-webkit-scrollbar-thumb {
-      background: url('scroll.png') no-repeat center; /* Set icon as the scrollbar thumb */
-      background-size: contain; /* Ensure the icon fits within the scrollbar thumb */
-      border: none; /* Remove default scrollbar border */
-    } 
-    .content {
-      scrollbar-width: thin; /* For Firefox */
-    }
 
-
-      
     .panel-inactive:hover {
       flex: 1.1;
       background-color: rgba(0, 0, 0, 0.1);
