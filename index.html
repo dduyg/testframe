@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .menu {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        
-        .dropdown {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            padding: 12px 16px;
-            z-index: 1000;
-        }
-        
-        .menu:hover .dropdown {
-            display: block;
-        }
-        
-        .dropdown a {
-            display: block;
-            padding: 8px 0;
-            text-decoration: none;
-            color: #333;
-        }
-        
-        .dropdown a:hover {
-            background-color: #ddd;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .dropdown a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 0;
+    }
+
+    .menu:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 <body>
-
-<div class="menu">
-    <button>Menu</button>
+  <div class="menu">Menu
     <div class="dropdown">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
+      <a href="#">Home</a>
+      <a href="#">Portfolio</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </div>
-</div>
+  </div>
 
-<h1>Welcome to My Portfolio</h1>
-<p>This is my awesome portfolio website.</p>
-
+  <div>
+    <h1>Welcome to My Portfolio</h1>
+    <p>This is a simple portfolio website.</p>
+  </div>
 </body>
 </html>
