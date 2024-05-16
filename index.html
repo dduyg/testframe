@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #8a2387; /* Purple */
-            background-image: url('https://media.giphy.com/media/IY7oKcQz2XwVy/giphy.gif');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: #fff;
+            background-color: #f4f4f4;
         }
-        
+
         header {
             position: fixed;
             top: 0;
             right: 0;
             padding: 20px;
+            background-color: #333;
+            color: #fff;
         }
 
         .menu {
             display: none;
             position: absolute;
-            top: 60px;
+            top: 50px;
             right: 20px;
-            background-color: #4B0082; /* Indigo */
-            border-radius: 5px;
+            background-color: #333;
             padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
         }
 
         .menu a {
@@ -43,62 +40,57 @@
         }
 
         .menu a:hover {
-            background-color: #9400D3; /* Dark Violet */
+            background-color: #555;
         }
 
-        .menu.show {
+        .dropdown:hover .menu {
             display: block;
         }
 
-        .section {
-            margin: 50px;
+        section {
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
+            margin-top: 80px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
         }
     </style>
 </head>
+
 <body>
     <header>
-        <button id="menuToggle">Menu</button>
-        <div class="menu" id="menu">
-            <a href="#about" onclick="toggleMenu()">About</a>
-            <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
-            <a href="#contact" onclick="toggleMenu()">Contact</a>
+        <div class="dropdown">
+            <span>Menu &#9660;</span>
+            <div class="menu">
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
     </header>
 
-    <div id="about" class="section">
+    <section id="about">
         <h2>About Me</h2>
-        <p>Welcome to my portfolio website! I'm a creative director with a passion for vaporwave aesthetics.</p>
-    </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec est tristique, volutpat ex id, ultrices
+            justo.</p>
+    </section>
 
-    <div id="portfolio" class="section">
+    <section id="portfolio">
         <h2>Portfolio</h2>
-        <p>Check out some of my latest projects below:</p>
-        <!-- Add your portfolio items here -->
-    </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec est tristique, volutpat ex id, ultrices
+            justo.</p>
+    </section>
 
-    <div id="contact" class="section">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out to me via email or social media:</p>
-        <!-- Add your contact information here -->
-    </div>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.classList.toggle("show");
-        }
-
-        document.getElementById("menuToggle").addEventListener("click", toggleMenu);
-
-        var menuLinks = document.querySelectorAll(".menu a");
-        menuLinks.forEach(function(link) {
-            link.addEventListener("click", function() {
-                toggleMenu();
-            });
-        });
-    </script>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec est tristique, volutpat ex id, ultrices
+            justo.</p>
+    </section>
 </body>
+
 </html>
