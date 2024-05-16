@@ -23,7 +23,10 @@
           height: 2rem;
         }
         .menu {
-          
+          display: table-cell;
+          vertical-align: middle;
+          width: 75%;
+          text-align: right;
         }
 
         
@@ -64,8 +67,7 @@
     .ph5-ns { padding-left: 4rem; padding-right: 4rem; }
     .mr4-ns { margin-right: 2rem; }
     .f5-ns { font-size: 1rem; }
-}
-      
+}    
     </style>
 </head>
 <body>
@@ -74,9 +76,8 @@
   <a class="home-badge" href="#">
     <img id="badge" src="img/logo.jpg">
   </a>
-  <div class="dtc v-mid w-75 tr">
+  <div class="menu">
     <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" href="#" title="About">Services</a>
-    <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" href="#" title="Store">Blog</a>
     <a class="link dim dark-gray f6 f5-ns dib" href="#" title="Contact">Join Us</a>
   </div>
 </nav>
