@@ -28,6 +28,14 @@
           width: 75%;
           text-align: right;
         }
+        .item {
+         display: inline-block;
+         text-decoration: none;
+         font-size: .875rem;
+        }
+        .between {
+         margin-right: 1rem; 
+        }
 
         
 .border-box { box-sizing: border-box; }
@@ -37,8 +45,6 @@
 .dtc { display: table-cell; }
 .h2 { height: 2rem; }
 .link { text-decoration: none; transition: color .15s ease-in; }
-.link:link, .link:visited { transition: color .15s ease-in; }
-.link:hover { transition: color .15s ease-in; }
 .link:active { transition: color .15s ease-in; }
 .link:focus { transition: color .15s ease-in; outline: 1px dotted currentColor; }
 .w2 { width: 2rem; }
@@ -62,10 +68,16 @@
         padding-left: 4rem;
         padding-right: 4rem; 
     }
+    .item {
+        font-size: 1rem;
+    }
+    .between {
+        margin-right: 2rem; 
+    }
 
     
     .ph5-ns { padding-left: 4rem; padding-right: 4rem; }
-    .mr4-ns { margin-right: 2rem; }
+    .mr4-ns { ; }
     .f5-ns { font-size: 1rem; }
 }    
     </style>
@@ -77,8 +89,8 @@
     <img id="badge" src="img/logo.jpg">
   </a>
   <div class="menu">
-    <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" href="#" title="About">Services</a>
-    <a class="link dim dark-gray f6 f5-ns dib" href="#" title="Contact">Join Us</a>
+    <a class="item between" href="#" title="About">Services</a>
+    <a class="item" href="#" title="Contact">Join Us</a>
   </div>
 </nav>
 
