@@ -1,142 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #800080; /* purple */
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: right;
-            position: relative;
-            padding: 20px;
-        }
-
-        .menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 10px;
-            background-color: #FF69B4; /* hot pink */
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .menu a {
-            display: block;
-            color: #FFF;
-            text-decoration: none;
-            padding: 5px;
-            margin: 5px 0;
-            transition: background-color 0.3s;
-        }
-
-        .menu a:hover {
-            background-color: #7FFFD4; /* aquamarine */
-        }
-
-        .dropdown-btn {
-            background-color: transparent;
-            border: none;
-            color: #FFF;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .dropdown-btn:focus {
-            outline: none;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #800080; /* purple */
-            min-width: 160px;
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 5px;
-        }
-
-        .dropdown-content a {
-            color: #FFF;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #FF69B4; /* hot pink */
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      background-color: #7F00FF; /* Vaporwave purple */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #FF6EFF; /* Vaporwave pink */
+      color: #FFFFFF;
+      padding: 20px;
+      text-align: right;
+    }
+    nav {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #FF6EFF; /* Vaporwave pink */
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    nav a {
+      color: #FFFFFF;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .menu-toggle {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>My Portfolio</h1>
+    <div class="menu-toggle">Menu</div>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-    <div class="dropdown">
-        <button class="dropdown-btn">☰</button>
-        <div class="dropdown-content">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </div>
-</header>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>This is where you can introduce yourself and your skills.</p>
+  </section>
 
-<div class="container">
-    <section id="home">
-        <h1>Home Section</h1>
-        <p>Welcome to my portfolio website!</p>
-    </section>
-    <section id="about">
-        <h2>About Section</h2>
-        <p>Learn more about me here.</p>
-    </section>
-    <section id="portfolio">
-        <h2>Portfolio Section</h2>
-        <p>Check out some of my work.</p>
-    </section>
-    <section id="contact">
-        <h2>Contact Section</h2>
-        <p>Get in touch with me.</p>
-    </section>
-</div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Display your portfolio projects here.</p>
+  </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const dropdownBtn = document.querySelector('.dropdown-btn');
-        const menu = document.querySelector('.dropdown-content');
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Provide contact information or a contact form.</p>
+  </section>
 
-        dropdownBtn.addEventListener('click', function() {
-            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav');
+
+      menuToggle.addEventListener('click', function() {
+        nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+      });
+
+      // Close the menu when a menu item is clicked
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          nav.style.display = 'none';
         });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!menu.contains(event.target) && !dropdownBtn.contains(event.target)) {
-                menu.style.display = 'none';
-            }
-        });
+      });
     });
-</script>
-
+  </script>
 </body>
 </html>
