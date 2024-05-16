@@ -1,122 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Inter", sans-serif;
-            background-color: #b1acb9;
-            color: #171321;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            color: #fff;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #87fffb;
-            text-decoration: none;
-        }
-        .menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none;
-        }
-        .menu.active {
-            display: block;
-        }
-        .menu li {
-            display: block;
-            margin: 10px 0;
-        }
-        .menu li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-        .menu li a:hover {
-            color: #87fffb;
-        }
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #fff;
-        }
-        h1, h2, h3 {
-            text-align: center;
-            color: #87fffb;
-        }
-        section {
-            padding: 80px 0;
-        }
-        a {
-            font-size: 2em;
-            text-decoration: none;
-            color: #87fffb;
-            font-weight: bold;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 999;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .content {
+    margin-top: 50px; /* Adjust according to header height */
+    padding: 20px;
+  }
+</style>
 </head>
 <body>
-        <nav>
-                <a href="#" class="logo">Liminal Loop</a>
-                <ul class="menu">
-                    <li><a href="#first">Start</a></li>
-                    <li><a href="#second">About</a></li>
-                    <li><a href="#third">Posts</a></li>
-                    <li><a href="#fourth">More</a></li>
-                </ul>
-        </nav>
+<div class="header">
+  <div class="menu" id="menu">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+  <button onclick="toggleMenu()">Menu</button>
+</div>
 
-    <main>
-        <section id="first">
-            <h1>Welcome to my LiminalLoop</h1>
-            <p>Lorem ipsum dolor <a href="../13/">⎌</a> sit amet, consectetur adipiscing elit. Nullam ac lorem sed velit cursus vehicula. Morbi at nunc lobortis, bibendum ligula ut, tincidunt velit. Nam id purus eget libero faucibus aliquam. Vestibulum non odio eu purus sodales dapibus. Sed ut tortor eu nisi pellentesque iaculis. Duis at leo nec elit rhoncus accumsan. Fusce fermentum vehicula orci, sit amet luctus tortor fermentum a. Vivamus accumsan nulla at orci dignissim, vel malesuada turpis viverra. Nulla eleifend, sem eget ultricies vehicula, libero nisi aliquet dui, auctor ullamcorper sem tortor non arcu. Sed sit amet nisi non justo vestibulum vestibulum. Aliquam convallis arcu non augue consequat dignissim. Phasellus id eros ac magna sodales placerat. Sed interdum ligula nec eros facilisis, nec lacinia risus vehicula.</p>
-        </section>
-        
-        <section id="second">
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac lorem sed velit cursus vehicula. Morbi at nunc lobortis, bibendum ligula ut, tincidunt velit. Nam id purus eget libero faucibus aliquam. Vestibulum non odio eu purus sodales dapibus. Sed ut tortor eu nisi pellentesque iaculis. Duis at leo nec elit rhoncus accumsan. Fusce fermentum vehicula orci, sit amet luctus tortor fermentum a. Vivamus accumsan nulla at orci dignissim, vel malesuada turpis viverra. Nulla eleifend, sem eget ultricies vehicula, libero nisi aliquet dui, auctor ullamcorper sem tortor non arcu. Sed sit amet nisi non justo vestibulum vestibulum. Aliquam convallis arcu non augue consequat dignissim. Phasellus id eros ac magna sodales placerat. Sed interdum ligula nec eros facilisis, nec lacinia risus vehicula.</p>
-        </section>
-        
-        <section id="third">
-            <h2>Posts</h2>
-            <code>items here</code>
-        </section>
-        
-        <section id="fourth">
-            <h2>More</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac lorem sed velit cursus vehicula. Morbi at nunc lobortis, bibendum ligula ut, tincidunt velit. Nam id purus eget libero faucibus aliquam. Vestibulum non odio eu purus sodales dapibus. Sed ut tortor eu nisi pellentesque iaculis. Duis at leo nec elit rhoncus accumsan. Fusce fermentum vehicula orci, sit amet luctus tortor fermentum a. Vivamus accumsan nulla at orci dignissim, vel malesuada turpis viverra. Nulla eleifend, sem eget ultricies vehicula, libero nisi aliquet dui, auctor ullamcorper sem tortor non arcu. Sed sit amet nisi non justo vestibulum vestibulum. Aliquam convallis arcu non augue consequat dignissim. Phasellus id eros ac magna sodales placerat. Sed interdum ligula nec eros facilisis, nec lacinia risus vehicula.</p>
-        </section>
-    </main>
+<div class="content">
+  <h1>Welcome to My Portfolio</h1>
+  <p>This is where I showcase my work and skills.</p>
+  <!-- Add more content here -->
+</div>
 
-    <script>
-        const menuBtn = document.querySelector('.logo');
-        const menu = document.querySelector('.menu');
-        const menuItems = document.querySelectorAll('.menu li a');
-
-        // Toggle menu active class
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-
-        // Close menu when a menu item is clicked
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                menu.classList.remove('active');
-            });
-        });
-    </script>
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('menu');
+  menu.classList.toggle('active');
+}
+</script>
 </body>
 </html>
