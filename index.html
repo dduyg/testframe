@@ -3,106 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>404 Not Found - dduyg</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Courier New', Courier, monospace;
-            color: #fff;
-            background-color: #2d2d2d;
-            background: linear-gradient(135deg, #ff00cc 0%, #333399 100%);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            background-color: #ff77ab;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
             text-align: center;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         h1 {
-            font-size: 3em;
-            margin-bottom: 0.5em;
+            font-size: 5em;
+            margin: 0.5em 0;
+            color: #ffcc00;
+            text-shadow: 2px 2px #660066;
         }
         p {
             font-size: 1.5em;
-            margin-bottom: 1em;
+            margin: 0.5em 0;
         }
-        a {
-            color: #00ffff;
-            text-decoration: none;
-            border: 2px solid #00ffff;
-            padding: 0.5em 1em;
+        .neon-button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin-top: 20px;
+            color: #ff77ab;
+            background-color: #660066;
+            border: none;
             border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+            box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00;
         }
-        a:hover {
-            background-color: #00ffff;
-            color: #2d2d2d;
+        .neon-button:hover {
+            background-color: #ffcc00;
+            color: #660066;
         }
-        .glitch {
-            font-size: 5em;
-            position: relative;
-            display: inline-block;
-        }
-        .glitch::before, .glitch::after {
-            content: '404';
-            position: absolute;
-            left: 0;
-        }
-        .glitch::before {
-            animation: glitchTop 1s infinite linear alternate-reverse;
-            clip: rect(24px, 550px, 90px, 0);
-        }
-        .glitch::after {
-            animation: glitchBottom 1s infinite linear alternate-reverse;
-            clip: rect(85px, 550px, 140px, 0);
-        }
-        @keyframes glitchTop {
-            0% {
-                transform: translate(0px, 0px);
-            }
-            20% {
-                transform: translate(-5px, -5px);
-            }
-            40% {
-                transform: translate(-5px, 5px);
-            }
-            60% {
-                transform: translate(5px, 5px);
-            }
-            80% {
-                transform: translate(5px, -5px);
-            }
-            100% {
-                transform: translate(0px, 0px);
-            }
-        }
-        @keyframes glitchBottom {
-            0% {
-                transform: translate(0px, 0px);
-            }
-            20% {
-                transform: translate(-5px, 5px);
-            }
-            40% {
-                transform: translate(-5px, -5px);
-            }
-            60% {
-                transform: translate(5px, -5px);
-            }
-            80% {
-                transform: translate(5px, 5px);
-            }
-            100% {
-                transform: translate(0px, 0px);
-            }
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
-    <div class="glitch">404</div>
-    <h1>Oops! This page is lost in the vaporwave.</h1>
-    <p>It seems you've reached a URL that doesn't exist on <strong>dduyg</strong>. Maybe try one of the links below to get back on track.</p>
-    <a href="/">Take Me Home</a>
+    <div class="container">
+        <h1>404</h1>
+        <p>Oops! Looks like you took a wrong turn in the matrix.</p>
+        <a href="/" class="neon-button">Go Back to Safety</a>
+    </div>
 </body>
 </html>
