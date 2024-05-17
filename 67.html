@@ -24,6 +24,54 @@
     0% { transform: rotateX(0deg); }
     100% { transform: rotateX(360deg); }
 }
+
+<div class="credits center">
+    <div class="logo-ftr">
+     <img src="wide.jpg" alt="●"/>
+    </div>
+    <div class="ftr">
+      <p class="mv0">hge is.</p>
+    </div>
+</div>
+
+.credits {
+   display: table;
+   max-width: 32rem;
+   padding-top: 2rem; padding-bottom: 2rem
+}
+.logo-ftr {
+  display: table-cell;
+  vertical-align: top;
+}
+.logo-ftr img {
+    max-width: 16rem;
+    display: block;
+}
+.ftr {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 1rem;
+}
+.ftr p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.center { margin-right: auto; margin-left: auto; }
+        
+@media screen and (min-width: 30em) {
+    .credits {
+     padding-top: 8rem;
+     padding-bottom: 8rem;  
+    }
+}
+@media screen and (min-width: 30em) and (max-width: 60em) {
+    .credits {
+      padding-top: 4rem;
+      padding-bottom: 4rem;   
+    }
+} 
         
     </style>
 </head>
