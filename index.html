@@ -3,110 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found - dduyg</title>
+    <title>dduyg</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
             font-family: 'Courier New', Courier, monospace;
-            color: #FFFFFF;
-            background: linear-gradient(135deg, #1E1E1E 40%, #FF5F5F);
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            text-align: center;
+            min-height: 100vh;
             overflow: hidden;
         }
+
         .container {
-            position: relative;
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
         }
-        .glitch {
-            font-size: 3em;
-            position: relative;
-            display: inline-block;
+
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            color: #ff6ec7;
+            text-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff6ec7, 0 0 30px #ff6ec7;
         }
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
+
+        h2 {
+            font-size: 2em;
+            margin: 20px 0;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #ffffff;
+            text-shadow: 0 0 5px #ffffff;
+        }
+
+        a {
+            color: #ff6ec7;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #00ffff;
+        }
+
+        .navbar {
+            margin-bottom: 30px;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 0.8em;
+        }
+
+        .error-message {
+            display: none;
+            font-size: 1.5em;
+            color: #ff6ec7;
+        }
+
+        .show-error .content {
+            display: none;
+        }
+
+        .show-error .error-message {
+            display: block;
+        }
+
+        .matrix-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #FF5F5F;
             overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
         }
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #00FFFF;
-            clip: rect(24px, 550px, 90px, 0);
+
+        .matrix-background div {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #00ff00;
+            animation: fall linear infinite;
         }
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 #FF00FF;
-            clip: rect(85px, 550px, 140px, 0);
-        }
-        .glitch:hover::before {
-            animation: glitch 0.2s infinite linear alternate-reverse;
-        }
-        .glitch:hover::after {
-            animation: glitch 0.2s infinite linear alternate-reverse;
-        }
-        @keyframes glitch {
-            0% {
-                clip: rect(24px, 550px, 90px, 0);
-            }
-            10% {
-                clip: rect(85px, 550px, 140px, 0);
-            }
-            20% {
-                clip: rect(24px, 550px, 90px, 0);
-            }
-            30% {
-                clip: rect(85px, 550px, 140px, 0);
-            }
-            40% {
-                clip: rect(24px, 550px, 90px, 0);
-            }
-            50% {
-                clip: rect(85px, 550px, 140px, 0);
-            }
-            60% {
-                clip: rect(24px, 550px, 90px, 0);
-            }
-            70% {
-                clip: rect(85px, 550px, 140px, 0);
-            }
-            80% {
-                clip: rect(24px, 550px, 90px, 0);
-            }
-            90% {
-                clip: rect(85px, 550px, 140px, 0);
-            }
-            100% {
-                clip: rect(24px, 550px, 90px, 0);
-            }
-        }
-        h1 {
-            font-size: 6em;
-            margin: 0;
-            text-shadow: 4px 4px 0 #00FFFF, 8px 8px 0 #FF00FF;
-        }
-        p {
-            font-size: 1.5em;
-        }
-        .brand {
-            font-size: 2em;
-            margin-top: 20px;
+
+        @keyframes fall {
+            from { transform: translateY(-100vh); }
+            to { transform: translateY(100vh); }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="glitch" data-text="404">404</h1>
-        <p>Looks like you've taken a wrong turn in cyberspace!</p>
-        <div class="brand">- dduyg -</div>
+        <h1>dduyg</h1>
+        <h2>Welcome to my Vaporwave Cyber World</h2>
+        <div class="navbar">
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="content">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I'm dduyg, a digital enthusiast and creator navigating through the cyber waves. Welcome to my personal space on the web, where the past meets the future in a neon haze.</p>
+            </section>
+            <section id="projects">
+                <h2>Projects</h2>
+                <p>Here you'll find a showcase of my latest projects, blending technology and creativity in perfect harmony.</p>
+            </section>
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>Want to connect? Drop me a line at <a href="mailto:dduyg@example.com">dduyg@example.com</a>.</p>
+            </section>
+        </div>
+        <div class="error-message">
+            <h2>404 Error</h2>
+            <p>Oops! Looks like you took a wrong turn in the cyber world. There's nothing here but virtual dust and neon dreams. <a href="#" onclick="history.back()">Go back</a> or return to the <a href="/">home page</a>.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 dduyg. All rights reserved.</p>
+        </div>
     </div>
+    <div class="matrix-background"></div>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simulate 404 error for demonstration
+        if (window.location.hash === '#404') {
+            document.body.classList.add('show-error');
+        }
+
+        // Matrix background animation
+        function createMatrixElement() {
+            const element = document.createElement('div');
+            element.style.left = Math.random() * 100 + 'vw';
+            element.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.querySelector('.matrix-background').appendChild(element);
+            element.addEventListener('animationend', () => element.remove());
+        }
+
+        setInterval(createMatrixElement, 100);
+    </script>
 </body>
 </html>
