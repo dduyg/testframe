@@ -1,73 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vaporwave Portfolio</title>
-<style>
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #800080; /* Purple background */
-    color: #ffffff; /* White text */
-    margin: 0;
-    padding: 0;
-  }
-  .container {
-    width: 80%;
-    margin: 0 auto;
-    padding-top: 50px;
-  }
-  .menu {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #008080; /* Teal menu background */
-    color: #ffffff; /* White text */
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .menu ul {
-    list-style-type: none;
-    padding: 0;
-    display: none;
-  }
-  .menu ul li {
-    padding: 5px 0;
-  }
-  .menu ul li:hover {
-    background-color: #00ffff; /* Light blue hover */
-    border-radius: 3px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found - dduyg</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #1E1E1E 40%, #FF5F5F);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+        }
+        .glitch {
+            font-size: 3em;
+            position: relative;
+            display: inline-block;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #FF5F5F;
+            overflow: hidden;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #00FFFF;
+            clip: rect(24px, 550px, 90px, 0);
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #FF00FF;
+            clip: rect(85px, 550px, 140px, 0);
+        }
+        .glitch:hover::before {
+            animation: glitch 0.2s infinite linear alternate-reverse;
+        }
+        .glitch:hover::after {
+            animation: glitch 0.2s infinite linear alternate-reverse;
+        }
+        @keyframes glitch {
+            0% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+            10% {
+                clip: rect(85px, 550px, 140px, 0);
+            }
+            20% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+            30% {
+                clip: rect(85px, 550px, 140px, 0);
+            }
+            40% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+            50% {
+                clip: rect(85px, 550px, 140px, 0);
+            }
+            60% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+            70% {
+                clip: rect(85px, 550px, 140px, 0);
+            }
+            80% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+            90% {
+                clip: rect(85px, 550px, 140px, 0);
+            }
+            100% {
+                clip: rect(24px, 550px, 90px, 0);
+            }
+        }
+        h1 {
+            font-size: 6em;
+            margin: 0;
+            text-shadow: 4px 4px 0 #00FFFF, 8px 8px 0 #FF00FF;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .brand {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
-  <h1>Welcome to My Vaporwave Portfolio</h1>
-  <p>Feel free to explore my work!</p>
-</div>
-
-<div class="menu" onclick="toggleMenu()">Menu &#x25BC;</div>
-<ul id="menuItems">
-  <li><a href="#home">Home</a></li>
-  <li><a href="#about">About</a></li>
-  <li><a href="#portfolio">Portfolio</a></li>
-  <li><a href="#contact">Contact</a></li>
-</ul>
-
-<script>
-  function toggleMenu() {
-    var menuItems = document.getElementById("menuItems");
-    if (menuItems.style.display === "block") {
-      menuItems.style.display = "none";
-      document.querySelector('.menu').innerHTML = 'Menu &#x25BC;';
-    } else {
-      menuItems.style.display = "block";
-      document.querySelector('.menu').innerHTML = 'Menu &#x25B2;';
-    }
-  }
-</script>
-
+    <div class="container">
+        <h1 class="glitch" data-text="404">404</h1>
+        <p>Looks like you've taken a wrong turn in cyberspace!</p>
+        <div class="brand">- dduyg -</div>
+    </div>
 </body>
 </html>
