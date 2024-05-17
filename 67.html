@@ -6,63 +6,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <title>Liminal Loop</title>
     <style>
-        nav {
-          display: table;
-          width: 100%;
-          box-sizing: border-box;
-          padding: 1rem;
-        }
-        .home-badge {
-          display: table-cell;
-          vertical-align: middle;
-          width: 25%;
-        }
-        #badge {
-          display: inline-block;
-          width: 2rem;
-          height: 2rem;
-        }
-        #menu {
-          display: table-cell;
-          vertical-align: middle;
-          width: 75%;
-          text-align: right;
-          color: #292721;
-          font-family: "Arial", sans-serif;          
-        }
-        .item {
-         display: inline-block;
-         text-decoration: none;
-         font-size: .875rem;
-        }
-        .between {
-         margin-right: 1rem; 
-        }
+
+
+.links a::before {
+    content: '';
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    -moz-border-radius: calc(0.5 * 0.75em);
+    -webkit-border-radius: calc(0.5 * 0.75em);
+    border-radius: calc(0.5 * 0.75em);
+    background-color: black;
+    margin: 0em 0.5em 0em 0em;
+    animation: 1.5s rotate ease-in-out infinite;
+}
+@keyframes rotate {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(360deg); }
+}
         
-@media screen and (min-width: 30em) {
-    nav {
-        padding-left: 4rem;
-        padding-right: 4rem; 
-    }
-    .item {
-        font-size: 1rem;
-    }
-    .between {
-        margin-right: 2rem; 
-    }
-}    
     </style>
 </head>
-<body>
-
-<nav>
-  <a class="home-badge" href="#">
-    <img id="badge" src="img/logo.jpg">
-  </a>
-  <div id="menu">
-    <a class="item between" href="#">See More</a>
-    <a class="item" href="#">Contact</a>
-  </div>
-</nav>    
+<body>   
 </body>
 </html>   
