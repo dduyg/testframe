@@ -14,7 +14,7 @@
             color: #171321;
         }
         .container {
-            width: 80%;
+            width: 90%;
             margin: 0 auto;
             overflow: hidden;
         }
@@ -30,21 +30,19 @@
             color: #87fffb;
             text-decoration: none;
         }
-        .menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .menu.active {
+            display: block;
         }
         .menu li {
-            display: inline-block;
-            margin-left: 20px;
+            display: block;
+            margin: 10px 0;
         }
         .menu li a {
             color: #171321;
             text-decoration: none;
             font-size: 18px;
             transition: color 0.3s ease;
-        }
+        }    
         main {
             max-width: 800px;
             margin: 0 auto;
@@ -59,21 +57,6 @@
         }
         section {
             padding: 80px 0;
-        }
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-            .menu {
-                display: none;
-            }
-            .menu.active {
-                display: block;
-            }
-            .menu li {
-                display: block;
-                margin: 10px 0;
-            }
         }
     </style>
 </head>
