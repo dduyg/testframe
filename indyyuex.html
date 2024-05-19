@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: "Liberation Mono", monospace;
-      background-color: #271052;
-      color: #E3DFFF;
+      background-color: aquamarine;
+      color: black;
     }
     header, section {
       margin-top: 40px;
@@ -17,42 +17,6 @@
 
 .dropbtn {
   color: black;
-  padding: 16px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  float:right;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #271052;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
 }
 
   </style>
@@ -62,14 +26,40 @@
     <h1>Adaletin bu kadar mı?</h1>
   </header>
 
-  <div class="dropdown">
-  <div class="dropbtn">Right</div>
-  <div class="dropdown-content">
-  <a href="#">Link 1</a>
-  <a href="#">Link 2</a>
-  <a href="#">Link 3</a>
-  </div>
-  </div>
+
+
+  <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      {{ if ne site.Copyright "" }}{{ site.Copyright | safeHTML }}{{ else }}&copy; {{ now.Format "2006"}}{{ if site.Params.orgName }} {{ site.Params.orgName }}{{ end }}{{ if site.Params.orgLocal }}, {{ site.Params.orgLocal }}{{ end }}{{ end }}
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      {{ partial "shared/attribution.html" }}
+    </p>
+    {{ if and (not .IsHome) (site.Params.socialInFooter) }}
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      {{ partial "shared/social-links.html" . }}
+    </div>
+    {{ end }}
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      {{ range site.Menus.footer }}
+      <a class="dib pv1 ph2 link" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+      {{ end }}
+    </div>
+  </nav>
+  {{ with site.Params.math }}
+    {{ partial "shared/math-preprocess.html" }}
+  {{ with .renderer }}
+    {{ if eq . "mathjax" }}
+      {{ partial "shared/math-render-mathjax.html" }}
+    {{ end }}
+    {{ if eq . "katex" }}
+      {{ partial "shared/math-render-katex.html" }}
+    {{ end }}
+  {{ end }}
+  {{ end }}
+  </footer>
 
 </body>
 </html>
