@@ -166,22 +166,25 @@
       .dropdown-content {
         display: none;
         position: absolute;
-        background-color: white;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
       }
       .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
         display: block;
+        font-size: .875rem;   
       }
       .dropdown-content a:hover {
         background-color: #ddd;
       }
       .dropdown-active .dropdown-content {
         display: block;
+      }
+
+      @media screen and (min-width: 30em) {
+      .dropdown-content a {
+          font-size: 1.1em;
+        }
       }
     </style>
   </head>
