@@ -34,7 +34,6 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            display: none; /* Initially hide the menu */
         }
         .menu li {
             display: inline-block;
@@ -60,6 +59,21 @@
         }
         section {
             padding: 80px 0;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            .menu {
+                display: none;
+            }
+            .menu.active {
+                display: block;
+            }
+            .menu li {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
