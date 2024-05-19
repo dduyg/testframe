@@ -1,119 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <title>Liminal Loop</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Inter", sans-serif;
-            background-color: #b1acb9;
-            color: #171321;
-        }
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #87fffb;
-            text-decoration: none;
-        }
-        .menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 20px;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .menu.active {
-            display: block;
-        }
-        .menu li {
-            margin: 10px 0;
-        }
-        .menu li a {
-            color: #171321;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }    
-        main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            text-align: center;
-            color: #87fffb;
-        }
-        .menu li a:hover {
-            color: #87fffb;
-        }
-        section {
-            padding: 80px 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liminal Loop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Liberation Mono", monospace;
+      background-color: #271052;
+      color: #E3DFFF;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px;
+    }
+
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #E3DFFF;
+      color: #271052;
+      border: none;
+      padding: 8px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background-color: #E3DFFF;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .menu ul li {
+      margin-bottom: 10px;
+    }
+
+    .menu ul li a {
+      color: #271052;
+      text-decoration: none;
+    }
+
+    header, section {
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="#" class="logo">Liminal Loop</a>
-                <button class="toggle-menu">Menu</button>
-                <ul class="menu">
-                    <li><a href="#first">Start</a></li>
-                    <li><a href="#second">About</a></li>
-                    <li><a href="#third">Posts</a></li>
-                    <li><a href="#fourth">More</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <section id="first">
-            <h1>Welcome to my LiminalLoop</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac lorem sed velit cursus vehicula. Morbi at nunc lobortis, bibendum ligula ut, tincidunt velit. Nam id purus eget libero faucibus aliquam. Vestibulum non odio eu purus sodales dapibus. Sed ut tortor eu nisi pellentesque iaculis. Duis at leo nec elit rhoncus accumsan. Fusce fermentum vehicula orci, sit amet luctus tortor fermentum a. Vivamus accumsan nulla at orci dignissim, vel malesuada turpis viverra. Nulla eleifend, sem eget ultricies vehicula, libero nisi aliquet dui, auctor ullamcorper sem tortor non arcu. Sed sit amet nisi non justo vestibulum vestibulum. Aliquam convallis arcu non augue consequat dignissim. Phasellus id eros ac magna sodales placerat. Sed interdum ligula nec eros facilisis, nec lacinia risus vehicula.</p>
-        </section>
-        
-        <section id="second">
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac lorem sed velit cursus vehicula. Morbi at nunc lobortis, bibendum ligula ut, tincidunt velit. Nam id purus eget libero faucibus aliquam. Vestibulum non odio eu purus sodales dapibus. Sed ut tortor eu nisi pellentesque iaculis. Duis at leo nec elit rhoncus accumsan. Fusce fermentum vehicula orci, sit amet luctus tortor fermentum a. Vivamus accumsan nulla at orci dignissim, vel malesuada turpis viverra. Nulla eleifend, sem eget ultricies vehicula, libero nisi aliquet dui, auctor ullamcorper sem tortor non arcu. Sed sit amet nisi non justo vestibulum vestibulum. Aliquam convallis arcu non augue consequat dignissim. Phasellus id eros ac magna sodales placerat. Sed interdum ligula nec eros facilisis, nec lacinia risus vehicula.</p>
-        </section>
-        
-        <section id="third">
-            <h2>Posts</h2>
-            <code>items here</code>
-        </section>
-        
-        <section id="fourth">
-            <h2>More</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac lorem sed velit cursus vehicula. Morbi at nunc lobortis, bibendum ligula ut, tincidunt velit. Nam id purus eget libero faucibus aliquam. Vestibulum non odio eu purus sodales dapibus. Sed ut tortor eu nisi pellentesque iaculis. Duis at leo nec elit rhoncus accumsan. Fusce fermentum vehicula orci, sit amet luctus tortor fermentum a. Vivamus accumsan nulla at orci dignissim, vel malesuada turpis viverra. Nulla eleifend, sem eget ultricies vehicula, libero nisi aliquet dui, auctor ullamcorper sem tortor non arcu. Sed sit amet nisi non justo vestibulum vestibulum. Aliquam convallis arcu non augue consequat dignissim. Phasellus id eros ac magna sodales placerat. Sed interdum ligula nec eros facilisis, nec lacinia risus vehicula.</p>
-        </section>
-    </main>
+<div class="container">
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <nav class="menu">
+    <ul>
+      <li><a href="#home">waterfront</a></li>
+      <li><a href="#3">forecast</a></li>
+      <li><a href="#4">automated</a></li>
+      <li><a href="#5">display</a></li>
+      <li><a href="../15/">▶</a></li>
+    </ul>
+  </nav>
 
-    <script>
-        const toggleMenuBtn = document.querySelector('.toggle-menu');
-        const menu = document.querySelector('.menu');
+  <header id="home">
+    <h1>Adaletin bu kadar mı?</h1>
+  </header>
 
-        toggleMenuBtn.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    </script>
+  <section id="3">
+    <h2>03</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis libero sit amet euismod eleifend. Nulla elementum ullamcorper justo id gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur condimentum leo id elementum lacinia. Phasellus euismod eu enim et ultrices. Pellentesque convallis iaculis justo in bibendum. In lacinia aliquam aliquam. Pellentesque nec malesuada orci. Phasellus vel erat eget mi imperdiet finibus id sed tortor. Cras lacus nibh, bibendum sit amet est nec, lobortis volutpat nunc. Mauris ac dictum libero. Vivamus facilisis arcu eget elit mollis, ac dictum risus lacinia. Nullam pellentesque sit amet ex et aliquam.
+       Nullam tincidunt ultricies lorem vestibulum viverra. Sed tempor ante ut elit feugiat mollis. Vivamus venenatis turpis vel est dapibus, sodales tempor metus congue. Vivamus nunc ex, facilisis id metus eget, scelerisque efficitur purus. Phasellus sit amet sodales magna, in consectetur ipsum. Duis euismod odio massa, tincidunt vestibulum ligula imperdiet at. Cras sem justo, condimentum eu mi non, dignissim elementum mauris. Sed vulputate, metus eget luctus vestibulum, leo justo egestas libero, at elementum nibh dolor vitae ipsum. Cras maximus tincidunt urna, in volutpat purus euismod non. Nulla euismod nec leo eget viverra. Mauris luctus augue ut nisl imperdiet, in fermentum ligula gravida.
+    </p>
+  </section>
+
+  <section id="4">
+    <h2>04</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis libero sit amet euismod eleifend. Nulla elementum ullamcorper justo id gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur condimentum leo id elementum lacinia. Phasellus euismod eu enim et ultrices. Pellentesque convallis iaculis justo in bibendum. In lacinia aliquam aliquam. Pellentesque nec malesuada orci. Phasellus vel erat eget mi imperdiet finibus id sed tortor. Cras lacus nibh, bibendum sit amet est nec, lobortis volutpat nunc. Mauris ac dictum libero. Vivamus facilisis arcu eget elit mollis, ac dictum risus lacinia. Nullam pellentesque sit amet ex et aliquam.
+       Nullam tincidunt ultricies lorem vestibulum viverra. Sed tempor ante ut elit feugiat mollis. Vivamus venenatis turpis vel est dapibus, sodales tempor metus congue. Vivamus nunc ex, facilisis id metus eget, scelerisque efficitur purus. Phasellus sit amet sodales magna, in consectetur ipsum. Duis euismod odio massa, tincidunt vestibulum ligula imperdiet at. Cras sem justo, condimentum eu mi non, dignissim elementum mauris. Sed vulputate, metus eget luctus vestibulum, leo justo egestas libero, at elementum nibh dolor vitae ipsum. Cras maximus tincidunt urna, in volutpat purus euismod non. Nulla euismod nec leo eget viverra. Mauris luctus augue ut nisl imperdiet, in fermentum ligula gravida.
+    </p>
+  </section>
+
+  <section id="5">
+    <h2>05</h2>
+     <p>Lorem ipsum dolor sit celerisque efficitur pdales magna, isl imperdiet, in fermentum ligula gravida.
+    </p>
+  </section>
+</div>
+
+<script>
+  function toggleMenu() {
+    var menu = document.querySelector('.menu');
+    if (menu.style.display === 'block') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'block';
+    }
+  }
+</script>
 </body>
 </html>
