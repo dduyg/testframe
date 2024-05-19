@@ -1,33 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liminal Loop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Liberation Mono", monospace;
+      background-color: aquamarine;
+      color: black;
+    }  
 
-  <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
-  <nav class="db dt-l w-100">
-    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
-      {{ if ne site.Copyright "" }}{{ site.Copyright | safeHTML }}{{ else }}&copy; {{ now.Format "2006"}}{{ if site.Params.orgName }} {{ site.Params.orgName }}{{ end }}{{ if site.Params.orgLocal }}, {{ site.Params.orgLocal }}{{ end }}{{ end }}
+footer {
+  grid-column: 1 / 7;
+  
+  padding: 2rem 4rem;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-color: transparent;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    order: 4;
+  }
+}  
+    
+.site-footer {
+  display: block;
+  width: 100%;
+}
+.site-copyright {
+  font-size: .75rem;
+  display: block;
+  vertical-align: middle; 
+  width: 100%;
+  text-align: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem; 
+  line-height: 1.5; 
+}    
+.middot-divider::after {
+  color: #516db0;
+  margin-left: .25rem;
+  margin-right: .25rem;
+  content:'\00B7';  
+}
+.social-links {
+  display: block;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}   
+.re-links {
+  display: block;
+  font-size: .875rem;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.re-links a {
+  display: inline-block;
+  padding: .25rem .5rem;
+  text-decoration: none;
+  transition: color .15s ease-in; 
+}
+
+@media screen and (min-width: 60em) {
+  .site-footer {
+    display: table;
+  }
+  .site-copyright { 
+    display: table-cell;
+    width: 33%;
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;  
+  }
+  .social-links {
+    display: table-cell;
+    width: 33%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }  
+  .re-links {
+    display: table-cell;
+    width: 67%;  ////
+    text-align: right;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.re-links a:link, .re-links a:visited, .re-links a:hover, .re-links a:active, .re-links a:focus {
+  transition: color .15s ease-in;
+}   
+.re-links a, .re-links a:after, .re-links a:before {
+  transition: all .5s;
+}
+.re-links a {
+  position: relative;
+}
+.re-links a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content:'.';
+  color: transparent;
+  height: .08em;
+  pointer-events: none;
+}
+.re-links a:hover:after {
+  width: 85%;
+}
+.re-links a.active:after {
+  width: 85%;
+  color: transparent;
+  height: .08em;
+} 
+  </style>
+</head>
+<body>
+
+  
+  <footer>
+  <nav class="site-footer">
+    <p class="site-copyright">
+      Hi here tgextcopy56
       <span class="middot-divider"></span>
-      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
-      <br />
-      {{ partial "shared/attribution.html" }}
+      Made with HugApéro.
     </p>
     {{ if and (not .IsHome) (site.Params.socialInFooter) }}
-    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
-      {{ partial "shared/social-links.html" . }}
+    <div class="social-links">
+      {{ social-links.html }}
     </div>
     {{ end }}
-    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
-      {{ range site.Menus.footer }}
-      <a class="dib pv1 ph2 link" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-      {{ end }}
+    <div class="re-links">
+      <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
     </div>
   </nav>
-  {{ with site.Params.math }}
-    {{ partial "shared/math-preprocess.html" }}
-  {{ with .renderer }}
-    {{ if eq . "mathjax" }}
-      {{ partial "shared/math-render-mathjax.html" }}
-    {{ end }}
-    {{ if eq . "katex" }}
-      {{ partial "shared/math-render-katex.html" }}
-    {{ end }}
-  {{ end }}
-  {{ end }}
   </footer>
+
+</body>
+</html>
