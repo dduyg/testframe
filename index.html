@@ -11,95 +11,66 @@
       background-color: #271052;
       color: #E3DFFF;
     }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 50px;
-    }
-
-    .menu-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      background-color: #E3DFFF;
-      color: #271052;
-      border: none;
-      padding: 8px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .menu {
-      display: none;
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      color: #E3DFFF;  
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .menu a {
-      margin-bottom: 10px;
-      color: #271052;
-      text-decoration: none;
-    }
-
     header, section {
       margin-top: 40px;
     }
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
   </style>
 </head>
 <body>
-
-<div class="container">
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  <nav class="menu">
-    <ul>
-      <li><a href="#home">waterfront</a></li>
-      <li><a href="#3">forecast</a></li>
-      <li><a href="#4">automated</a></li>
-      <li><a href="#5">display</a></li>
-      <li><a href="../15/">▶</a></li>
-    </ul>
-  </nav>
-
   <header id="home">
     <h1>Adaletin bu kadar mı?</h1>
   </header>
 
-  <section id="3">
-    <h2>03</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis libero sit amet euismod eleifend. Nulla elementum ullamcorper justo id gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur condimentum leo id elementum lacinia. Phasellus euismod eu enim et ultrices. Pellentesque convallis iaculis justo in bibendum. In lacinia aliquam aliquam. Pellentesque nec malesuada orci. Phasellus vel erat eget mi imperdiet finibus id sed tortor. Cras lacus nibh, bibendum sit amet est nec, lobortis volutpat nunc. Mauris ac dictum libero. Vivamus facilisis arcu eget elit mollis, ac dictum risus lacinia. Nullam pellentesque sit amet ex et aliquam.
-       Nullam tincidunt ultricies lorem vestibulum viverra. Sed tempor ante ut elit feugiat mollis. Vivamus venenatis turpis vel est dapibus, sodales tempor metus congue. Vivamus nunc ex, facilisis id metus eget, scelerisque efficitur purus. Phasellus sit amet sodales magna, in consectetur ipsum. Duis euismod odio massa, tincidunt vestibulum ligula imperdiet at. Cras sem justo, condimentum eu mi non, dignissim elementum mauris. Sed vulputate, metus eget luctus vestibulum, leo justo egestas libero, at elementum nibh dolor vitae ipsum. Cras maximus tincidunt urna, in volutpat purus euismod non. Nulla euismod nec leo eget viverra. Mauris luctus augue ut nisl imperdiet, in fermentum ligula gravida.
-    </p>
-  </section>
+  <div class="dropdown" style="float:right;">
+  <button class="dropbtn">Right</button>
+  <div class="dropdown-content">
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+  </div>
+  </div>
 
-  <section id="4">
-    <h2>04</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis libero sit amet euismod eleifend. Nulla elementum ullamcorper justo id gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur condimentum leo id elementum lacinia. Phasellus euismod eu enim et ultrices. Pellentesque convallis iaculis justo in bibendum. In lacinia aliquam aliquam. Pellentesque nec malesuada orci. Phasellus vel erat eget mi imperdiet finibus id sed tortor. Cras lacus nibh, bibendum sit amet est nec, lobortis volutpat nunc. Mauris ac dictum libero. Vivamus facilisis arcu eget elit mollis, ac dictum risus lacinia. Nullam pellentesque sit amet ex et aliquam.
-       Nullam tincidunt ultricies lorem vestibulum viverra. Sed tempor ante ut elit feugiat mollis. Vivamus venenatis turpis vel est dapibus, sodales tempor metus congue. Vivamus nunc ex, facilisis id metus eget, scelerisque efficitur purus. Phasellus sit amet sodales magna, in consectetur ipsum. Duis euismod odio massa, tincidunt vestibulum ligula imperdiet at. Cras sem justo, condimentum eu mi non, dignissim elementum mauris. Sed vulputate, metus eget luctus vestibulum, leo justo egestas libero, at elementum nibh dolor vitae ipsum. Cras maximus tincidunt urna, in volutpat purus euismod non. Nulla euismod nec leo eget viverra. Mauris luctus augue ut nisl imperdiet, in fermentum ligula gravida.
-    </p>
-  </section>
-
-  <section id="5">
-    <h2>05</h2>
-     <p>Lorem ipsum dolor sit celerisque efficitur pdales magna, isl imperdiet, in fermentum ligula gravida.
-    </p>
-  </section>
-</div>
-
-<script>
-  function toggleMenu() {
-    var menu = document.querySelector('.menu');
-    if (menu.style.display === 'block') {
-      menu.style.display = 'none';
-    } else {
-      menu.style.display = 'block';
-    }
-  }
-</script>
 </body>
 </html>
