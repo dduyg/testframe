@@ -30,11 +30,20 @@
             color: #87fffb;
             text-decoration: none;
         }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
         .menu.active {
             display: block;
         }
         .menu li {
-            display: block;
             margin: 10px 0;
         }
         .menu li a {
@@ -65,6 +74,7 @@
         <nav class="navbar">
             <div class="container">
                 <a href="#" class="logo">Liminal Loop</a>
+                <button class="toggle-menu">Menu</button>
                 <ul class="menu">
                     <li><a href="#first">Start</a></li>
                     <li><a href="#second">About</a></li>
@@ -98,20 +108,11 @@
     </main>
 
     <script>
-        const menuBtn = document.querySelector('.logo');
+        const toggleMenuBtn = document.querySelector('.toggle-menu');
         const menu = document.querySelector('.menu');
-        const menuItems = document.querySelectorAll('.menu li a');
 
-        // Toggle menu active class
-        menuBtn.addEventListener('click', () => {
+        toggleMenuBtn.addEventListener('click', () => {
             menu.classList.toggle('active');
-        });
-
-        // Close menu when a menu item is clicked
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                menu.classList.remove('active');
-            });
         });
     </script>
 </body>
