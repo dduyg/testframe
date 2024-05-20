@@ -14,10 +14,7 @@
 
 footer {
   padding: 2rem 4rem;
-} 
-.site-footer {
   display: block;
-  width: 100%;
 }
 .site-copyright {
   font-size: .75rem;
@@ -63,7 +60,7 @@ footer {
 }
 
 @media screen and (min-width: 60em) {
-  .site-footer {
+  footer {
     display: table;
   }
   .site-copyright { 
@@ -95,7 +92,6 @@ footer {
 
   
   <footer>
-  <div class="site-footer">
     <p class="site-copyright">
       By Duygu © 2024.   
       <span class="middot-divider"></span>
@@ -112,7 +108,6 @@ footer {
       <a href="{{ .URL }}" title="{{ .Title }}">Contact</a>
       <a href="{{ .URL }}" title="{{ .Title }}">Give Support</a>
     </div>
-  </div>
   </footer>
 
 </body>
