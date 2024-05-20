@@ -10,104 +10,22 @@
       font-family: "Liberation Mono", monospace;
       background-color: aquamarine;
       color: black;
-    }  
+    }
 
-footer {
-  padding: 2rem 4rem;
-  display: block;
-}
-.site-copyright {
-  font-size: .75rem;
-  display: block;
-  vertical-align: middle; 
-  width: 100%;
-  text-align: center;
-  padding-top: .5rem;
-  padding-bottom: .5rem; 
-  line-height: 1.5; 
-}    
-.middot-divider::after {
-  color: #516db0;
-  margin-left: .25rem;
-  margin-right: .25rem;
-  content:'\00B7';  
-}
-.social-links {
-  display: block;
-  vertical-align: middle;
-  width: 100%;
-  text-align: center;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  margin-top: 0;
-  margin-bottom: 0;
-}   
-.re-links {
-  display: block;
-  font-size: .875rem;
-  vertical-align: middle;
-  width: 100%;
-  text-align: center;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.re-links a {
-  display: inline-block;
-  padding: .25rem .5rem;
-  text-decoration: underline; 
-}
-
-@media screen and (min-width: 60em) {
-  footer {
-    display: table;
-  }
-  .site-copyright { 
-    display: table-cell;
-    width: 33%;
-    text-align: left;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0;  
-  }
-  .social-links {
-    display: table-cell;
-    width: 33%;
-    padding-top: 0;
-    padding-bottom: 0;
-  }  
-  .re-links {
-    display: table-cell;
-    text-align: right;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-}
+		.link {
+			text-decoration: none;
+			transition: color .15s ease-in;
+		}
+		.link:link, .link:visited, .link:hover, .link:active, .link:focus {
+			transition: color .15s ease-in;
+		}
+		.hover-red:hover { color: #ff4136; }
+		.hover-red:focus { color: #ff4136; }
   </style>
 </head>
 <body>
 
-  
-  <footer>
-    <p class="site-copyright">
-      By Duygu © 2024.   
-      <span class="middot-divider"></span>
-      This site is a continuous work in progress, evolving with every new idea and inspiration.
-    </p>
-    <div class="social-links">
-      <a href="{{ .URL }}" title="{{ .Title }}">😀</a>
-      <a href="{{ .URL }}" title="{{ .Title }}">♀️</a>
-      <a href="{{ .URL }}" title="{{ .Title }}">🌆</a>
-      <a href="{{ .URL }}" title="{{ .Title }}">🗂</a>
-      <a href="{{ .URL }}" title="{{ .Title }}">🤍</a> 
-    </div>
-    <div class="re-links">
-      <a href="{{ .URL }}" title="{{ .Title }}">Contact</a>
-      <a href="{{ .URL }}" title="{{ .Title }}">Give Support</a>
-    </div>
-  </footer>
+<a class="link hover-red" href="#0">on hover </a>
 
 </body>
 </html>
