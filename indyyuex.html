@@ -13,19 +13,8 @@
     }  
 
 footer {
-  grid-column: 1 / 7;
-  
   padding: 2rem 4rem;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-color: transparent;
-}
-@media screen and (max-width: 768px) {
-  footer {
-    order: 4;
-  }
-}  
-    
+} 
 .site-footer {
   display: block;
   width: 100%;
@@ -70,8 +59,7 @@ footer {
 .re-links a {
   display: inline-block;
   padding: .25rem .5rem;
-  text-decoration: none;
-  transition: color .15s ease-in; 
+  text-decoration: underline; 
 }
 
 @media screen and (min-width: 60em) {
@@ -95,41 +83,13 @@ footer {
   }  
   .re-links {
     display: table-cell;
-    width: 67%;  ////
+    width: 67%;
     text-align: right;
     padding-top: 0;
     padding-bottom: 0;
   }
 }
-
-.re-links a:link, .re-links a:visited, .re-links a:hover, .re-links a:active, .re-links a:focus {
-  transition: color .15s ease-in;
-}   
-.re-links a, .re-links a:after, .re-links a:before {
-  transition: all .5s;
-}
-.re-links a {
-  position: relative;
-}
-.re-links a:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 0%;
-  content:'.';
-  color: transparent;
-  height: .08em;
-  pointer-events: none;
-}
-.re-links a:hover:after {
-  width: 85%;
-}
-.re-links a.active:after {
-  width: 85%;
-  color: transparent;
-  height: .08em;
+ight: .08em;
 } 
   </style>
 </head>
@@ -137,9 +97,9 @@ footer {
 
   
   <footer>
-  <nav class="site-footer">
+  <div class="site-footer">
     <p class="site-copyright">
-      By Duygu Dağdelen © 2024.   
+      By Duygu © 2024.   
       <span class="middot-divider"></span>
       This site is a continuous work in progress, evolving with every new idea and inspiration.
     </p>
@@ -154,7 +114,7 @@ footer {
       <a href="{{ .URL }}" title="{{ .Title }}">Contact</a>
       <a href="{{ .URL }}" title="{{ .Title }}">Give Support</a>
     </div>
-  </nav>
+  </div>
   </footer>
 
 </body>
