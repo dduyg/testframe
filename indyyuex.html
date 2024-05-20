@@ -139,15 +139,13 @@ footer {
   <footer>
   <nav class="site-footer">
     <p class="site-copyright">
-      Hi here tgextcopy56
+      By Duygu Dağdelen © 2024.   
       <span class="middot-divider"></span>
-      Made with HugApéro.
+      This site is a continuous work in progress, evolving with every new idea and inspiration.
     </p>
-    {{ if and (not .IsHome) (site.Params.socialInFooter) }}
     <div class="social-links">
       {{ social-links.html }}
     </div>
-    {{ end }}
     <div class="re-links">
       <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
     </div>
