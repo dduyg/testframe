@@ -3,96 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
+    <title>Liminal Loop - Personal Webpage</title>
     <style>
+        /* CSS for vaporwave aesthetics */
         body {
+            background-color: #9900ff; /* Purple background */
+            color: #ffcc00; /* Yellow text */
             font-family: Arial, sans-serif;
-            background-color: #000000;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
         }
-        header {
-            background-color: #800080;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
+
+        /* CSS for the dropdown menu */
+        .dropdown {
             position: fixed;
-            right: 20px;
             top: 20px;
+            right: 20px;
             z-index: 9999;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            margin-bottom: 10px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 18px;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #800080;
-            min-width: 160px;
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: #ffffff;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2 {
-            color: #800080;
-        }
+
+        /* CSS for other sections */
+        /* Add your styles here */
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>Liminal Loop</h1>
-    </header>
-    <nav>
-        <div class="dropdown">
-            <a href="#">Menu &#9660;</a>
-            <div class="dropdown-content">
-                <a href="#about">About</a>
-                <a href="#posts">Posts</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <section id="about">
-            <h2>About</h2>
-            <p>Welcome to Liminal Loop! I'm a data scientist who loves Python and enjoys exploring the liminal spaces of data. Join me on this journey through vaporwave aesthetics and data-driven discoveries.</p>
-        </section>
-        <section id="posts">
-            <h2>Posts</h2>
-            <p>No posts yet. Stay tuned for updates!</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me via email at liminalloop@example.com</p>
-        </section>
+
+<div class="dropdown">
+    <button class="dropbtn">Menu</button>
+    <div class="dropdown-content">
+        <a href="#about">About</a>
+        <a href="#posts">Posts</a>
+        <a href="#contact">Contact</a>
     </div>
+</div>
+
+<header>
+    <h1>Welcome to Liminal Loop's World</h1>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Me</h2>
+    <!-- Add your bio or description here -->
+</section>
+
+<!-- Posts Section -->
+<section id="posts">
+    <h2>Posts</h2>
+    <!-- Add your posts here -->
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <!-- Add your contact information here -->
+</section>
+
 </body>
 </html>
