@@ -3,68 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Vaporwave Retro Page</title>
+    <title>Vaporwave Retro Personal Page</title>
     <style>
         body {
-            background-color: #000000;
-            color: #ffffff;
             font-family: 'Arial', sans-serif;
+            background-color: #0e0e0e;
+            color: #ffffff;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
-
-        .content {
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            font-family: 'Pacifico', cursive;
             text-align: center;
         }
-
-        h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
-        }
-
         p {
-            font-size: 1.5em;
+            text-align: justify;
         }
-
-        .wave {
-            width: 100%;
-            height: auto;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .wave img {
-            width: 100%;
-            height: auto;
-            filter: grayscale(100%) brightness(30%) contrast(150%);
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px 0;
+        .image {
             text-align: center;
-            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.8em;
         }
     </style>
 </head>
 <body>
-    <div class="content">
+    <div class="container">
         <h1>Welcome to My Vaporwave Retro Page</h1>
-        <p>This is where I embrace the aesthetic of the 80s and 90s.</p>
+        <p>This is a place where I share my love for all things vaporwave and retro. From music to aesthetics, this page is a celebration of the nostalgic and the futuristic.</p>
+        
+        <h2>About Me</h2>
+        <p>I'm a retro enthusiast who spends most of my time listening to vaporwave music, watching old VHS tapes, and exploring vintage aesthetics.</p>
+        
+        <h2>My Favorite Vaporwave Albums</h2>
+        <ul>
+            <li>Floral Shoppe by Macintosh Plus</li>
+            <li>Birth of a New Day by 2814</li>
+            <li>Blank Banshee 0 by Blank Banshee</li>
+        </ul>
+        
+        <div class="image">
+            <img src="https://via.placeholder.com/500" alt="Vaporwave Image">
+        </div>
+        
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me via email at vaporlover@example.com</p>
     </div>
-    <div class="wave">
-        <img src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg" alt="Vaporwave Background">
-    </div>
-    <footer>&copy; 2024 My Vaporwave Retro Page</footer>
+
+    <footer class="footer">
+        &copy; 2024 Vaporwave Retro Enthusiast
+    </footer>
 </body>
 </html>
