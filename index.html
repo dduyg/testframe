@@ -3,96 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaporwave Personal Webpage</title>
+    <title>Vaporwave Personal Page</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background: linear-gradient(to bottom, #320066, #ff66cc);
+            background-color: #2b2b2b;
             color: #ffffff;
-            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
-        header {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-bottom: 5px solid #ff0099;
+        .container {
+            text-align: center;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff615c);
+            border: 5px solid #00ffff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
         }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #00ff99;
+        h1 {
+            font-size: 4em;
+            margin: 0.5em 0;
         }
-        .content {
-            padding: 50px 20px;
-        }
-        .content h2 {
+        h2 {
             font-size: 2em;
-            color: #ff66cc;
-            margin-bottom: 20px;
+            margin: 0.5em 0;
         }
-        .content p {
+        p {
             font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto 20px;
-        }
-        footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-top: 5px solid #ff0099;
-        }
-        footer p {
-            margin: 0;
-            font-size: 1em;
-            color: #00ff99;
-        }
-        .grid-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png') repeat;
-            opacity: 0.2;
-            pointer-events: none;
-        }
-        .neon-button {
-            background-color: #00ff99;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            color: #320066;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 10px;
-        }
-        .neon-button:hover {
-            background-color: #ff66cc;
-            color: #ffffff;
         }
         a {
+            color: #00ffff;
             text-decoration: none;
-            color: inherit;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="grid-background"></div>
-    <header>
-        <h1>My Vaporwave World</h1>
-    </header>
-    <div class="content">
-        <h2>About Me</h2>
-        <p>Hello! I'm [Your Name], a digital artist and vaporwave enthusiast. Welcome to my personal webpage where I share my thoughts, art, and music. Feel the vibes and enjoy the aesthetic!</p>
-        <h2>My Projects</h2>
-        <p>Check out some of my latest projects and artworks below:</p>
-        <button class="neon-button"><a href="#project1">Project 1</a></button>
-        <button class="neon-button"><a href="#project2">Project 2</a></button>
-        <button class="neon-button"><a href="#project3">Project 3</a></button>
+    <div class="container">
+        <h1>Welcome to My Vaporwave Page</h1>
+        <h2>John Doe</h2>
+        <p>Web Developer | Music Enthusiast | Retro Gamer</p>
+        <p>Find me on <a href="https://twitter.com" target="_blank">Twitter</a>, <a href="https://github.com" target="_blank">GitHub</a>, and <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
     </div>
-    <footer>
-        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
-    </footer>
 </body>
 </html>
