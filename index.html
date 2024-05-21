@@ -1,72 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
+    <title>Liminal Loop - Personal Webpage</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
-            color: #fff;
+            background-color: #000000;
+            color: #ffffff;
         }
-
         header {
-            background-color: #333;
+            background-color: #800080;
             padding: 20px;
             text-align: center;
         }
-
         nav {
             position: fixed;
-            top: 0;
+            top: 50%;
             right: 0;
-            background-color: #333;
-            padding: 10px;
+            transform: translateY(-50%);
+            z-index: 999;
         }
-
         nav ul {
-            list-style-type: none;
-            margin: 0;
+            list-style: none;
             padding: 0;
         }
-
         nav ul li {
-            display: inline;
-            margin-right: 20px;
+            margin-bottom: 10px;
         }
-
         nav ul li a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
+            padding: 10px;
+            background-color: #800080;
+            display: block;
         }
-
+        nav ul li a:hover {
+            background-color: #a52a2a;
+        }
         .container {
             max-width: 800px;
-            margin: 50px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 20px;
         }
-
-        .about,
-        .posts,
-        .contact {
-            margin-bottom: 50px;
+        section {
+            margin-bottom: 40px;
         }
-
-        footer {
-            text-align: center;
-            background-color: #333;
-            padding: 20px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        h2 {
+            color: #800080;
+        }
+        p {
+            line-height: 1.6;
         }
     </style>
 </head>
-
 <body>
     <header>
         <h1>Liminal Loop</h1>
@@ -80,25 +70,18 @@
         </ul>
     </nav>
     <div class="container">
-        <section id="about" class="about">
+        <section id="about">
             <h2>About Me</h2>
-            <p>I'm a data scientist who loves Python and embraces the vaporwave aesthetics design. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id feugiat libero. In hac habitasse platea dictumst. Donec sed sapien a libero interdum condimentum. Ut ac efficitur velit.</p>
+            <p>I'm a data scientist who loves Python and enjoys creating vaporwave aesthetics designs. My work revolves around analyzing data and deriving insights using Python programming language.</p>
         </section>
-        <section id="posts" class="posts">
+        <section id="posts">
             <h2>Posts</h2>
-            <!-- Add your posts here -->
-            <p>No posts yet.</p>
+            <p>No posts yet. Stay tuned for updates!</p>
         </section>
-        <section id="contact" class="contact">
+        <section id="contact">
             <h2>Contact Me</h2>
-            <p>Email: liminal@loop.com</p>
-            <p>Phone: +1234567890</p>
-            <p>Social Media: <a href="#">Twitter</a>, <a href="#">LinkedIn</a></p>
+            <p>You can reach me at: liminalloop@example.com</p>
         </section>
     </div>
-    <footer>
-        <p>&copy; 2024 Liminal Loop. All rights reserved.</p>
-    </footer>
 </body>
-
 </html>
