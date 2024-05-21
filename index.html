@@ -3,85 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Vaporwave Cyber Pixel Webpage</title>
+    <title>My Vaporwave Retro Webpage</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
         body {
-            background-color: #1b1b1b;
-            color: #f0f0f0;
+            background-color: #2a2a72;
+            color: #fff;
             font-family: 'Press Start 2P', cursive;
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
-        h1, h2 {
-            color: #ff6f61;
-            text-shadow: 2px 2px #d01f3e;
-        }
-        a {
-            color: #00ffff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: #ff00ff;
-        }
+
         .container {
-            background: url('https://via.placeholder.com/800x600/1b1b1b/ff6f61?text=Vaporwave+Background') no-repeat center center;
-            background-size: cover;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-        }
-        .content {
-            max-width: 800px;
             text-align: center;
         }
-        .btn {
-            display: inline-block;
+
+        h1 {
+            font-size: 3em;
+            color: #ff77e9;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff77e9, 0 0 30px #ff77e9, 0 0 40px #ff77e9, 0 0 55px #ff77e9, 0 0 75px #ff77e9;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #ff77e9;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff77e9;
+        }
+
+        a {
+            color: #ff77e9;
+            text-decoration: none;
+            border: 2px solid #ff77e9;
             padding: 10px 20px;
-            margin: 10px;
-            border: 2px solid #ff6f61;
-            border-radius: 5px;
-            background-color: transparent;
-            color: #ff6f61;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s, color 0.3s;
         }
-        .btn:hover {
-            background-color: #ff6f61;
-            color: #1b1b1b;
+
+        a:hover {
+            background-color: #ff77e9;
+            color: #2a2a72;
         }
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 10px;
-            }
-            .content {
-                padding: 10px;
-            }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.8em;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="content">
-            <h1>Welcome to My Vaporwave Cyber Pixel Webpage</h1>
-            <h2>John Doe</h2>
-            <p>Hello! I'm John Doe, a digital artist and web developer inspired by the aesthetics of vaporwave and cyberpunk. I create digital art, design websites, and make music. Explore my world!</p>
-            <div>
-                <a href="#portfolio" class="btn">Portfolio</a>
-                <a href="#about" class="btn">About Me</a>
-                <a href="#contact" class="btn">Contact</a>
-            </div>
-        </div>
+        <h1>Welcome to My Retro World</h1>
+        <p>Hello! I'm [Your Name], a lover of all things retro and vaporwave.</p>
+        <a href="#about-me">About Me</a>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
     </div>
 </body>
 </html>
