@@ -27,6 +27,15 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
+            display: none;
+            position: absolute;
+            background-color: #800080;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav:hover ul {
+            display: block;
         }
         nav ul li {
             margin-bottom: 10px;
@@ -51,6 +60,7 @@
         <h1>Liminal Loop</h1>
     </header>
     <nav>
+        <span>Menu &#9662;</span>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#posts">Posts</a></li>
