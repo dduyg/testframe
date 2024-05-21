@@ -3,55 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaporwave Personal Page</title>
+    <title>Vaporwave Blog</title>
     <style>
         body {
-            background-color: #2b2b2b;
+            background-color: #1a1a2e;
             color: #ffffff;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
+        }
+        header {
+            background: linear-gradient(90deg, #f0f, #0ff, #0f0, #ff0);
+            color: #000;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: #f0f;
+            margin: 0 15px;
+            text-decoration: none;
         }
         .container {
+            padding: 20px;
+        }
+        .post {
+            background-color: #27293d;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .post h2 {
+            color: #ff0;
+        }
+        .post p {
+            color: #ddd;
+        }
+        footer {
             text-align: center;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff615c);
-            border: 5px solid #00ffff;
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
-        h1 {
-            font-size: 4em;
-            margin: 0.5em 0;
-        }
-        h2 {
-            font-size: 2em;
-            margin: 0.5em 0;
-        }
-        p {
-            font-size: 1.2em;
-        }
-        a {
-            color: #00ffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
+        .glow {
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0, 0 0 30px #ff0, 0 0 40px #ff0, 0 0 55px #ff0, 0 0 75px #ff0;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1 class="glow">Vaporwave Blog</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
     <div class="container">
-        <h1>Welcome to My Vaporwave Page</h1>
-        <h2>John Doe</h2>
-        <p>Web Developer | Music Enthusiast | Retro Gamer</p>
-        <p>Find me on <a href="https://twitter.com" target="_blank">Twitter</a>, <a href="https://github.com" target="_blank">GitHub</a>, and <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
+        <div class="post">
+            <h2>Welcome to My Vaporwave Blog</h2>
+            <p>This is my first post! Stay tuned for more content.</p>
+        </div>
+        <div class="post">
+            <h2>What is Vaporwave?</h2>
+            <p>Vaporwave is a microgenre of electronic music, a visual art style, and an Internet meme that emerged in the early 2010s. It is defined by its eclectic mix of retro aesthetics, early Internet imagery, and a nostalgic fascination with the late 80s and early 90s pop culture.</p>
+        </div>
     </div>
+    <footer>
+        &copy; 2024 Vaporwave Blog. All rights reserved.
+    </footer>
 </body>
 </html>
