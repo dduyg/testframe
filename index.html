@@ -1,31 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liminal Loop</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Liberation Mono", monospace;
-      background-color: aquamarine;
-      color: black;
-    }
-
-		.link {
-			text-decoration: none;
-			transition: color .15s ease-in;
-		}
-		.link:link, .link:visited, .link:hover, .link:active, .link:focus {
-			transition: color .15s ease-in;
-		}
-		.hover-red:hover { color: #ff4136; }
-		.hover-red:focus { color: #ff4136; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Software Developer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #2e2b5f;
+            color: #fff;
+        }
+        header {
+            background: linear-gradient(135deg, #ff00c8, #00ffe0);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+        }
+        .menu {
+            background: #2e2b5f;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .menu:hover .dropdown {
+            display: block;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: #2e2b5f;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .dropdown a {
+            display: block;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .dropdown a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .content {
+            padding: 20px;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            font-size: 2em;
+            border-bottom: 2px solid #ff00c8;
+            padding-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
-
-<a class="link hover-red" href="#0">on hover </a>
-
+    <header>
+        <h1>John Doe - Software Developer</h1>
+    </header>
+    <nav>
+        <div class="menu">
+            Menu
+            <div class="dropdown">
+                <a href="#about">About</a>
+                <a href="#posts">Posts</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hello! I'm John Doe, a passionate software developer with expertise in web development, data science, and software engineering. I love creating innovative solutions and exploring new technologies.</p>
+        </div>
+        <div id="posts" class="section">
+            <h2>Posts</h2>
+            <p>Coming soon! Stay tuned for articles and posts about my latest projects, tech tutorials, and industry insights.</p>
+        </div>
+        <div id="contact" class="section">
+            <h2>Contact</h2>
+            <p>If you'd like to get in touch, please email me at johndoe@example.com.</p>
+        </div>
+    </div>
 </body>
 </html>
