@@ -3,97 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
+    <title>John Doe - Data Scientist</title>
     <style>
         body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #2d2d2d;
+            background-color: #0f0c29;
             color: #ffffff;
-        }
-        header {
-            background-color: #ff71ce;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            background-color: #ff71ce;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        nav ul {
-            list-style-type: none;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
         }
-        nav ul li {
-            padding: 1rem;
-            cursor: pointer;
+        header {
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            padding: 1em;
+            text-align: center;
         }
-        nav ul li:hover {
-            background-color: #05ffa1;
+        header h1 {
+            margin: 0;
         }
-        nav ul li ul {
+        nav {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
             display: none;
             position: absolute;
-            right: 0;
-            top: 100%;
-            background-color: #ff71ce;
-            border-radius: 5px;
+            background-color: #24243e;
             box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            z-index: 1;
         }
-        nav ul li:hover ul {
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #302b63;
+        }
+        .dropdown:hover .dropdown-content {
             display: block;
         }
         section {
-            padding: 2rem;
+            padding: 2em;
         }
-        #about, #posts, #contact {
-            padding: 2rem;
-            background-color: #2d2d2d;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-        }
-        a {
-            color: #05ffa1;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+        .vaporwave {
+            color: #ff77e9;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>John Doe - Data Scientist</h1>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="#about">About</a>
+                    <a href="#posts">Posts</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li>Menu
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#posts">Posts</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome! I am John Doe, a data scientist with a passion for uncovering insights from data and building data-driven solutions. With a background in computer science and statistics, I specialize in machine learning, data visualization, and big data technologies.</p>
-        </section>
-        <section id="posts">
-            <h2>Posts</h2>
-            <p>Stay tuned for my latest blog posts and articles where I share my thoughts on data science, machine learning, and technology trends.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>If you'd like to get in touch, feel free to email me at <a href="mailto:johndoe@example.com">johndoe@example.com</a> or connect with me on <a href="https://www.linkedin.com/in/johndoe" target="_blank">LinkedIn</a>.</p>
-        </section>
-    </main>
+    <section id="about">
+        <h2 class="vaporwave">About Me</h2>
+        <p>Hello! I'm John Doe, a data scientist with a passion for extracting insights from data and solving complex problems. I specialize in machine learning, data analysis, and predictive modeling.</p>
+    </section>
+    <section id="posts">
+        <h2 class="vaporwave">Posts</h2>
+        <p>Check back soon for blog posts on data science, machine learning, and more!</p>
+    </section>
+    <section id="contact">
+        <h2 class="vaporwave">Contact</h2>
+        <p>You can reach me at: <a href="mailto:johndoe@example.com" class="vaporwave">johndoe@example.com</a></p>
+    </section>
 </body>
 </html>
