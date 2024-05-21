@@ -3,74 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Vaporwave Retro Webpage</title>
+    <title>My Vaporwave Retro Page</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
         body {
-            background-color: #2a2a72;
-            color: #fff;
-            font-family: 'Press Start 2P', cursive;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
         }
 
-        .container {
+        .content {
             text-align: center;
         }
 
         h1 {
-            font-size: 3em;
-            color: #ff77e9;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff77e9, 0 0 30px #ff77e9, 0 0 40px #ff77e9, 0 0 55px #ff77e9, 0 0 75px #ff77e9;
+            font-size: 4em;
+            margin-bottom: 20px;
         }
 
         p {
-            font-size: 1.2em;
-            color: #ff77e9;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff77e9;
+            font-size: 1.5em;
         }
 
-        a {
-            color: #ff77e9;
-            text-decoration: none;
-            border: 2px solid #ff77e9;
-            padding: 10px 20px;
-            display: inline-block;
-            margin-top: 20px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        a:hover {
-            background-color: #ff77e9;
-            color: #2a2a72;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 20px;
+        .wave {
             width: 100%;
-            text-align: center;
+            height: auto;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
         }
 
-        .footer p {
-            font-size: 0.8em;
+        .wave img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%) brightness(30%) contrast(150%);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Retro World</h1>
-        <p>Hello! I'm [Your Name], a lover of all things retro and vaporwave.</p>
-        <a href="#about-me">About Me</a>
+    <div class="content">
+        <h1>Welcome to My Vaporwave Retro Page</h1>
+        <p>This is where I embrace the aesthetic of the 80s and 90s.</p>
     </div>
-    <div class="footer">
-        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+    <div class="wave">
+        <img src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg" alt="Vaporwave Background">
     </div>
+    <footer>&copy; 2024 My Vaporwave Retro Page</footer>
 </body>
 </html>
