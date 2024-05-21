@@ -3,60 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop - Personal Webpage</title>
+    <title>My Vaporwave Blog</title>
     <style>
-        /* CSS for vaporwave aesthetics */
         body {
-            background-color: #9900ff; /* Purple background */
-            color: #ffcc00; /* Yellow text */
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2E1A47;
+            color: #F8F8F2;
+            margin: 0;
+            padding: 0;
         }
-
-        /* CSS for the dropdown menu */
-        .dropdown {
+        header {
+            background-color: #8D4E85;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
+            right: 0;
+            top: 0;
+            background-color: #592F6D;
+            width: 200px;
+            height: 100%;
+            padding-top: 20px;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
         }
-
-        /* CSS for other sections */
-        /* Add your styles here */
-
+        nav a {
+            display: block;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #8D4E85;
+        }
+        main {
+            margin-right: 220px;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #592F6D;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #8D4E85;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 <body>
 
-<div class="dropdown">
-    <button class="dropbtn">Menu</button>
-    <div class="dropdown-content">
-        <a href="#about">About</a>
-        <a href="#posts">Posts</a>
-        <a href="#contact">Contact</a>
-    </div>
-</div>
-
 <header>
-    <h1>Welcome to Liminal Loop's World</h1>
+    <h1>Welcome to My Vaporwave Blog</h1>
 </header>
 
-<!-- About Section -->
-<section id="about">
-    <h2>About Me</h2>
-    <!-- Add your bio or description here -->
-</section>
+<nav>
+    <div class="dropdown">
+        <a href="#">Menu</a>
+        <div class="dropdown-content">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
 
-<!-- Posts Section -->
-<section id="posts">
-    <h2>Posts</h2>
-    <!-- Add your posts here -->
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact Me</h2>
-    <!-- Add your contact information here -->
-</section>
+<main>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a coder who loves the aesthetic of vaporwave. This blog is where I share my thoughts, projects, and everything in between. Stay tuned for updates!</p>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you would like to get in touch, feel free to email me at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
+    </section>
+</main>
 
 </body>
 </html>
