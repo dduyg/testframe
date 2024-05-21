@@ -3,47 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Vaporwave Retro Page</title>
+    <title>Vaporwave Personal Webpage</title>
     <style>
         body {
-            background-color: #9b59b6;
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(to bottom, #320066, #ff66cc);
             color: #ffffff;
-            font-family: 'Arial', sans-serif;
+            text-align: center;
             margin: 0;
             padding: 0;
-            text-align: center;
+            overflow-x: hidden;
         }
         header {
-            background-color: #ff6eff;
-            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-bottom: 5px solid #ff0099;
         }
-        h1 {
+        header h1 {
             font-size: 3em;
             margin: 0;
+            color: #00ff99;
         }
-        section {
+        .content {
             padding: 50px 20px;
         }
-        p {
+        .content h2 {
+            font-size: 2em;
+            color: #ff66cc;
+            margin-bottom: 20px;
+        }
+        .content p {
             font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 20px;
         }
         footer {
-            background-color: #ff6eff;
-            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-top: 5px solid #ff0099;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1em;
+            color: #00ff99;
+        }
+        .grid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png') repeat;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        .neon-button {
+            background-color: #00ff99;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #320066;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        .neon-button:hover {
+            background-color: #ff66cc;
+            color: #ffffff;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
 <body>
+    <div class="grid-background"></div>
     <header>
-        <h1>My Vaporwave Retro Page</h1>
+        <h1>My Vaporwave World</h1>
     </header>
-    <section>
-        <p>Welcome to my vaporwave retro-themed personal webpage! Feel the nostalgia and aesthetic vibes.</p>
-        <p>I'm passionate about retro gaming, synthwave music, and neon aesthetics.</p>
-        <p>Check out my blog for more vaporwave goodness!</p>
-    </section>
+    <div class="content">
+        <h2>About Me</h2>
+        <p>Hello! I'm [Your Name], a digital artist and vaporwave enthusiast. Welcome to my personal webpage where I share my thoughts, art, and music. Feel the vibes and enjoy the aesthetic!</p>
+        <h2>My Projects</h2>
+        <p>Check out some of my latest projects and artworks below:</p>
+        <button class="neon-button"><a href="#project1">Project 1</a></button>
+        <button class="neon-button"><a href="#project2">Project 2</a></button>
+        <button class="neon-button"><a href="#project3">Project 3</a></button>
+    </div>
     <footer>
-        <p>&copy; 2024 My Vaporwave Retro Page</p>
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
     </footer>
 </body>
 </html>
