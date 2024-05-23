@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Underline</title>
     <style>
-        u {
+        .item u {
             text-decoration: none;
             position: relative;
         }
-        u::before {
+        .item u::before {
             content: '';
             position: absolute;
-            top: -0.2em;
+            top: -0.15em;
             left: 0;
             right: 0;
-            border-top: 1px solid; /* Style of the overline */
+            border-top: 1px solid currentColor;
         }
     </style>
 </head>
 <body>
-    <p>This is a <u>styled underline</u> example.</p>
+    <p class="item">This is a <u>styled underline</u> example.</p>
+    <p>This is a <u>normal underline</u> example.</p>
 </body>
 </html>
