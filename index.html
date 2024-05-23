@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Underline</title>
+    <title>Styled Underline</title>
     <style>
-        .item u {
-            text-decoration: none;
-            position: relative;
+        u {
+            text-decoration: none; /* Remove default underline */
+            position: relative; /* Enable positioning of the pseudo-element */
         }
-        .item u::before {
+        u::before {
             content: '';
             position: absolute;
-            top: -0.15em;
+            top: -0.25em; /* Adjusted for closer spacing */
             left: 0;
             right: 0;
-            border-top: 1px solid currentColor;
+            height: 1.5px; /* Intermediate thickness */
+            background-color: currentColor; /* Matches the color of the text */
         }
     </style>
 </head>
 <body>
-    <p class="item">This is a <u>styled underline</u> example.</p>
-    <p>This is a <u>normal underline</u> example.</p>
+    <p>This is a <u>styled underline</u> example.</p>
 </body>
 </html>
