@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Underline</title>
+    <title>Styled Underline</title>
     <style>
         u {
             text-decoration: none; /* Remove default underline */
@@ -12,10 +12,10 @@
         u::before {
             content: '';
             position: absolute;
-            top: -1em; /* Adjust as needed for space */
+            top: -0.15em; /* Adjusted for closer spacing */
             left: 0;
             right: 0;
-            border-top: 2px solid; /* Style of the overline */
+            border-top: 1px solid currentColor; /* 1px solid line matching text color */
         }
     </style>
 </head>
