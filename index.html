@@ -1,126 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Underline</title>
-
-  <!-- Load Javascript and CSS for Fomantic UI -->
-  <script
-  src="https://code.jquery.com/jquery-3.5.1.min.js"
-  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-  crossorigin="anonymous">
-  </script>
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
-
-
-<style>
-
-
-ui.dropdown {
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  text-align: left;
-  -webkit-transition: box-shadow 0.1s ease, width 0.1s ease;
-  transition: box-shadow 0.1s ease, width 0.1s ease;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiminalLoop</title>
+  <style>
+      :root {
+  --color-main: rgba(0, 0, 0, 0.87);
+  --color-light-main: #292721; 
+  --marker: #CCCCCC;
+  --back: #898989;
+  --main-font: "Schibsted Grotesk", sans-serif;
+  --mono-font: 'LabMono', sans-serif;  
 }
-.ui.dropdown .menu {
-  cursor: auto;
-  position: absolute;
-  display: none;
-  outline: none;
-  top: 100%;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-  margin: 0em;
-  padding: 0em 0em;
-  background: #FFFFFF;
-  font-size: 1em;
-  text-shadow: none;
-  text-align: left;
-  box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  border-radius: 0.28571429rem;
-  -webkit-transition: opacity 0.1s ease;
-  transition: opacity 0.1s ease;
-  z-index: 11;
-  will-change: transform, opacity;
-}
-.ui.dropdown .menu > * {
-  white-space: nowrap;
-}
-ui.dropdown > .text {
-  display: inline-block;
-  -webkit-transition: none;
-  transition: none;
-}
-.ui.dropdown .menu > .item {
-  position: relative;
-  cursor: pointer;
-  display: block;
-  border: none;
-  height: auto;
-  text-align: left;
-  border-top: none;
-  line-height: 1em;
-  color: rgba(0, 0, 0, 0.87);
-  padding: 0.78571429rem 1.14285714rem !important;
-  font-size: 1rem;
-  text-transform: none;
+@font-face {
+  font-family: 'LabMono';
+  src: url('/assets/labmono-regular-web.woff2') format('woff2'),
+       url('/assets/labmono-regular-web.woff') format('woff');
   font-weight: normal;
-  box-shadow: none;
-  -webkit-touch-callout: none;
+  font-style: normal;
 }
-.ui.dropdown .menu > .item:first-child {
-  border-top-width: 0px;
-}
-.ui.floating.dropdown .menu {
-  left: 0;
-  right: auto;
-  box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.15) !important;
-  border-radius: 0.28571429rem !important;
-}
-.ui.floating.dropdown > .menu {
-  margin-top: 0.5em !important;
-  border-radius: 0.28571429rem !important;
-}
-.ui.top.right.pointing.dropdown > .menu:after {
-  top: -0.25em;
-  left: auto;
-  right: 1em;
-  margin: 0em;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-    
-</style>
 
-    
-</head>
-<body>
-<div class="ui container">
+html, body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: var(--back);
+  color: var(--color-main);
+  line-height: 1.5;
+  font-family: var(--main-font);
+}
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+section {
+  border-right: 1px black solid;
+  display: flex;
+  flex: 1;
+  height: 70%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#contact {
+  border-right: none;
+}
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.inline-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
 
-<div class="ui top right dropdown">
- <span class="text">Posts</span>
-    <div class="menu">
-        <div class="item"> Important </div>
-        <div class="item"> Announcement </div>
-        <div class="item"> Discussion </div> 
-    </div>
-</div>
+/* Navigation */
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+}
+.home-badge {
+    display: table-cell;
+    vertical-align: middle;
+    width: 25%;
+    cursor: pointer;
+}
+#badge {
+    display: inline-block;
+    width: 4.5rem;  
+}
 
-<script>
-  $('.ui.dropdown')
-  .dropdown();
-</script>
-                                                                                                 
-</div>    
-</body>
+#menu {
+    display: table-cell;
+    vertical-align: middle;
+    width: 75%;
+    text-align: right;
+    color: var(--color-light-main);
+    letter-spacing: 1px;
+    font-family: var(--mono-font);
+}
+.item {
+    display: inline-block;
+    font-size: 1em;
+    margin-right: 1rem;
+    letter-spacing: 3px;  
+}
+.item u {
+   text-decoration: none;
+   position: relative;
+}
+.item u::before {
+   content: '';
+   position: absolute;
+   top: -0.33em;
+   left: 0;
+   right: 0;
+   height: 1.1px; /* Intermediate thickness */
+   background-color: currentColor;
+}
+
+@media screen and (min-width: 30em) {
+    nav {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .item {
+        font-size: 1.1em;
+        margin-right: 2rem;
+    }
+}
+
+#menu a::before {
+    content: '';
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    -moz-border-radius: calc(0.5 * 0.75em);
+    -webkit-border-radius: calc(0.5 * 0.75em);
+    border-radius: calc(0.5 * 0.75em);
+    background-color: black;
+    margin: 0em 0.5em 0em 0em;
+    animation: 1.5s rotate ease-in-out infinite;
+}
+@keyframes rotate {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(360deg); }
+}
+/********************************/
+
+/*  Panel */
+header {
+  font-family: "Lato", sans-serif;
+  transform: rotate(-90deg);
+} 
+header h1 {
+  font-size: min(5vw, 32px);
+  margin: 0;
+}
+@media screen and (min-width: 1200px) {
+  header h1 {
+      font-size: 32px; /* Resets font size to 32px for screens wider than 1200px */
+  }
+}
+.panel-active header {
+  color: var(--marker);
+  letter-spacing: 3px;
+  transform: rotate(0deg);
+  transition: 0.5s ease;
+}
+.panel-active header h1 {
+  font-size: calc(1.3 * min(5vw, 32px));
+}
+#contact header {
+  transform: rotate(0deg); /* Rotation normal for icon */
+}
+#contact h1 i {
+  font-size: 1.1em;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content {
+  display: none;
+  font-size: min(4vw, 19px); /* Limits font size to 19px or 4vw, whichever is smaller */
+  padding: 3% 10%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 800px;
+  max-height: calc(100% - 20px);
+}
+@media screen and (min-width: 1200px) {
+  .content {
+      font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
+  }
+}
+
+.panel-inactive:hover {
+  flex: 1.1;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.5s ease;
+}
+.panel-active {
+  flex: 16;
+  transition: 1s ease;
+}
+.panel-active .content {
+  display: block;
+}
+
+.links, .panel-link {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--marker);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.links:hover, .panel-link:hover {
+  color: var(--marker);
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  font-family: var(--mono-font);
+  padding: 2rem;
+  display: block;
+}
+.site-copyright {
+  font-size: .75rem;
+  display: block;
+  vertical-align: middle; 
+  width: 100%;
+  text-align: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem; 
+  line-height: 1.5;
+}
+.social-links, .site-contact {
+  display: block;
+  font-size: .875rem;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.social-links a {
+  color: var(--color-light-main);
+  font-size: 1.1rem;
+  margin-right: .25rem;
+  display: inline-block;
+  cursor: pointer;
+}
+.site-contact a {
+  display: inline-block;
+  padding: .25rem .5rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 60em) {
+  footer {
+    padding: 2rem 4rem;
+    display: table;
+  }
+  .site-copyright { 
+    display: table-cell;
+    width: 33%;
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;  
+  }
+  .social-links {
+    display: table-cell;
+    width: 33%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }  
+  .site-contact {
+    display: table-cell;
+    text-align: right;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+/********************************/     
+  </style>      
+  </head>
+  <body>
+    <nav>
+      <a class="home-badge" href="/">
+        <img id="badge" src="assets/images/badge.gif">
+      </a>
+      <div id="menu">
+        <a class="item" href="#">ddu<u>yg&nbsp;</u></a>
+      </div>  
+    </nav>
+  </body>
 </html>
