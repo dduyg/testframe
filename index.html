@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Underline</title>
+    <title>Underline</title>
     <style>
         u {
-            text-decoration: none; /* Remove default underline */
-            position: relative; /* Enable positioning of the pseudo-element */
+            text-decoration: none;
+            position: relative;
         }
         u::before {
             content: '';
             position: absolute;
-            top: -0.15em; /* Adjusted for closer spacing */
+            top: -0.2em;
             left: 0;
             right: 0;
-            border-top: 1px solid currentColor; /* 1px solid line matching text color */
+            border-top: 1px solid; /* Style of the overline */
         }
     </style>
 </head>
