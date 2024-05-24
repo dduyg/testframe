@@ -67,6 +67,7 @@
       border: none;
       color: inherit;
       outline: none;
+      text-decoration: none;
     }
     @media screen and (min-width: 30em) {
       nav {
@@ -111,10 +112,12 @@
       transition: 0.5s;
       transition-delay: calc(60ms * var(--delay));
     }
-    .dropdown-btn:focus + .dropdown-content li {
+    .dropdown-btn:focus + .dropdown-content li,
+    .dropdown-btn:focus-within + .dropdown-content li {
       left: 0;
     }
-    .dropdown-btn:focus + .dropdown-content {
+    .dropdown-btn:focus + .dropdown-content,
+    .dropdown-btn:focus-within + .dropdown-content {
       visibility: visible;
     }
     .dropdown-content li:hover {
@@ -135,7 +138,7 @@
       <img id="badge" src="assets/images/badge.gif">
     </a>
     <div id="menu">
-      <button class="dropdown-btn" aria-haspopup="menu">dduyg</button>
+      <a href="#" class="dropdown-btn" tabindex="0">dduyg</a>
       <ul class="dropdown-content">
         <li style="--delay: 1;"><a href="#">About</a></li>
         <li style="--delay: 2;"><a href="#">Posts</a></li>
