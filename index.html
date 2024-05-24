@@ -56,6 +56,10 @@
       letter-spacing: 1px;
       font-family: var(--mono-font);
     }
+    .dropdown-container {
+      display: inline-block;
+      position: relative;
+    }
     .dropdown-btn {
       position: relative;
       display: inline-block;
@@ -94,8 +98,8 @@
     .dropdown-content {
       position: absolute;
       top: 3.2em;
-      right: 3em;
-      width: 75%;
+      right: 0;
+      width: 100%;
       max-width: 30em;
       visibility: hidden;
       overflow: hidden;
@@ -134,11 +138,13 @@
       <img id="badge" src="assets/images/badge.gif">
     </a>
     <div id="menu">
-      <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">dduyg</a>
-      <div class="dropdown-content">
-        <a class="item" style="--delay: 1;" href="#">About</a>
-        <a class="item" style="--delay: 2;" href="#">Posts</a>
-        <a class="item" style="--delay: 3;" href="#">Contact</a>
+      <div class="dropdown-container">
+        <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">dduyg</a>
+        <div class="dropdown-content">
+          <a class="item" style="--delay: 1;" href="#">About</a>
+          <a class="item" style="--delay: 2;" href="#">Posts</a>
+          <a class="item" style="--delay: 3;" href="#">Contact</a>
+        </div>
       </div>
     </div>
   </nav>
