@@ -56,42 +56,58 @@
       letter-spacing: 3px;
       display: flex;
       align-items: center;
+      background: #1d1f24;
+      padding: 0.7em 0.5em;
+      border-radius: 0.5em;
     }
-    .menu-start u {
-      text-decoration: none;
-      position: relative;
-    }
-    .menu-start u::before {
+    .menu-start::after {
       content: '';
-      position: absolute;
-      top: -0.33em;
-      left: 0;
-      right: 0;
-      height: 1.1px;
-      background-color: currentColor;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #fff;
+      transition: transform 0.3s ease-in-out;
+      margin-left: 10px;
     }
     .menu-drop {
-      display: none;
+      list-style: none;
       position: absolute;
-      right: 0;
       top: 3em;
-      background-color: white;
+      right: 0;
+      background-color: #2f3238;
       padding: 10px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       z-index: 11;
       width: 150px;
+      visibility: hidden;
+      overflow: hidden;
     }
-    .menu-drop .item {
+    .menu-drop li {
+      background: #2f3238;
+      border-radius: 0.5em;
+      position: relative;
+      left: 100%;
+      transition: 0.5s;
+      transition-delay: calc(60ms * var(--delay));
+    }
+    .menu-start:focus + .menu-drop li {
+      left: 0;
+    }
+    .menu-start:focus + .menu-drop {
+      visibility: visible;
+    }
+    .menu-start:focus::after {
+      transform: rotate(180deg);
+    }
+    .menu-drop li:hover {
+      background: #1d1f24;
+    }
+    .menu-drop li a {
       display: block;
-      padding: 10px;
-      margin: 0;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .menu-drop .item:hover {
-      background-color: var(--color-light-main);
-      color: white;
+      padding: 0.7em 0.5em;
+      color: #fff;
+      margin: 0.1em 0;
+      text-decoration: none;
     }
     @media screen and (min-width: 30em) {
       nav {
@@ -111,25 +127,13 @@
       <img id="badge" src="assets/images/badge.gif" alt="Home">
     </a>
     <div id="menu">
-      <div class="menu-start" onclick="toggleMenu()">ddu<u>yg&nbsp;</u></div>  
-      <div class="menu-drop">
-        <a class="item" href="#about">About</a>
-        <a class="item" href="#posts">Posts</a>
-        <a class="item" href="#contact">Contact</a>
-      </div>
+      <div class="menu-start" tabindex="0">ddu<u>yg&nbsp;</u></div>  
+      <ul class="menu-drop">
+        <li style="--delay: 1;"><a class="item" href="#about">About</a></li>
+        <li style="--delay: 2;"><a class="item" href="#posts">Posts</a></li>
+        <li style="--delay: 3;"><a class="item" href="#contact">Contact</a></li>
+      </ul>
     </div>  
   </nav>
-  <script>
-    function toggleMenu() {
-      var menu = document.querySelector('.menu-drop');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-    window.onclick = function(event) {
-      if (!event.target.matches('.menu-start')) {
-        var dropdowns = document.querySelectorAll('.menu-drop');
-        dropdowns.forEach(dropdown => dropdown.style.display = 'none');
-      }
-    }
-  </script>
 </body>
 </html>
