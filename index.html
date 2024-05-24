@@ -96,12 +96,14 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 70%;
-      max-width: 400px; /* Optional: Set a maximum width */
-      background-color: white;
-      visibility: hidden;
-      overflow: hidden;
-    }
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 20em;
+  visibility: hidden;
+  overflow: hidden;
+  max-height: calc(100vh - 2em); /* Set maximum height to fit within viewport */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds maximum height */
+}  
  
     .dropdown-content li {
       background: #2f3238;
