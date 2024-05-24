@@ -95,6 +95,8 @@
       position: absolute;
       top: 3.2em;
       right: 3em;
+      width: 75%;
+      max-width: 30em;
       visibility: hidden;
       overflow: hidden;
       z-index: 11;
@@ -105,7 +107,12 @@
       transition: 0.5s;
       transition-delay: calc(60ms * var(--delay));
       display: block;
-      padding: 0.92857143em 1.14285714em;
+      border: 2px solid rgba(0, 0, 0, 0.6);
+      border-top-width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      line-height: 1.5;
+      padding: 1rem 1.14285714em;
       background: var(--back);
       text-align: left;
       text-decoration: none;
