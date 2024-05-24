@@ -160,13 +160,48 @@ ui.dropdown > .text {
 
 
 
-    <div class="ui top right dropdown">
-      <span class="text">Posts</span>
-      <div class="menu">
-        <div class="item"> Important </div>
-        <div class="item"> Announcement </div>
-        <div class="item"> Discussion </div> 
-      </div>
-    </div>
+ <!DOCTYPE html>
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #E3DFFF;
+      color: #271052;
+      border: none;
+      padding: 8px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      background-color: #E3DFFF;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .menu ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .menu ul li {
+      margin-bottom: 10px;
+    }
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <nav class="menu">
+    <ul>
+      <li><a href="#home">waterfront</a></li>
+      <li><a href="#3">forecast</a></li>
+      <li><a href="#4">automated</a></li>
+      <li><a href="#5">display</a></li>
+      <li><a href="../15/">▶</a></li>
+    </ul>
+  </nav>
+
+
+    
   </body>
 </html>
