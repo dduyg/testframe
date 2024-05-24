@@ -92,7 +92,6 @@
     }
 
     .dropdown-content {
-      list-style: none;
       position: absolute;
       top: 3.2em;
       right: 3em;
@@ -100,30 +99,28 @@
       overflow: hidden;
       z-index: 11;
     }
-    .dropdown-content li {
+    .dropdown-content .item {
       background: #2f3238;
       border-radius: 0.28571429rem;
       position: relative;
       left: 100%;
       transition: 0.5s;
       transition-delay: calc(60ms * var(--delay));
-    }
-    .dropdown-btn:focus + .dropdown-content li {
-      left: 0;
-    }
-    .dropdown-btn:focus + .dropdown-content {
-      visibility: visible;
-    }
-    .dropdown-content li:hover {
-      background: #1d1f24;
-    }
-    .dropdown-content li a {
       display: block;
       padding: 0.7em 0.5em;
       color: #fff;
       margin: 0.1em 0;
       text-align: left;
       text-decoration: none;
+    }
+    .dropdown-btn:focus + .dropdown-content .item {
+      left: 0;
+    }
+    .dropdown-btn:focus + .dropdown-content {
+      visibility: visible;
+    }
+    .dropdown-content .item:hover {
+      background: #1d1f24;
     }
   </style>
 </head>
@@ -134,11 +131,11 @@
     </a>
     <div id="menu">
       <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">dduyg</a>
-      <ul class="dropdown-content">
-        <li style="--delay: 1;"><a href="#">About</a></li>
-        <li style="--delay: 2;"><a href="#">Posts</a></li>
-        <li style="--delay: 3;"><a href="#">Contact</a></li>
-      </ul>
+      <div class="dropdown-content">
+        <a class="item" style="--delay: 1;" href="#">About</a>
+        <a class="item" style="--delay: 2;" href="#">Posts</a>
+        <a class="item" style="--delay: 3;" href="#">Contact</a>
+      </div>
     </div>
   </nav>
 </body>
