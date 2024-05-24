@@ -1,192 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LiminalLoop</title>
-  <style>
-    :root {
-      --color-main: rgba(0, 0, 0, 0.87);
-      --color-light-main: #292721; 
-      --marker: #CCCCCC;
-      --back: #898989;
-      --main-font: "Schibsted Grotesk", sans-serif;
-      --mono-font: 'LabMono', sans-serif;  
-    }
-    html, body {
-      padding: 0;
-      margin: 0;
-      border: 0;
-      background-color: var(--back);
-      color: var(--color-main);
-      line-height: 1.5;
-      font-family: var(--main-font);
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiminalLoop</title>
+    <style>
+      :root {
+        --color-main: rgba(0, 0, 0, 0.87);
+        --color-light-main: #292721; 
+        --marker: #CCCCCC;
+        --back: #898989;
+        --main-font: "Schibsted Grotesk", sans-serif;
+        --mono-font: 'LabMono', sans-serif;  
+      }
+      html, body {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: var(--back);
+        color: var(--color-main);
+        line-height: 1.5;
+        font-family: var(--main-font);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-    /* Navigation */
-    nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: table;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 0.75rem 1rem;
-    }
-    .home-badge {
-      display: table-cell;
-      vertical-align: middle;
-      width: 25%;
-      cursor: pointer;
-    }
-    #badge {
-      display: inline-block;
-      width: 4.5rem;  
-    }
-
-    #menu {
-      display: table-cell;
-      vertical-align: middle;
-      width: 75%;
-      text-align: right;
-      color: var(--color-light-main);
-      letter-spacing: 1px;
-      font-family: var(--mono-font);
-    }
-    .menu-start {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      font-size: 1em;
-      margin-right: 1rem;
-      letter-spacing: 3px;  
-    }    
-    .menu-start u {
-      text-decoration: none;
-      position: relative;
-    }
-    .menu-start u::before {
-      content: '';
-      position: absolute;
-      top: -0.33em;
-      left: 0;
-      right: 0;
-      height: 1.1px; /* Intermediate thickness */
-      background-color: currentColor;
-    }
-
-    @media screen and (min-width: 30em) {
+      /* Navigation */
       nav {
-        padding-left: 4rem;
-        padding-right: 4rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: table;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.75rem 1rem;
+      }
+      .home-badge {
+        display: table-cell;
+        vertical-align: middle;
+        width: 25%;
+        cursor: pointer;
+      }
+      #badge {
+        display: inline-block;
+        width: 4.5rem;  
+      }
+
+      #menu {
+        display: table-cell;
+        vertical-align: middle;
+        width: 75%;
+        text-align: right;
+        color: var(--color-light-main);
+        letter-spacing: 1px;
+        font-family: var(--mono-font);
       }
       .menu-start {
-        font-size: 1.1em;
-        margin-right: 2rem;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 1em;
+        margin-right: 1rem;
+        letter-spacing: 3px;  
+      }    
+      .menu-start u {
+        text-decoration: none;
+        position: relative;
       }
-    }
+      .menu-start u::before {
+        content: '';
+        position: absolute;
+        top: -0.33em;
+        left: 0;
+        right: 0;
+        height: 1.1px;
+        background-color: currentColor;
+      }
 
-    .menu-start::before {
-      content: '';
-      display: inline-block;
-      width: 0.75em;
-      height: 0.75em;
-      -moz-border-radius: calc(0.5 * 0.75em);
-      -webkit-border-radius: calc(0.5 * 0.75em);
-      border-radius: calc(0.5 * 0.75em);
-      background-color: black;
-      margin: 0em 0.5em 0em 0em;
-      animation: 1.5s rotate ease-in-out infinite;
-    }
-    @keyframes rotate {
-      0% { transform: rotateX(0deg); }
-      100% { transform: rotateX(360deg); }
-    }
+      @media screen and (min-width: 30em) {
+        nav {
+          padding-left: 4rem;
+          padding-right: 4rem;
+        }
+        .menu-start {
+          font-size: 1.1em;
+          margin-right: 2rem;
+        }
+      }
 
-    /* Dropdown styles */
-    .dropdown {
-      max-width: 13em;
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-btn {
-      background: #1d1f24;
-      font-size: 18px;
-      width: 100%;
-      border: none;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.7em 0.5em;
-      border-radius: 0.5em;
-      cursor: pointer;
-    }
-    .arrow {
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 6px solid #fff;
-      transition: transform ease-in-out 0.3s;
-    }
-    .dropdown-content {
-      list-style: none;
-      position: absolute;
-      top: 3.2em;
-      width: 100%;
-      visibility: hidden;
-      overflow: hidden;
-    }
-    .dropdown-content li {
-      background: #2f3238;
-      border-radius: 0.5em;
-      position: relative;
-      left: 100%;
-      transition: 0.5s;
-      transition-delay: calc(60ms * var(--delay));
-    }
-    .dropdown-btn:focus + .dropdown-content li {
-      left: 0;
-    }
-    .dropdown-btn:focus + .dropdown-content {
-      visibility: visible;
-    }
-    .dropdown-btn:focus > .arrow {
-      transform: rotate(180deg);
-    }
-    .dropdown-content li:hover {
-      background: #1d1f24;
-    }
-    .dropdown-content li a {
-      display: block;
-      padding: 0.7em 0.5em;
-      color: #fff;
-      margin: 0.1em 0;
-      text-decoration: none;
-    }
-  </style>      
-</head>
-<body>
-  <nav>
-    <a class="home-badge" href="/">
-      <img id="badge" src="assets/images/badge.gif">
-    </a>
-    <div id="menu">
-      <div class="dropdown">
-        <button class="dropdown-btn" aria-haspopup="menu">
-          <span>ddu<u>yg&nbsp;</u></span>
-          <span class="arrow"></span>
-        </button>
-        <ul class="dropdown-content" role="menu">
-          <li style="--delay: 1;"><a href="#about">About</a></li>
-          <li style="--delay: 2;"><a href="#posts">Posts</a></li>
-          <li style="--delay: 3;"><a href="#contact">Contact</a></li>
+      .menu-start::before {
+        content: '';
+        display: inline-block;
+        width: 0.75em;
+        height: 0.75em;
+        border-radius: calc(0.5 * 0.75em);
+        background-color: black;
+        margin: 0em 0.5em 0em 0em;
+        animation: 1.5s rotate ease-in-out infinite;
+      }
+      @keyframes rotate {
+        0% { transform: rotateX(0deg); }
+        100% { transform: rotateX(360deg); }
+      }
+
+      .menu-drop {
+        list-style: none;
+        position: absolute;
+        top: 3.2em;
+        right: 0;
+        visibility: hidden;
+        overflow: hidden;
+        text-align: right;
+        z-index: 11;
+      }
+      .menu-drop .item {
+        background: var(--color-light-main);
+        border-radius: 0.5em;
+        position: relative;
+        right: 100%;
+        transition: 0.5s;
+        transition-delay: calc(60ms * var(--delay));
+        display: block;
+        text-align: right;
+        padding: 0.7em 0.5em;
+        color: #fff;
+        margin-bottom: 0.1em;
+      }
+      .menu-start:focus + .menu-drop .item {
+        right: 0;
+      }
+      .menu-start:focus + .menu-drop {
+        visibility: visible;
+      }
+      .menu-drop .item:hover {
+        background: #1d1f24;
+      }
+
+      /* base styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: var(--main-font);
+        color: var(--color-main);
+        background: var(--back);
+      }
+    </style>      
+  </head>
+  <body>
+    <nav>
+      <a class="home-badge" href="/">
+        <img id="badge" src="assets/images/badge.gif">
+      </a>
+      <div id="menu">
+        <button class="menu-start" aria-haspopup="menu">ddu<u>yg&nbsp;</u></button>  
+        <ul class="menu-drop" role="menu">
+          <li class="item" style="--delay: 1;"><a href="#about">About</a></li>
+          <li class="item" style="--delay: 2;"><a href="#posts">Posts</a></li>
+          <li class="item" style="--delay: 3;"><a href="#contact">Contact</a></li>
         </ul>
-      </div>
-    </div>  
-  </nav>
-</body>
+      </div>  
+    </nav>
+  </body>
 </html>
