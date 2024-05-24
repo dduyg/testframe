@@ -104,7 +104,48 @@ nav {
     0% { transform: rotateX(0deg); }
     100% { transform: rotateX(360deg); }
 }
-    
+
+
+
+
+
+
+
+
+
+ui.dropdown {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+.ui.dropdown .menu {
+  position: absolute;
+  font-size: 1em;
+  text-align: right;
+  z-index: 11;
+}
+ui.dropdown > .text {
+  display: inline-block;
+}
+.ui.dropdown .menu > .item {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  border: none;
+  height: auto;
+  text-align: right;
+}
+.ui.floating.dropdown .menu {
+  left: 0;
+  right: auto;
+  margin-top: 0.5em !important;
+}
+.ui.top.right.pointing.dropdown > .menu:after {
+  top: -0.25em;
+  left: auto;
+  right: 1em;
+  margin: 0em;
+}    
   </style>      
   </head>
   <body>
@@ -116,5 +157,16 @@ nav {
         <a class="item" href="#">ddu<u>yg&nbsp;</u></a>
       </div>  
     </nav>
+
+
+
+    <div class="ui top right dropdown">
+      <span class="text">Posts</span>
+      <div class="menu">
+        <div class="item"> Important </div>
+        <div class="item"> Announcement </div>
+        <div class="item"> Discussion </div> 
+      </div>
+    </div>
   </body>
 </html>
