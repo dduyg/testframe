@@ -57,12 +57,10 @@
       font-family: var(--mono-font);
     }
     .dropdown-container {
-      display: inline-block;
+      display: inline-flex;
       position: relative;
     }
     .dropdown-btn {
-      position: relative;
-      display: inline-block;
       font-size: 1em;
       margin-right: 1rem;
       letter-spacing: 3px;
@@ -83,11 +81,9 @@
       display: inline-block;
       width: 0.75em;
       height: 0.75em;
-      -moz-border-radius: calc(0.5 * 0.75em);
-      -webkit-border-radius: calc(0.5 * 0.75em);
-      border-radius: calc(0.5 * 0.75em);
+      border-radius: 50%;
       background-color: black;
-      margin: 0em 0.5em 0em 0em;
+      margin: 0 0.5em 0 0;
       animation: 1.5s rotate ease-in-out infinite;
     }
     @keyframes rotate {
@@ -97,9 +93,9 @@
 
     .dropdown-content {
       position: absolute;
-      top: 3.2em;
+      top: 100%;
       right: 0;
-      width: 100%;
+      width: 75%;
       max-width: 30em;
       visibility: hidden;
       overflow: hidden;
@@ -107,7 +103,7 @@
     }
     .dropdown-content .item {
       position: relative;
-      left: 100%;
+      right: 100%;
       transition: 0.5s;
       transition-delay: calc(60ms * var(--delay));
       display: block;
@@ -122,7 +118,7 @@
       font-family: "Liberation Mono", monospace;
     }
     .dropdown-btn:focus + .dropdown-content .item {
-      left: 0;
+      right: 0;
     }
     .dropdown-btn:focus + .dropdown-content {
       visibility: visible;
