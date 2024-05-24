@@ -36,7 +36,7 @@ nav {
     width: 100%;
     box-sizing: border-box;
     padding: 0.75rem 1rem;
-}
+}    
 .home-badge {
     display: table-cell;
     vertical-align: middle;
@@ -46,8 +46,7 @@ nav {
 #badge {
     display: inline-block;
     width: 4.5rem;  
-}
-
+}    
 #menu {
     display: table-cell;
     vertical-align: middle;
@@ -57,25 +56,25 @@ nav {
     letter-spacing: 1px;
     font-family: var(--mono-font);
 }
-.item {
+.dropdown-btn {
+    position: relative;
     display: inline-block;
     font-size: 1em;
     margin-right: 1rem;
-    letter-spacing: 3px;  
+    letter-spacing: 3px;
+    cursor: pointer;
 }
-
 @media screen and (min-width: 30em) {
     nav {
         padding-left: 4rem;
         padding-right: 4rem;
     }
-    .item {
+    .dropdown-btn {
         font-size: 1.1em;
         margin-right: 2rem;
     }
-}
-
-#menu a::before {
+}    
+.dropdown-btn::before {
     content: '';
     display: inline-block;
     width: 0.75em;
@@ -91,6 +90,9 @@ nav {
     0% { transform: rotateX(0deg); }
     100% { transform: rotateX(360deg); }
 }
+
+
+    
   </style>
   </head>
   <body>
@@ -100,7 +102,7 @@ nav {
         <img id="badge" src="assets/images/badge.gif">
       </a>
       <div id="menu">
-        <a class="item" href="#">dduyg</a>
+        <div class="dropdown-btn">dduyg</div>
       </div>  
     </nav>
 
