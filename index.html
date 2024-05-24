@@ -1,185 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LiminalLoop</title>
   <style>
     :root {
-      --color-main: rgba(0, 0, 0, 0.87);
-      --color-light-main: #292721; 
-      --marker: #CCCCCC;
-      --back: #898989;
-      --main-font: "Schibsted Grotesk", sans-serif;
-      --mono-font: 'LabMono', sans-serif;  
-    }
-    html, body {
-      padding: 0;
-      margin: 0;
-      border: 0;
-      background-color: var(--back);
-      color: var(--color-main);
-      line-height: 1.5;
-      font-family: var(--main-font);
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+  --color-main: rgba(0, 0, 0, 0.87);
+  --color-light-main: #292721; 
+  --marker: #CCCCCC;
+  --back: #898989;
+  --main-font: "Schibsted Grotesk", sans-serif;
+  --mono-font: 'LabMono', sans-serif;  
+}
+html, body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: var(--back);
+  color: var(--color-main);
+  line-height: 1.5;
+  font-family: var(--main-font);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    /* Navigation */
+/* Navigation */
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+}
+.home-badge {
+    display: table-cell;
+    vertical-align: middle;
+    width: 25%;
+    cursor: pointer;
+}
+#badge {
+    display: inline-block;
+    width: 4.5rem;  
+}
+
+#menu {
+    display: table-cell;
+    vertical-align: middle;
+    width: 75%;
+    text-align: right;
+    color: var(--color-light-main);
+    letter-spacing: 1px;
+    font-family: var(--mono-font);
+}
+.item {
+    display: inline-block;
+    font-size: 1em;
+    margin-right: 1rem;
+    letter-spacing: 3px;  
+}
+
+@media screen and (min-width: 30em) {
     nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: table;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 0.75rem 1rem;
-    }
-    .home-badge {
-      display: table-cell;
-      vertical-align: middle;
-      width: 25%;
-      cursor: pointer;
-    }
-    #badge {
-      display: inline-block;
-      width: 4.5rem;  
-    }
-
-    #menu {
-      display: table-cell;
-      vertical-align: middle;
-      width: 75%;
-      text-align: right;
-      color: var(--color-light-main);
-      letter-spacing: 1px;
-      font-family: var(--mono-font);
-    }
-    .menu-start {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      font-size: 1em;
-      margin-right: 1rem;
-      letter-spacing: 3px;  
-    }    
-    .menu-start u {
-      text-decoration: none;
-      position: relative;
-    }
-    .menu-start u::before {
-      content: '';
-      position: absolute;
-      top: -0.33em;
-      left: 0;
-      right: 0;
-      height: 1.1px; /* Intermediate thickness */
-      background-color: currentColor;
-    }
-
-    @media screen and (min-width: 30em) {
-      nav {
         padding-left: 4rem;
         padding-right: 4rem;
-      }
-      .menu-start {
+    }
+    .item {
         font-size: 1.1em;
         margin-right: 2rem;
-      }
     }
+}
 
-    .menu-start::before {
-      content: '';
-      display: inline-block;
-      width: 0.75em;
-      height: 0.75em;
-      -moz-border-radius: calc(0.5 * 0.75em);
-      -webkit-border-radius: calc(0.5 * 0.75em);
-      border-radius: calc(0.5 * 0.75em);
-      background-color: black;
-      margin: 0em 0.5em 0em 0em;
-      animation: 1.5s rotate ease-in-out infinite;
-    }
-    @keyframes rotate {
-      0% { transform: rotateX(0deg); }
-      100% { transform: rotateX(360deg); }
-    }
+#menu a::before {
+    content: '';
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    -moz-border-radius: calc(0.5 * 0.75em);
+    -webkit-border-radius: calc(0.5 * 0.75em);
+    border-radius: calc(0.5 * 0.75em);
+    background-color: black;
+    margin: 0em 0.5em 0em 0em;
+    animation: 1.5s rotate ease-in-out infinite;
+}
+@keyframes rotate {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(360deg); }
+}
+  </style>
+  </head>
+  <body>
+    
+    <nav>
+      <a class="home-badge" href="{{ site.baseurl}}/">
+        <img id="badge" src="assets/images/badge.gif">
+      </a>
+      <div id="menu">
+        <a class="item" href="#">dduyg</a>
+      </div>  
+    </nav>
 
-    /* Dropdown styles */
-    .dropdown {
-      max-width: 13em;
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-btn {
-      background: #1d1f24;
-      font-size: 18px;
-      width: 100%;
-      border: none;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.7em 0.5em;
-      border-radius: 0.5em;
-      cursor: pointer;
-    }
-    .dropdown-content {
-      list-style: none;
-      position: absolute;
-      top: 3.2em;
-      right: 3em;
-      visibility: hidden;
-      overflow: hidden;
-    }
-    .dropdown-content li {
-      background: #2f3238;
-      border-radius: 0.5em;
-      position: relative;
-      left: 100%;
-      transition: 0.5s;
-      transition-delay: calc(60ms * var(--delay));
-    }
-    .dropdown-btn:focus + .dropdown-content li {
-      left: 0;
-    }
-    .dropdown-btn:focus + .dropdown-content {
-      visibility: visible;
-    }
-    .dropdown-btn:focus > .arrow {
-      transform: rotate(180deg);
-    }
-    .dropdown-content li:hover {
-      background: #1d1f24;
-    }
-    .dropdown-content li a {
-      display: block;
-      padding: 0.7em 0.5em;
-      color: #fff;
-      margin: 0.1em 0;
-      text-decoration: none;
-    }
-  </style>      
-</head>
-<body>
-  <nav>
-    <a class="home-badge" href="/">
-      <img id="badge" src="assets/images/badge.gif">
-    </a>
-    <div id="menu">
-      <div class="dropdown">
-        <button class="dropdown-btn" aria-haspopup="menu">
-          <span>ddu<u>yg&nbsp;</u></span>
-        </button>
-        <ul class="dropdown-content" role="menu">
-          <li style="--delay: 1;"><a href="#about">About</a></li>
-          <li style="--delay: 2;"><a href="#posts">Posts</a></li>
-          <li style="--delay: 3;"><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>  
-  </nav>
-</body>
+ 
+  </body>
 </html>
