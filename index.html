@@ -91,7 +91,38 @@ nav {
     100% { transform: rotateX(360deg); }
 }
 
-
+    .dropdown-content {
+      list-style: none;
+      position: absolute;
+      top: 3.2em;
+      right: 3em;
+      visibility: hidden;
+      overflow: hidden;
+    }
+    .dropdown-content li {
+      background: #2f3238;
+      border-radius: 0.5em;
+      position: relative;
+      left: 100%;
+      transition: 0.5s;
+      transition-delay: calc(60ms * var(--delay));
+    }
+    .dropdown-btn:focus + .dropdown-content li {
+      left: 0;
+    }
+    .dropdown-btn:focus + .dropdown-content {
+      visibility: visible;
+    }
+    .dropdown-content li:hover {
+      background: #1d1f24;
+    }
+    .dropdown-content li a {
+      display: block;
+      padding: 0.7em 0.5em;
+      color: #fff;
+      margin: 0.1em 0;
+      text-decoration: none;
+    }  
     
   </style>
   </head>
@@ -103,6 +134,11 @@ nav {
       </a>
       <div id="menu">
         <div class="dropdown-btn">dduyg</div>
+        <ul class="dropdown-content">
+          <li style="--delay: 1;"><a href="#">About</a></li>
+          <li style="--delay: 2;"><a href="#">Posts</a></li>
+          <li style="--delay: 3;"><a href="#">Contact</a></li>
+        </ul>
       </div>  
     </nav>
 
