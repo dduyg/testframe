@@ -64,20 +64,6 @@
       letter-spacing: 3px;
       cursor: pointer;
     }
-    @media screen and (min-width: 30em) {
-      nav {
-        padding-left: 4rem;
-        padding-right: 4rem;
-      }
-      .dropdown-btn {
-        font-size: 1.1em;
-        margin-right: 2rem;
-      }
-      .dropdown-content {
-        right: 16rem;
-        width: 60%;  
-      } 
-    }
     .dropdown-btn::before {
       content: '';
       display: inline-block;
@@ -130,6 +116,20 @@
     .dropdown-content .item:hover {
       background: rgba(0, 0, 0, 0.1);
     }
+    @media screen and (min-width: 30em) {
+      nav {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+      .dropdown-btn {
+        font-size: 1.1em;
+        margin-right: 2rem;
+      }
+      .dropdown-content {
+        right: 6rem;
+        width: 60%;  
+      } 
+     }
   </style>
 </head>
 <body>
