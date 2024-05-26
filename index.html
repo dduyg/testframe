@@ -53,6 +53,7 @@
       width: 75%;
       text-align: right;
       color: var(--color-light-main);
+      letter-spacing: 1px;
       font-family: var(--mono-font);
     }
     .dropdown-btn {
@@ -90,10 +91,8 @@
       position: absolute;
       top: 4.6rem;
       right: 2rem;
-      width: 100vh;
-      height: 100vh;
-      padding: 1rem;
-      background: aquamarine;
+      width: 75%;
+      max-width: 600px;
       visibility: hidden;
       overflow: hidden;
       z-index: 11;
@@ -107,6 +106,7 @@
       border: solid var(--color-main);
       border-width: 1px 0 0 0;
       padding: .5rem 1rem 0 0;
+      background: var(--back);
       text-align: left;
       text-decoration: none;
       text-transform: uppercase;
@@ -138,24 +138,6 @@
         width: 60%;  
       } 
     }
-    
-    main {
-      max-width: 800px;
-      padding: 8rem;
-    }
-    .stroke {
-  color: var(--back);
-  text-shadow:
-    -2px -2px 0 var(--color-main),
-    2px -2px 0 var(--color-main),
-    -2px 2px 0 var(--color-main),
-    2px 2px 0 var(--color-main),
-    -2px 0 0 var(--color-main),
-    2px 0 0 var(--color-main),
-    0 -2px 0 var(--color-main),
-    0 2px 0 var(--color-main);
-    }
-
   </style>
 </head>
 <body>
@@ -169,15 +151,8 @@
         <a class="item" style="--delay: 1;" href="{{ site.baseurl}}/">Home</a>        
         <a class="item" style="--delay: 2;" href="{{ site.baseurl }}/posts">Posts</a>
         <a class="item" style="--delay: 3;" href="{{ site.baseurl }}/about">About</a>
-        <a class="item" style="--delay: 4;" href="{{ site.baseurl }}/portfolio">Portfolio</a>
-        <a class="item" style="--delay: 5;" href="{{ site.baseurl }}/contact">Contact</a>
       </div>
     </div>
   </nav>
-
-  <main>
-    <h1 class="stroke">Liminal</h1>
-  </main>
-  
 </body>
 </html>
