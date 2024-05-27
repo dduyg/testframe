@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LiminalLoop</title>
-  <style>
-    :root {
-  --color-main: rgba(0, 0, 0, 0.87);
-  --color-light-main: #292721; 
-  --marker: #CCCCCC;
-  --back: #898989;
-  --main-font: "Schibsted Grotesk", sans-serif;
-  --mono-font: 'LabMono', sans-serif;  
-}
-@font-face {
-  font-family: 'LabMono';
-  src: url('/assets/labmono-regular-web.woff2') format('woff2'),
-       url('/assets/labmono-regular-web.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LiminalLoop</title>
+<style>
+  :root {
+    --color-main: rgba(0, 0, 0, 0.87);
+    --color-light-main: #292721; 
+    --marker: #CCCCCC;
+    --back: #898989;
+    --main-font: "Schibsted Grotesk", sans-serif;
+    --mono-font: 'LabMono', sans-serif;  
+  }
+  @font-face {
+    font-family: 'LabMono';
+    src: url('/assets/labmono-regular-web.woff2') format('woff2'),
+         url('/assets/labmono-regular-web.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-html, body {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background-color: var(--back);
-  color: var(--color-main);
-  line-height: 1.5;
-  font-family: var(--main-font);
-}
-main {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-}
-section {
-  border-right: 1px black solid;
-  display: flex;
-  flex: 1;
-  height: 70%;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-#contact {
+  html, body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--back);
+    color: var(--color-main);
+    line-height: 1.5;
+    font-family: var(--main-font);
+  }
+  main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  section {
+    border-right: 1px black solid;
+    display: flex;
+    flex: 1;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #contact {
   border-right: none;
 }
 
