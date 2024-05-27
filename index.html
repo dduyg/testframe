@@ -4,6 +4,132 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LiminalLoop</title>
+  <style>
+    :root {
+  --color-main: rgba(0, 0, 0, 0.87);
+  --color-light-main: #292721; 
+  --marker: #CCCCCC;
+  --back: #898989;
+  --main-font: "Schibsted Grotesk", sans-serif;
+  --mono-font: 'LabMono', sans-serif;  
+}
+@font-face {
+  font-family: 'LabMono';
+  src: url('/assets/labmono-regular-web.woff2') format('woff2'),
+       url('/assets/labmono-regular-web.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: var(--back);
+  color: var(--color-main);
+  line-height: 1.5;
+  font-family: var(--main-font);
+}
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+section {
+  border-right: 1px black solid;
+  display: flex;
+  flex: 1;
+  height: 70%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#contact {
+  border-right: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*  Panel */
+header {
+  font-family: "Lato", sans-serif;
+  transform: rotate(-90deg);
+} 
+header h1 {
+  font-size: min(5vw, 32px);
+  margin: 0;
+}
+@media screen and (min-width: 1200px) {
+  header h1 {
+      font-size: 32px; /* Resets font size to 32px for screens wider than 1200px */
+  }
+}
+.panel-active header {
+  color: var(--marker);
+  letter-spacing: 3px;
+  transform: rotate(0deg);
+  transition: 0.5s ease;
+}
+.panel-active header h1 {
+  font-size: calc(1.3 * min(5vw, 32px));
+}
+#contact header {
+  transform: rotate(0deg); /* Rotation normal for icon */
+}
+#contact h1 i {
+  font-size: 1.1em;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content {
+  display: none;
+  font-size: min(4vw, 19px); /* Limits font size to 19px or 4vw, whichever is smaller */
+  padding: 3% 10%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 800px;
+  max-height: calc(100% - 20px);
+}
+@media screen and (min-width: 1200px) {
+  .content {
+      font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
+  }
+}
+
+.panel-inactive:hover {
+  flex: 1.1;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.5s ease;
+}
+.panel-active {
+  flex: 16;
+  transition: 1s ease;
+}
+.panel-active .content {
+  display: block;
+}
+
+.links, .panel-link {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--marker);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.links:hover, .panel-link:hover {
+  color: var(--marker);
+  font-weight: bold;
+}
+  </style>
   </head>
   <body>
        <main>
