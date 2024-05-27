@@ -5,22 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LiminalLoop</title>
   <style>
-    :root {
-      --color-main: rgba(0, 0, 0, 0.87);
-      --color-light-main: #292721;
-      --marker: #CCCCCC;
-      --back: #898989;
-      --main-font: "Schibsted Grotesk", sans-serif;
-      --mono-font: 'LabMono', sans-serif;
-    }
-    html, body {
+    body {
       padding: 0;
       margin: 0;
-      border: 0;
-      background-color: var(--back);
-      color: var(--color-main);
+      background-color: #EBFFCO;
+      color: black;
       line-height: 1.5;
-      font-family: var(--main-font);
+      font-family: "Liberation Mono", monospace;
     }
     a {
       color: inherit;
@@ -105,7 +96,6 @@
       text-decoration: none;
       text-transform: uppercase;
       font-size: 2.475em;
-      font-family: "Liberation Mono", monospace;
     }
     .dropdown-btn:focus + .dropdown-content .item {
       left: 0;
@@ -138,7 +128,7 @@
       <img id="badge" src="assets/images/badge.gif">
     </a>
     <div id="menu">
-      <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">dduyg</a>
+      <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">Liminal</a>
       <div class="dropdown-content">
         <a class="item" style="--delay: 1;" href="{{ site.baseurl}}/">Home</a>        
         <a class="item" style="--delay: 2;" href="{{ site.baseurl }}/posts">Posts</a>
