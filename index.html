@@ -1,168 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LiminalLoop</title>
-  <style>
-    body {
-      background-color: #EBFFC0;
-      color: black;
-      line-height: 1.5;
-      font-family: "Liberation Mono", monospace;
-      margin: 0;
-      padding: 0;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Navigation */
-    nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: table;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 0.75rem 1rem;
-    }
-    .home-badge {
-      display: table-cell;
-      vertical-align: middle;
-      width: 25%;
-      cursor: pointer;
-    }
-    #badge {
-      display: inline-block;
-      width: 4.5rem;
-    }
-    #menu {
-      display: table-cell;
-      vertical-align: middle;
-      width: 75%;
-      text-align: right;
-      color: var(--color-light-main);
-      letter-spacing: 1px;
-      font-family: var(--mono-font);
-    }
-    .dropdown-btn {
-      position: relative;
-      display: inline-block;
-      font-size: 1em;
-      margin-right: 1rem;
-      letter-spacing: 3px;
-      cursor: pointer;
-    }
-    .dropdown-btn::before {
-      content: '';
-      display: inline-block;
-      width: 0.75em;
-      height: 0.75em;
-      border-radius: 50%;
-      background-color: black;
-      margin-right: 0.5em;
-      animation: 1.5s rotate ease-in-out infinite;
-    }
-    @keyframes rotate {
-      0% { transform: rotateX(0deg); }
-      100% { transform: rotateX(360deg); }
-    }
-
-    .dropdown-content {
-      position: absolute;
-      top: 5rem;
-      right: 2rem;
-      width: 70%;
-      max-width: 600px;
-      visibility: hidden;
-      overflow: hidden;
-      z-index: 11;
-    }
-    .dropdown-content .item {
-      position: relative;
-      left: 100%;
-      transition: 0.5s;
-      transition-delay: calc(60ms * var(--delay));
-      display: block;
-      border: solid black;
-      border-width: 1px 0 0 0;
-      padding: .5rem 1rem 0 1px;
-      background: #E3FEAF;
-      text-align: left;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 2.475em;
-    }
-    .dropdown-btn:focus + .dropdown-content .item {
-      left: 0;
-    }
-    .dropdown-btn:focus + .dropdown-content {
-      visibility: visible;
-    }
-    .dropdown-content .item:hover {
-      color: #E3FEAF;
-      background: black;
-    }
-     @media screen and (min-width: 30em) {
-      nav {
-        padding-left: 4rem;
-        padding-right: 4rem;
-      }
-      .dropdown-btn {
-        font-size: 1.1em;
-        margin-right: 2rem;
-      }
-      .dropdown-content {
-        right: 6rem;
-        width: 60%;
-      } 
-     }
-    
-    main {
-      max-width: 800px;
-      margin: 5em 1em;
-      padding-top: 80px;
-    }
-    hr { 
-      background: #E3FEAF;
-      border: 0;
-      height: 1px; 
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a class="home-badge" href="{{ site.baseurl }}/">
-      <img id="badge" src="assets/images/badge.gif">
-    </a>
-    <div id="menu">
-      <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">Liminal</a>
-      <div class="dropdown-content">
-        <a class="item" style="--delay: 1;" href="{{ site.baseurl}}/">Home</a>        
-        <a class="item" style="--delay: 2;" href="{{ site.baseurl }}/posts">Posts</a>
-        <a class="item" style="--delay: 3;" href="{{ site.baseurl }}/about">About</a>
-      </div>
+  </head>
+  <body>
+       <main>
+  <section id="welcome" class="panel-active">
+    <header>
+      <h1>/dduyg</h1>
+    </header>
+    <div class="content">
+      <p>Lorem Duygu Dağdelen dolor <a href="#about" class="panel-link">sit</a> amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Sed aliquam tincidunt elit ac scelerisque.</p>   
     </div>
-  </nav>
+  </section>
+  <section id="posts" class="panel-inactive">
+    <header>
+      <h1>Latest</h1>
+    </header>
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
+      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent finibus ac enim vel iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et egestas ante. Nullam ac elementum velit, quis aliquam nisi. Pellentesque cursus eu ligula non semper. Nam pharetra velit sit amet orci tempor fringilla. Donec pretium mattis gravida. Morbi ut leo felis.</p>
+    </div>
+  </section>
+  <section id="about" class="panel-inactive">
+    <header>
+      <h1>About</h1>
+    </header>
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
+    </div>
+  </section>
+  <section id="contact" class="panel-inactive">
+    <header>
+      <h1><i class="far fa-paper-plane"></i></h1>
+    </header>
+    <div class="content">
+      <p>Whether you want to know more about my work or me, ask me a question, maybe share or discuss interesting thoughts, ideas, projects or just like to say hi, please don't hesitate to contact me. You can send me a DM or reach me via email. I would be happy to hear from you.</p>
+      <p>As a social creature, I love to talk with others and exchange thoughts and ideas. Every conversation is a unique opportunity to learn, grow and create something new.</p>
+    </div>
+  </section>
+</main>
+<script>
+  const sections = document.querySelectorAll('section');
+  const panelLinks = document.querySelectorAll('.panel-link');
 
-  <main>
-    <p>*Operating Hours —<br>
-Monday – Thursday: 9am – 5pm (EST)</p>
+  sections.forEach((section) => {
+    section.addEventListener('click', activatePanel);  
+  });
 
-<p>*Summer break —<br>
-July 1</p>
+  panelLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent default link behavior
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        deactivatePanels();
+        targetSection.classList.remove('panel-inactive');
+        targetSection.classList.add('panel-active');
+        targetSection.querySelector('.content').style.display = 'block';
+      }
+    });
+  });
 
-<p>*Location —<br>
-The Internet <sup><svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21ZM14.8055 18.4151C17.1228 17.4003 18.7847 15.1667 18.9806 12.525C18.1577 12.9738 17.12 13.3418 15.9371 13.598C15.7882 15.4676 15.3827 17.1371 14.8055 18.4151ZM9.1945 5.58487C7.24725 6.43766 5.76275 8.15106 5.22208 10.244C5.4537 10.4638 5.84813 10.7341 6.44832 11.0008C6.89715 11.2003 7.42053 11.3798 8.00537 11.5297C8.05853 9.20582 8.50349 7.11489 9.1945 5.58487ZM10.1006 13.9108C10.2573 15.3675 10.5852 16.6202 10.9992 17.5517C11.2932 18.2133 11.5916 18.6248 11.8218 18.8439C11.9037 18.9219 11.9629 18.9634 12 18.9848C12.0371 18.9634 12.0963 18.9219 12.1782 18.8439C12.4084 18.6248 12.7068 18.2133 13.0008 17.5517C13.4148 16.6202 13.7427 15.3675 13.8994 13.9108C13.2871 13.9692 12.6516 14 12 14C11.3484 14 10.7129 13.9692 10.1006 13.9108ZM8.06286 13.598C8.21176 15.4676 8.61729 17.1371 9.1945 18.4151C6.8772 17.4003 5.21525 15.1666 5.01939 12.525C5.84231 12.9738 6.88001 13.3418 8.06286 13.598ZM13.9997 11.8896C13.369 11.9609 12.6993 12 12 12C11.3008 12 10.631 11.9609 10.0003 11.8896C10.0135 9.66408 10.4229 7.74504 10.9992 6.44832C11.2932 5.78673 11.5916 5.37516 11.8218 5.15605C11.9037 5.07812 11.9629 5.03659 12 5.01516C12.0371 5.03659 12.0963 5.07812 12.1782 5.15605C12.4084 5.37516 12.7068 5.78673 13.0008 6.44832C13.5771 7.74504 13.9865 9.66408 13.9997 11.8896ZM15.9946 11.5297C15.9415 9.20582 15.4965 7.11489 14.8055 5.58487C16.7528 6.43766 18.2373 8.15107 18.7779 10.244C18.5463 10.4638 18.1519 10.7341 17.5517 11.0008C17.1029 11.2003 16.5795 11.3798 15.9946 11.5297Z" fill="currentColor" /></svg></sup></p>
-    <hr>
+  function deactivatePanels() {
+    sections.forEach((section) => {
+      section.classList.add('panel-inactive');
+      section.classList.remove('panel-active');
+      section.querySelector('.content').style.display = 'none'; // Hide panel content
+    });
+  }
 
-    <details>
-      <summary>Details</summary>
-      🌃
-    </details>
-  </main>
+  function activatePanel(event) {
+    if (!event.target.closest('.panel-link')) {
+      deactivatePanels();
+      this.classList.remove('panel-inactive');
+      this.classList.add('panel-active');
+      this.querySelector('.content').style.display = 'block'; // Show panel content
+    }
+  }
+</script> 
 </body>
 </html>
