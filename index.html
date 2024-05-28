@@ -162,59 +162,61 @@
   </section>
   <section id="contact" class="panel-inactive">
     <header>
-      <h1 data-active-text="Contact"><i class="far fa-paper-plane"></i></h1>
+      <h1 data-active-text="Contact Me"><i class="far fa-paper-plane"></i></h1>
     </header>
     <div class="content">
       <p>Whether you want to know more about my work or me, ask me a question, maybe share or discuss interesting thoughts, ideas, projects or just like to say hi, please don't hesitate to contact me. You can send me a DM or reach me via email. I would be happy to hear from you.</p>
       <p>As a social creature, I love to talk with others and exchange thoughts and ideas. Every conversation is a unique opportunity to learn, grow and create something new.</p>
     </div>
   </section>
-  </main>
-  <script>
-    const sections = document.querySelectorAll('section');
-    const panelLinks = document.querySelectorAll('.panel-link');
+</main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('section');
+  const panelLinks = document.querySelectorAll('.panel-link');
 
-    sections.forEach((section) => {
-      section.addEventListener('click', activatePanel);  
-    });
+  sections.forEach((section) => {
+    section.addEventListener('click', activatePanel);  
+  });
 
-    panelLinks.forEach((link) => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent default link behavior
-        const targetId = link.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          deactivatePanels();
-          activatePanelSection(targetSection);
-        }
-      });
-    });
-
-    function deactivatePanels() {
-      sections.forEach((section) => {
-        section.classList.add('panel-inactive');
-        section.classList.remove('panel-active');
-        section.querySelector('.content').style.display = 'none'; // Hide panel content
-        const header = section.querySelector('header h1');
-        header.textContent = header.dataset.activeText || header.textContent; // Use existing text content if data-active-text is not set
-      });
-    }
-
-    function activatePanel(event) {
-      if (!event.target.closest('.panel-link')) {
+  panelLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent default link behavior
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
         deactivatePanels();
-        activatePanelSection(this);
+        activatePanelSection(targetSection);
       }
-    }
+    });
+  });
 
-    function activatePanelSection(section) {
-      section.classList.remove('panel-inactive');
-      section.classList.add('panel-active');
-      section.querySelector('.content').style.display = 'block'; // Show panel content
+  function deactivatePanels() {
+    sections.forEach((section) => {
+      section.classList.add('panel-inactive');
+      section.classList.remove('panel-active');
+      section.querySelector('.content').style.display = 'none'; // Hide panel content
       const header = section.querySelector('header h1');
-      const activeText = header.getAttribute('data-active-text');
-      header.textContent = activeText;
+      header.textContent = header.dataset.activeText; // Reset to active text
+    });
+  }
+
+  function activatePanel(event) {
+    if (!event.target.closest('.panel-link')) {
+      deactivatePanels();
+      activatePanelSection(this);
     }
-  </script>
+  }
+
+  function activatePanelSection(section) {
+    section.classList.remove('panel-inactive');
+    section.classList.add('panel-active');
+    section.querySelector('.content').style.display = 'block'; // Show panel content
+    const header = section.querySelector('header h1');
+    const activeText = header.dataset.activeText;
+    header.textContent = activeText;
+  }
+});
+</script>
 </body>
 </html>
