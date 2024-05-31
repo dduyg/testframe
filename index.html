@@ -15,8 +15,6 @@
       --back: #898989;
       --main-font: "Schibsted Grotesk", sans-serif;
       --mono-font: 'LabMono', sans-serif;
-      --scrollbar-bg: #898989;
-      --scrollbar-thumb: #292721;
 
   --shadow-blur: 1.5rem;
   --shadow-color: hsla(var(--h) var(--s) var(--l) / 0.6);
@@ -103,14 +101,14 @@
     .content {
       display: none;
       font-size: min(4vw, 19px); /* Limits font size to 19px or 4vw, whichever is smaller */
-      padding: 3% 10%;
       overflow-x: hidden;
       overflow-y: auto;
       max-width: 800px;
       max-height: calc(100% - 20px);
-      scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
-      padding: var(--space);
-      animation: scroll-shadow-inset linear;
+      scrollbar-color: var(--color-light-main) transparent;
+      padding: clamp(1.125rem, 0.8rem + 1.3cqi, 1.875rem);
+      -webkit-animation: scroll-shadow-inset linear;
+              animation: scroll-shadow-inset linear;
       animation-timeline: scroll(self);
     }
     @media screen and (min-width: 1200px) {
@@ -118,7 +116,7 @@
         font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
       }
     }
-
+    
     .panel-inactive:hover {
       flex: 1.1;
       background-color: rgba(0, 0, 0, 0.1);
@@ -145,14 +143,29 @@
       font-weight: bold;
     }
 
-    @keyframes scroll-shadow-inset {
-      from {
-        box-shadow: inset 0 var(---shadow-y) var(--shadow-blur) var(---shadow-y) var(--shadow-color);
-      }
-      to {
-        box-shadow: inset 0 var(--shadow-y) var(--shadow-blur) var(---shadow-y) var(--shadow-color);
-      }
-    }
+@-webkit-keyframes scroll-shadow-inset {
+  from {
+    box-shadow: inset 0 var(---shadow-y) var(--shadow-blur) var(---shadow-y)
+      var(--shadow-color);
+  }
+
+  to {
+    box-shadow: inset 0 var(--shadow-y) var(--shadow-blur) var(---shadow-y)
+      var(--shadow-color);
+  }
+}
+
+@keyframes scroll-shadow-inset {
+  from {
+    box-shadow: inset 0 var(---shadow-y) var(--shadow-blur) var(---shadow-y)
+      var(--shadow-color);
+  }
+
+  to {
+    box-shadow: inset 0 var(--shadow-y) var(--shadow-blur) var(---shadow-y)
+      var(--shadow-color);
+  }
+  }   
   </style>
 </head>
 <body>
