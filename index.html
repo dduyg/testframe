@@ -134,10 +134,80 @@ header h1 {
   </style>
 </head>
 <body>
-  <nav>
-   
-  </nav>
+  <main>
+  <section id="welcome" class="panel-active">
+    <header>
+      <h1>/dduyg</h1>
+    </header>
+    <div class="content">
+      <p>Lorem Duygu Dağdelen dolor <a href="#about" class="panel-link">sit</a> amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Sed aliquam tincidunt elit ac scelerisque.</p>   
+    </div>
+  </section>
+  <section id="posts" class="panel-inactive">
+    <header>
+      <h1>Recent</h1>
+    </header>
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
+      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent finibus ac enim vel iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et egestas ante. Nullam ac elementum velit, quis aliquam nisi. Pellentesque cursus eu ligula non semper. Nam pharetra velit sit amet orci tempor fringilla. Donec pretium mattis gravida. Morbi ut leo felis.</p>
+    </div>
+  </section>
+  <section id="about" class="panel-inactive">
+    <header>
+      <h1>About</h1>
+    </header>
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
+    </div>
+  </section>
+  <section id="contact" class="panel-inactive">
+    <header>
+      <h1><i class="far fa-paper-plane"></i></h1>
+    </header>
+    <div class="content">
+      <p>Whether you want to know more about my work or me, ask me a question, maybe share or discuss interesting thoughts, ideas, projects or just like to say hi, please don't hesitate to contact me. You can send me a DM or reach me via email. I would be happy to hear from you.</p>
+      <p>As a social creature, I love to talk with others and exchange thoughts and ideas. Every conversation is a unique opportunity to learn, grow and create something new.</p>
+    </div>
+  </section>
+</main>
+<script>
+  const sections = document.querySelectorAll('section');
+  const panelLinks = document.querySelectorAll('.panel-link');
 
-  
+  sections.forEach((section) => {
+    section.addEventListener('click', activatePanel);  
+  });
+
+  panelLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent default link behavior
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        deactivatePanels();
+        targetSection.classList.remove('panel-inactive');
+        targetSection.classList.add('panel-active');
+        targetSection.querySelector('.content').style.display = 'block';
+      }
+    });
+  });
+
+  function deactivatePanels() {
+    sections.forEach((section) => {
+      section.classList.add('panel-inactive');
+      section.classList.remove('panel-active');
+      section.querySelector('.content').style.display = 'none'; // Hide panel content
+    });
+  }
+
+  function activatePanel(event) {
+    if (!event.target.closest('.panel-link')) {
+      deactivatePanels();
+      this.classList.remove('panel-inactive');
+      this.classList.add('panel-active');
+      this.querySelector('.content').style.display = 'block'; // Show panel content
+    }
+  }
+</script> 
 </body>
 </html>
