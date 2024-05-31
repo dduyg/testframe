@@ -101,9 +101,6 @@
       max-height: calc(100% - 20px);
       scrollbar-color: var(--color-light-main) transparent;
       padding: clamp(1.125rem, 0.8rem + 1.3cqi, 1.875rem);
-      -webkit-animation: scroll-shadow-inset linear;
-              animation: scroll-shadow-inset linear;
-      animation-timeline: scroll(self);
     }
     @media screen and (min-width: 1200px) {
       .content {
@@ -136,30 +133,6 @@
       color: var(--marker);
       font-weight: bold;
     }
-
-@-webkit-keyframes scroll-shadow-inset {
-  from {
-    box-shadow: inset 0 calc(1rem * -1) 1.5rem calc(1rem * -1)
-      var(--color-light-main);
-  }
-
-  to {
-    box-shadow: inset 0 1rem 1.5rem calc(1rem * -1)
-      var(--color-light-main);
-  }
-}
-
-@keyframes scroll-shadow-inset {
-  from {
-    box-shadow: inset 0 calc(1rem * -1) 1.5rem calc(1rem * -1)
-      var(--color-light-main);
-  }
-
-  to {
-    box-shadow: inset 0 1rem 1.5rem calc(1rem * -1)
-      var(--color-light-main);
-  }
-  }
   </style>
 </head>
 <body>
