@@ -30,6 +30,150 @@ a {
   text-decoration: none;
 }
 
+
+/* Base styles for all screen sizes */
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+}
+
+.home-badge {
+  display: table-cell;
+  vertical-align: middle;
+  width: 25%;
+  cursor: pointer;
+}
+
+#badge {
+  display: inline-block;
+  width: 4.5rem;
+}
+
+#menu {
+  display: table-cell;
+  vertical-align: middle;
+  width: 75%;
+  text-align: right;
+  letter-spacing: 1px;
+  color: var(--color-light-main);
+  font-family: var(--mono-font);
+}
+
+/* Dropdown menu styles */
+.dropdown-btn {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  margin-right: 1rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+.dropdown-btn::before {
+  content: '';
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  background-color: black;
+  margin-right: 0.5em;
+  animation: rotate 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(360deg); }
+}
+
+.dropdown-btn:hover::before,
+.dropdown-btn:focus::before,
+.dropdown-btn:active::before {
+  animation: none;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 5rem;
+  right: 2rem;
+  width: 85%;
+  max-width: 550px;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: 11;
+}
+
+.dropdown-content .item {
+  position: relative;
+  left: 100%;
+  transition: 0.5s;
+  transition-delay: calc(60ms * var(--delay));
+  display: block;
+  border: solid var(--color-main);
+  border-width: 2px 1px 1px 2px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: .5rem 1rem;
+  margin-bottom: .5rem;
+  background: #7B7B7B;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 2.475em;
+}
+
+.item.active {
+  color: #232b2b;
+}
+
+.item.active::before {
+  content: '';
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background-color: var(--color-main);
+  margin-right: 0.3em;
+  animation: rotate 1.5s ease-in-out infinite;
+}
+
+.dropdown-btn:focus + .dropdown-content .item {
+  left: 0;
+}
+
+.dropdown-btn:focus + .dropdown-content {
+  visibility: visible;
+}
+
+.dropdown-content .item:hover {
+  background: #969696;
+}
+
+/* Styles for larger screens (min-width: 30em) */
+@media screen and (min-width: 30em) {
+  nav {
+    padding: 0.75rem 4rem;
+  }
+
+  .dropdown-btn,
+  .dropdown-content {
+    display: none;
+  }
+
+  #menu {
+    text-align: right;
+  }
+
+  #menu .item {
+    display: inline-block;
+    font-size: 1.1em;
+    margin-right: 2rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -48,5 +192,41 @@ a {
       </div>
     </div>
   </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      function adjustNavStructure() {
+        const nav = document.querySelector("nav");
+        const homeBadge = document.querySelector(".home-badge");
+        const menu = document.querySelector("#menu");
+        const dropdownBtn = document.querySelector(".dropdown-btn");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        if (window.matchMedia("(min-width: 30em)").matches) {
+          // Adjust structure for larger screens
+          if (!homeBadge.querySelector(".item")) {
+            const dduygLink = document.createElement("a");
+            dduygLink.className = "item {% if page.url == '/' %}active{% endif %}";
+            dduygLink.href = "{{ site.baseurl }}/";
+            dduygLink.textContent = "dduyg";
+            homeBadge.appendChild(dduygLink);
+          }
+          dropdownBtn.style.display = "none";
+          dropdownContent.style.display = "none";
+        } else {
+          // Adjust structure for smaller screens
+          const dduygLink = homeBadge.querySelector(".item");
+          if (dduygLink) {
+            homeBadge.removeChild(dduygLink);
+          }
+          dropdownBtn.style.display = "inline-block";
+          dropdownContent.style.display = "block";
+        }
+      }
+
+      adjustNavStructure();
+      window.addEventListener("resize", adjustNavStructure);
+    });
+  </script>
 </body>
 </html>
