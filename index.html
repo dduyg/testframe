@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LiminalLoop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/63e03a9b9c.js" crossorigin="anonymous"></script>
   <style>
-      :root {
+    :root {
   --color-main: rgba(0, 0, 0, 0.87);
   --color-light-main: #292721; 
   --marker: #CCCCCC;
@@ -16,14 +16,6 @@
   --main-font: "Schibsted Grotesk", sans-serif;
   --mono-font: 'LabMono', sans-serif;  
 }
-@font-face {
-  font-family: 'LabMono';
-  src: url('/assets/labmono-regular-web.woff2') format('woff2'),
-       url('/assets/labmono-regular-web.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 html, body {
   padding: 0;
   margin: 0;
@@ -33,181 +25,28 @@ html, body {
   line-height: 1.5;
   font-family: var(--main-font);
 }
-main {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-}
-section {
-  border-right: 1px black solid;
-  display: flex;
-  flex: 1;
-  height: 70%;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-#contact {
-  border-right: none;
-}
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/*  Panel */
-header {
-  font-family: "Lato", sans-serif;
-  transform: rotate(-90deg);
-} 
-header h1 {
-  font-size: min(5vw, 32px);
-  margin: 0;
-}
-@media screen and (min-width: 1200px) {
-  header h1 {
-      font-size: 32px; /* Resets font size to 32px for screens wider than 1200px */
-  }
-}
-.panel-active header {
-  color: var(--marker);
-  letter-spacing: 3px;
-  transform: rotate(0deg);
-  transition: 0.5s ease;
-}
-.panel-active header h1 {
-  font-size: calc(1.3 * min(5vw, 32px));
-}
-#contact header {
-  transform: rotate(0deg); /* Rotation normal for icon */
-}
-#contact h1 i {
-  font-size: 1.1em;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.content {
-  display: none;
-  font-size: min(4vw, 19px); /* Limits font size to 19px or 4vw, whichever is smaller */
-  padding: 3% 10%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  max-width: 800px;
-  max-height: calc(100% - 20px);
-}
-@media screen and (min-width: 1200px) {
-  .content {
-      font-size: 19px; /* Resets font size to 19px for screens wider than 1200px */
-  }
-}
-
-.panel-inactive:hover {
-  flex: 1.1;
-  background-color: rgba(0, 0, 0, 0.1);
-  transition: 0.5s ease;
-}
-.panel-active {
-  flex: 16;
-  transition: 1s ease;
-}
-.panel-active .content {
-  display: block;
-}
-
-.links, .panel-link {
-  font-style: italic;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-decoration-color: var(--marker);
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-.links:hover, .panel-link:hover {
-  color: var(--marker);
-  font-weight: bold;
-}
   </style>
 </head>
 <body>
-  <main>
-  <section id="welcome" class="panel-active">
-    <header>
-      <h1>/dduyg</h1>
-    </header>
-    <div class="content">
-      <p>Lorem Duygu Dağdelen dolor <a href="#about" class="panel-link">sit</a> amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Sed aliquam tincidunt elit ac scelerisque.</p>   
+  <nav>
+    <a class="home-badge" href="{{ site.baseurl }}/">
+      <img id="badge" src="{{ site.baseurl }}/assets/images/badge.gif">
+    </a>
+    <div id="menu">
+      <a href="#" class="dropdown-btn" tabindex="0" aria-haspopup="menu">dduyg</a>
+      <div class="dropdown-content">
+        <a class="item {% if page.url == '/' %}active{% endif %}" style="--delay: 1;" href="{{ site.baseurl }}/">Home</a>
+        <a class="item {% if page.url contains '/posts/' %}active{% endif %}" style="--delay: 2;" href="{{ site.baseurl }}/posts">Posts</a>
+        <a class="item {% if page.url == '/about.html' %}active{% endif %}" style="--delay: 3;" href="{{ site.baseurl }}/about">About</a>
+        <a class="item {% if page.url contains '/works/' %}active{% endif %}" style="--delay: 4;" href="{{ site.baseurl }}/works">Works</a>
+        <a class="item {% if page.url == '/contact.html' %}active{% endif %}" style="--delay: 5;" href="{{ site.baseurl }}/contact">Contact</a>
+      </div>
     </div>
-  </section>
-  <section id="posts" class="panel-inactive">
-    <header>
-      <h1>Recent</h1>
-    </header>
-    <div class="content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
-      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent finibus ac enim vel iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et egestas ante. Nullam ac elementum velit, quis aliquam nisi. Pellentesque cursus eu ligula non semper. Nam pharetra velit sit amet orci tempor fringilla. Donec pretium mattis gravida. Morbi ut leo felis.</p>
-    </div>
-  </section>
-  <section id="about" class="panel-inactive">
-    <header>
-      <h1>About</h1>
-    </header>
-    <div class="content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed consectetur mauris, vel consectetur mi. Fusce volutpat lorem id cursus iaculis. Vivamus eget lobortis libero. Sed sodales tempor venenatis. Vivamus iaculis eros non sem aliquam ornare. Ut eget feugiat massa. Morbi condimentum, neque vitae vestibulum hendrerit, tortor metus vulputate augue, ut lacinia turpis sem sed dolor. Sed aliquam tincidunt elit ac scelerisque. Donec eleifend libero nisl, feugiat vulputate enim elementum consequat. Nullam scelerisque lorem fringilla urna ullamcorper consectetur.</p>
-    </div>
-  </section>
-  <section id="contact" class="panel-inactive">
-    <header>
-      <h1><i class="far fa-paper-plane"></i></h1>
-    </header>
-    <div class="content">
-      <p>Whether you want to know more about my work or me, ask me a question, maybe share or discuss interesting thoughts, ideas, projects or just like to say hi, please don't hesitate to contact me. You can send me a DM or reach me via email. I would be happy to hear from you.</p>
-      <p>As a social creature, I love to talk with others and exchange thoughts and ideas. Every conversation is a unique opportunity to learn, grow and create something new.</p>
-    </div>
-  </section>
-</main>
-<script>
-  const sections = document.querySelectorAll('section');
-  const panelLinks = document.querySelectorAll('.panel-link');
-
-  sections.forEach((section) => {
-    section.addEventListener('click', activatePanel);  
-  });
-
-  panelLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault(); // Prevent default link behavior
-      const targetId = link.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) {
-        deactivatePanels();
-        targetSection.classList.remove('panel-inactive');
-        targetSection.classList.add('panel-active');
-        targetSection.querySelector('.content').style.display = 'block';
-      }
-    });
-  });
-
-  function deactivatePanels() {
-    sections.forEach((section) => {
-      section.classList.add('panel-inactive');
-      section.classList.remove('panel-active');
-      section.querySelector('.content').style.display = 'none'; // Hide panel content
-    });
-  }
-
-  function activatePanel(event) {
-    if (!event.target.closest('.panel-link')) {
-      deactivatePanels();
-      this.classList.remove('panel-inactive');
-      this.classList.add('panel-active');
-      this.querySelector('.content').style.display = 'block'; // Show panel content
-    }
-  }
-</script> 
+  </nav>
 </body>
 </html>
